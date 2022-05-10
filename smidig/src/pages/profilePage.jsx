@@ -3,15 +3,12 @@ import styled from "styled-components";
 import AvatarHeader from "../components/AvatarHeader";
 
 
-const StyledDiv = styled("div")`
 
-`;
 
 const ProfilePage = () => {
     return(
         <>
             <AvatarHeader/>
-
         </>
     );
 }
