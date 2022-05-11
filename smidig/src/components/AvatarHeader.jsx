@@ -9,7 +9,6 @@ const StyledAvatarHeader = styled("div")`
     justify-content:center;
     align-items:center;
     flex-direction: column;
-    padding:60px;
 `;
 const StyledAvatarImage = styled("div")`
     border-radius: 100%;
