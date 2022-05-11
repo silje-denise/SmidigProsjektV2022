@@ -14,7 +14,6 @@ const StyledCharacterSelection = styled.div`
     align-items: center;
     border-radius: 1.5rem;
     margin: auto;
-    margin-top: 15rem;
 `;
 
 const StyledCharacters = styled.div`

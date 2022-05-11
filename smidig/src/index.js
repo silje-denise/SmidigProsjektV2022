@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter } from 'react-router-dom';
-import ProfilePage from './pages/ProfilePage';
+import ChooseAvatarPage from './pages/ChooseAvatarPage';
 import LandingPage from './pages/LandingPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,8 +12,8 @@ root.render(
 <React.StrictMode>
   <BrowserRouter>
     {/*<App />*/}
-    <LandingPage />
-    {/* <ProfilePage/> */}
+    {/* <LandingPage /> */}
+    <ChooseAvatarPage/>
   </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import AvatarHeader from "../components/AvatarHeader";
+import CharacterSelection from "../components/CharacterSelection";
 import monster from "./../images/monster.png";
 
 const PageWrapper = styled("div")`
@@ -12,6 +13,8 @@ const PageWrapper = styled("div")`
     display:flex;
     flex-direction: column;
     align-items:center;
+    padding:40px;
+    box-sizing: border-box;
     
 `;
 const StyledImage = styled("img")`
@@ -32,14 +35,20 @@ const StyledButton = styled("button")`
     align-items:center;
 `;
 
+const CharacterSelectionWrapper = styled("div")`
+    padding-bottom: 60px;
+`;
 
-const ProfilePage = () => {
+
+const ChooseAvatarPage = () => {
     return(
         <> 
         <StyledImage src={monster}/>
         <PageWrapper>
             <AvatarHeader/>
-            <div>hei</div>
+            <CharacterSelectionWrapper>
+                <CharacterSelection/>
+            </CharacterSelectionWrapper>
             <StyledButton>Fortsett</StyledButton>
         </PageWrapper>
         </>
@@ -47,4 +56,4 @@ const ProfilePage = () => {
 }
 
 
-export default ProfilePage
+export default ChooseAvatarPage;
