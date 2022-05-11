@@ -7,7 +7,7 @@ import Knowledge from "../images/Knowledge.png"
 
 const StyledBadgeMainDiv = styled.div`
     position: fixed;
-    top: 14rem;
+    top: 18rem;
     width: 100%;
     height: 5rem;
 `;
@@ -22,7 +22,7 @@ const StyledBadgesDiv = styled.div`
     width: 100%;
     height: 10rem;
     position: fixed;
-    top: 18rem;
+    top: 22rem;
     left: 0.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
