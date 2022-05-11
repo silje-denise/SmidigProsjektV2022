@@ -6,11 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter } from 'react-router-dom';
 import ChooseAvatarPage from './pages/ChooseAvatarPage';
 import LandingPage from './pages/LandingPage';
-<<<<<<< HEAD
-import ProfilePage from './pages/ProfilePage';
-=======
 import TempPage from './pages/TempPage.jsx'
->>>>>>> refs/remotes/origin/Gruppe2
+import ProfilePage from './pages/ProfilePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,11 +16,8 @@ root.render(
     {/*<App />*/}
     {/* <LandingPage /> */}
     {/* <ChooseAvatarPage/> */}
-<<<<<<< HEAD
-    <ProfilePage/>
-=======
-    <TempPage />
->>>>>>> refs/remotes/origin/Gruppe2
+    {/* <TempPage /> */}
+    {/* <ProfilePage /> */}
   </BrowserRouter>
   </React.StrictMode>
 );
