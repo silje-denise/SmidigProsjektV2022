@@ -1,4 +1,5 @@
 import React from "react";
+import AvatarCreationBubble from "../components/AvatarCreationBubble";
 import Badges from "../components/Badges";
 import ProfileHeader from "../components/ProfileHeader";
 import styled from "styled-components";
@@ -28,6 +29,7 @@ const ProfilePage = () => {
             <ProfileHeader/>
             <Badges/>
             <StyledImage src={monster}/>
+            <AvatarCreationBubble />
         </>
     );
 }
