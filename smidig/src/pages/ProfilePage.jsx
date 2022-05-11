@@ -29,6 +29,7 @@ const ProfilePage = () => {
             <ProfileHeader/>
             <Badges/>
             <StyledImage src={monster}/>
+            <AvatarCreationBubble />
         </>
     );
 }
