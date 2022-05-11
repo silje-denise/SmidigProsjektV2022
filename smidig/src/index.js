@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter } from 'react-router-dom';
 import ChooseAvatarPage from './pages/ChooseAvatarPage';
 import LandingPage from './pages/LandingPage';
+import TempPage from './pages/TempPage.jsx'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,8 @@ root.render(
   <BrowserRouter>
     {/*<App />*/}
     {/* <LandingPage /> */}
-    <ChooseAvatarPage/>
+    {/* <ChooseAvatarPage/> */}
+    <TempPage />
   </BrowserRouter>
   </React.StrictMode>
 );
