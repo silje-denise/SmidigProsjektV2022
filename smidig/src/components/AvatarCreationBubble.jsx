@@ -4,7 +4,7 @@ import SittingDog from "../images/SittingDog.png"
 
 const StyledAvatarCreationBubble = styled.div`
     align-content: center;
-    margin-top: 30rem;
+    margin-top: 15rem;
     text-align: center;
     width: 100%;
     display: flex;
@@ -19,7 +19,7 @@ const StyledAvatarCreationBubblePerson = styled.div`
     height: 10rem;
     position: fixed;
     margin-left: 1rem;
-    top: 35rem;
+    top: 28rem;
 `;
 
 const StyledAvatarCreationBubbleImage = styled.img`
