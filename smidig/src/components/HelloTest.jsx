@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledHelloTest = styled.div`
-    background: lightblue;
     align-content: center;
-    margin-top: 5rem;
+    margin-top: 4rem;
     text-align: center;
 `;
 
