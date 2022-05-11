@@ -10,12 +10,12 @@ const HeaderWrapper = styled("div")`
     justify-content:center;
     width: 100vw;
     flex-direction:column;
+    margin-bottom: 20px;
 `;
 
 const HeaderGrid = styled("div")`
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-  
     width: 100vw;
     height:150px;
 `;

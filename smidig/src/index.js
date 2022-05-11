@@ -16,8 +16,8 @@ root.render(
     {/*<App />*/}
     {/* <LandingPage /> */}
     {/* <ChooseAvatarPage/> */}
+    <ProfilePage/>
     {/* <TempPage /> */}
-    <ProfilePage />
   </BrowserRouter>
   </React.StrictMode>
 );
