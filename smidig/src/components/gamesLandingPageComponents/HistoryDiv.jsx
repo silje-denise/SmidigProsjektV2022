@@ -1,13 +1,32 @@
 import React from "react";
+import styled from "styled-components"
+
+
+
+const StyledContainer = styled.div `
+position: relative
+`;
+
+
+const StyledHistoryImage = styled.div `
+position: absolute
+`;
+
+const StyledHistoryInfo = styled.div `
+display: flex;
+flex-direction: column
+
+`;
 
 
 const HistoryDiv = () => {
 
 return(
     <div>
-        <h3>Historien</h3>
-        <img src="Images/Viking.png" alt="Bilde av en viking" />
-        <p>Følg oss gjennom stien, og hjelp avataren</p>
+        <StyledContainer>
+        <StyledHistoryInfo><h3>Historien</h3><p>Følg oss gjennom stien, og hjelp avataren</p></StyledHistoryInfo>
+        <StyledHistoryImage><img src="Images/Viking.png" alt="Bilde av en viking" /></StyledHistoryImage>
+       </StyledContainer>
     </div>
 );
 
