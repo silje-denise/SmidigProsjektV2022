@@ -17,7 +17,6 @@ const StyledPointsWrapper = styled.div`
 display: flex;
 justify-content: flex-end;
 margin: 30px;
-
 `
 
 
