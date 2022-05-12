@@ -1,12 +1,24 @@
 import React from "react";
 import styled from "styled-components";
+import RælingenLogo from "../images/RælingenLogo.png"
 
 const StyledSettingsDiv = styled.div`
     font-size: 33px;
     text-align: right;
-    margin-right: 4rem;
-    margin-top: 4rem;
+    margin-right: 0rem;
     font-weight: 700;
+    display: grid;
+`;
+
+const StyledSettingsButton = styled.button`
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 33px;
+    text-align: right;
+    margin-right: 4rem;
+    margin-top: 2rem;
+    font-weight: 600;
 `;
 
 const StyledSettings = styled.div`
@@ -20,41 +32,65 @@ const StyledContactUs = styled.div`
 `;
 
 const StyledShareApp = styled.div`
+    margin-top: -2rem;
 `;
 
 const StyledLogOff = styled.div`
     font-size: 30px;
-    margin-top: 8rem;
+    margin-top: 5rem;
     color: #209803;
-    font-weight: 400;
+    font-weight: 300;
+    background-color: white;
+`;
+
+const StyledLogo = styled.div`
+    width: 130px;
+    height: 60px;
+    margin-top: 12.5rem;
+    margin-left: 2.5rem;
+    background-color: white;
+`;
+
+const StyledLogoImage = styled.img`
+    width: 130px;
+    height: 60px;
 `;
 
 const Settings = () => {
     return(
         <>
+
             <StyledSettingsDiv>
 
                 <StyledSettings>
-                    <p>Innstillinger</p>
+                    <StyledSettingsButton>Innstillinger</StyledSettingsButton>
                 </StyledSettings>
 
                 <StyledAboutUs>
-                    <p>Om oss</p>
+                    <StyledSettingsButton>Om oss</StyledSettingsButton>
                 </StyledAboutUs>
 
                 <StyledContactUs>
-                    <p>Kontakt oss</p>
+                    <StyledSettingsButton>Kontakt oss</StyledSettingsButton>
                 </StyledContactUs>
 
-                <StyledShareApp>
-                    <p>Del appen</p>
-                </StyledShareApp>
+                <StyledSettingsButton>
+                    <StyledShareApp>
+                        <p>Del appen</p>
+                    </StyledShareApp>
+                </StyledSettingsButton>
 
-                <StyledLogOff>
-                    <p>Logg av</p>
-                </StyledLogOff>
+                <StyledSettingsButton>
+                    <StyledLogOff>
+                        <p>Logg av</p>
+                    </StyledLogOff>
+                </StyledSettingsButton>
 
             </StyledSettingsDiv>
+
+            <StyledLogo>
+                <StyledLogoImage src={RælingenLogo}/>
+            </StyledLogo>
 
         </>
     );
