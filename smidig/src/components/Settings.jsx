@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import RælingenLogo from "../images/RælingenLogo.png"
 
 const StyledSettingsDiv = styled.div`
     font-size: 33px;
     text-align: right;
     margin-right: 0rem;
     font-weight: 700;
-    display: grid;
 `;
 
 const StyledSettingsButton = styled.button`
@@ -18,7 +16,7 @@ const StyledSettingsButton = styled.button`
     text-align: right;
     margin-right: 4rem;
     margin-top: 2rem;
-    font-weight: 600;
+    font-weight: 700;
 `;
 
 const StyledSettings = styled.div`
@@ -37,23 +35,9 @@ const StyledShareApp = styled.div`
 
 const StyledLogOff = styled.div`
     font-size: 30px;
-    margin-top: 5rem;
+    margin-top: 6rem;
     color: #209803;
-    font-weight: 300;
-    background-color: white;
-`;
-
-const StyledLogo = styled.div`
-    width: 130px;
-    height: 60px;
-    margin-top: 12.5rem;
-    margin-left: 2.5rem;
-    background-color: white;
-`;
-
-const StyledLogoImage = styled.img`
-    width: 130px;
-    height: 60px;
+    font-weight: 400;
 `;
 
 const Settings = () => {
@@ -87,10 +71,6 @@ const Settings = () => {
                 </StyledSettingsButton>
 
             </StyledSettingsDiv>
-
-            <StyledLogo>
-                <StyledLogoImage src={RælingenLogo}/>
-            </StyledLogo>
 
         </>
     );
