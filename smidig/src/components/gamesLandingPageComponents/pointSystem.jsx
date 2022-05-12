@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import GoldenStar from '../../Images/GoldenStar.png'
 
 
 const StyledPoints = styled.div`
@@ -26,7 +27,7 @@ const PointSystem = () => {
     <StyledPointsWrapper>
         <StyledPoints>
             <h2>5</h2> 
-            <img src="./Images/GoldenStar.png" alt="stjerne" />
+            <img src={GoldenStar} alt="stjerne" />
         </StyledPoints>
     </StyledPointsWrapper>
   );

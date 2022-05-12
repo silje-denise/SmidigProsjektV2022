@@ -1,19 +1,21 @@
 import HistoryDiv from "../components/gamesLandingPageComponents/HistoryDiv"
 import BackroundGames from "../components/gamesLandingPageComponents/BackgroundGames"
-import PointSystem from "../components/gamesLandingPageComponents/pointSystem"
+import PointSystem from "../components/gamesLandingPageComponents/PointSystem"
+
+
+
 
 
 const GamesLandingPage = () => {
 
     return(
         
-    
-        <BackroundGames>
-        <PointSystem></PointSystem>
-        <HistoryDiv></HistoryDiv>
-    
-         </BackroundGames>
-      
+    <div>
+     <PointSystem></PointSystem>
+     <HistoryDiv></HistoryDiv>
+     <BackroundGames></BackroundGames>
+    </div>
+        
      
     );
     

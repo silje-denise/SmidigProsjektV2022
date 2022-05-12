@@ -1,21 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import backroundSpill from "../../Images/backroundSpill.png"
+import background from '../../Images/background.png'
 
-const StyledBackground = styled.div `
-height: 100%;
+const StyledBackground = styled.div`
+height: 100px;
 width: 100%;
 z-index: -1;
-background-image: url("./Images/backroundSpill.png")
+background-image: url('../../Images/background.png') ;
+`
 
-`;
     
 
 
-const BackgroundGames = () =>{
-    return(
+const BackgroundGames = () => {
+    return (
         <StyledBackground>
-            <img src={backroundSpill} alt= "Dette er en bakgrunn for spill landing side"></img>
         </StyledBackground>
     )
 }

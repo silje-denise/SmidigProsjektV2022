@@ -1,33 +1,66 @@
 import React from "react";
 import styled from "styled-components"
+import Viking from '../../Images/Viking.png'
 
-
+const StyledContainerWrappper = styled.div`
+display: flex;
+justify-content: center;
+`
 
 const StyledContainer = styled.div `
-position: relative
-`;
+display: grid;
+align-content: center;
+align-items: center;
+padding: 20px;
+background-image: linear-gradient(to top right ,#D1DD8F 50%,#71C742);
+width: 300px;
+height: 70px;
+border-radius: 20px;
+grid-template-columns: 200px 100px;
+grid-template-rows: auto;
+grid-template-areas: 
+"header sidebar "
+"main sidebar";
+`
 
 
 const StyledHistoryImage = styled.div `
-position: absolute
+grid-area: sidebar;
 `;
+const StyledImage = styled.img`
+   height : 90px ;
+`;
+
+
+const StyledHeader = styled.div`
+grid-area: header;
+margin: 0;
+`
 
 const StyledHistoryInfo = styled.div `
-display: flex;
-flex-direction: column
+grid-area: main;
+`
+const StyledInfoP = styled.p`
+margin-block-start:0;
+`
 
-`;
 
 
 const HistoryDiv = () => {
 
 return(
-    <div>
+        <StyledContainerWrappper>
         <StyledContainer>
-        <StyledHistoryInfo><h3>Historien</h3><p>Følg oss gjennom stien, og hjelp avataren</p></StyledHistoryInfo>
-        <StyledHistoryImage><img src="Images/Viking.png" alt="Bilde av en viking" /></StyledHistoryImage>
+        <StyledHeader>
+        <h2>Historien</h2>
+        </StyledHeader>
+        <StyledHistoryInfo>
+        <StyledInfoP>Følg oss gjennom stien, <br></br>og hjelp avataren</StyledInfoP>
+        </StyledHistoryInfo>
+        <StyledHistoryImage>
+        <StyledImage src={Viking} alt="Bilde av en viking" /></StyledHistoryImage>
        </StyledContainer>
-    </div>
+        </StyledContainerWrappper>
 );
 
 
