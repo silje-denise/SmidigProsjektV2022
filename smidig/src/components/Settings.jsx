@@ -4,8 +4,18 @@ import styled from "styled-components";
 const StyledSettingsDiv = styled.div`
     font-size: 33px;
     text-align: right;
+    margin-right: 0rem;
+    font-weight: 700;
+`;
+
+const StyledSettingsButton = styled.button`
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 33px;
+    text-align: right;
     margin-right: 4rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
     font-weight: 700;
 `;
 
@@ -20,11 +30,12 @@ const StyledContactUs = styled.div`
 `;
 
 const StyledShareApp = styled.div`
+    margin-top: -2rem;
 `;
 
 const StyledLogOff = styled.div`
     font-size: 30px;
-    margin-top: 8rem;
+    margin-top: 6rem;
     color: #209803;
     font-weight: 400;
 `;
@@ -32,27 +43,32 @@ const StyledLogOff = styled.div`
 const Settings = () => {
     return(
         <>
+
             <StyledSettingsDiv>
 
                 <StyledSettings>
-                    <p>Innstillinger</p>
+                    <StyledSettingsButton>Innstillinger</StyledSettingsButton>
                 </StyledSettings>
 
                 <StyledAboutUs>
-                    <p>Om oss</p>
+                    <StyledSettingsButton>Om oss</StyledSettingsButton>
                 </StyledAboutUs>
 
                 <StyledContactUs>
-                    <p>Kontakt oss</p>
+                    <StyledSettingsButton>Kontakt oss</StyledSettingsButton>
                 </StyledContactUs>
 
-                <StyledShareApp>
-                    <p>Del appen</p>
-                </StyledShareApp>
+                <StyledSettingsButton>
+                    <StyledShareApp>
+                        <p>Del appen</p>
+                    </StyledShareApp>
+                </StyledSettingsButton>
 
-                <StyledLogOff>
-                    <p>Logg av</p>
-                </StyledLogOff>
+                <StyledSettingsButton>
+                    <StyledLogOff>
+                        <p>Logg av</p>
+                    </StyledLogOff>
+                </StyledSettingsButton>
 
             </StyledSettingsDiv>
 
