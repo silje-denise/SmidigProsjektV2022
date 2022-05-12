@@ -9,6 +9,7 @@ import LandingPage from './pages/LandingPage';
 import ProfilePage from './pages/ProfilePage';
 import TempPage from './pages/TempPage.jsx'
 import SettingsPage from './pages/SettingsPage.jsx'
+import QuizPage from './pages/QuizPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,7 +19,8 @@ root.render(
     {/* <LandingPage /> */}
     {/* <ChooseAvatarPage/> */}
     {/* <ProfilePage/> */}
-    <SettingsPage />
+    {/* <SettingsPage /> */}
+    <QuizPage />
   </BrowserRouter>
   </React.StrictMode>
 );

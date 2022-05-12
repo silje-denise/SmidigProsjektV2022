@@ -49,7 +49,7 @@ const SettingsPage = () => {
     return(
         <>
         
-        <XButton />
+            <XButton />
 
             <StyledBackground>
                 <StyledBackgroundImage src={monster} />
