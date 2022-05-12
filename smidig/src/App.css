@@ -59,5 +59,7 @@ padding: 40px;
 .carousel {
   cursor: grab;
   overflow: hidden;
-  background: rgb(230, 173, 173);
+  background: brown;
 }
+
+
