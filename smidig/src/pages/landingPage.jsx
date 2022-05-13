@@ -11,7 +11,10 @@ const LandingPage = () => {
             <HelloTest />
             <AvatarHeader />
             <CharacterSelection />
-            <SkipButton />
+            {/* <Link to={"/overview"}> */}
+                <SkipButton />
+            {/* </Link> */}
+            
         </>
     );
 }

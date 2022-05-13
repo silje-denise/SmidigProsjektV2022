@@ -1,8 +1,9 @@
-import React from "react"
-import styled from "styled-components"
-import Settings from "../components/group2/Settings"
-import monster from "../images/BackgroundPattern.png"
-import XButton from"../components/common/XButton"
+import React from "react";
+import styled from "styled-components";
+import Settings from "../components/group2/Settings";
+import monster from "../images/BackgroundPattern.png";
+import XButton from"../components/common/XButton";
+import { Link } from "react-router-dom";
 
 const StyledPageWrapper = styled.div`
     height: 100vh;
@@ -48,9 +49,7 @@ const StyledSecondWhiteBox = styled.div`
 const SettingsPage = () => {
     return(
         <>
-        
-            <XButton />
-
+        <XButton/>
             <StyledBackground>
                 <StyledBackgroundImage src={monster} />
             </StyledBackground>

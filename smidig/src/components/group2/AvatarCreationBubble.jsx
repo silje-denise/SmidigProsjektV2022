@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import SittingDog from "../../images/SittingDog.png"
+import { Link } from "react-router-dom";
 
 const StyledAvatarCreationBubble = styled.div`
     align-content: center;
@@ -57,7 +58,11 @@ const AvatarCreationBubble = () => {
                 <StyledAvatarCreationBubble>
                     <StyledAvatarCreationBubbleText>
                         <p>
-                            Start med å velge din avatar <StyledAvatarCreationBubbleButton>HER</StyledAvatarCreationBubbleButton>
+                            Start med å velge din avatar 
+                            <Link to={"/chooseavatar"}>
+                                <StyledAvatarCreationBubbleButton>HER</StyledAvatarCreationBubbleButton>
+                            </Link>
+                            
                         </p>
                     </StyledAvatarCreationBubbleText>
                 </StyledAvatarCreationBubble>

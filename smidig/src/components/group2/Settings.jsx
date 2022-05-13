@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import RælingenLogo from "../../images/RaelingenLogo.png"
+import RaelingenLogo from "../../images/RaelingenLogo.png";
+import { Link } from "react-router-dom";
 
 const StyledSettingsDiv = styled.div`
     font-size: 33px;
@@ -81,15 +82,17 @@ const Settings = () => {
                 </StyledSettingsButton>
 
                 <StyledSettingsButton>
-                    <StyledLogOff>
-                        <p>Logg av</p>
-                    </StyledLogOff>
+                    
+                      <Link to={"/"}>
+                          <StyledLogOff>Logg av</StyledLogOff>
+                      </Link>  
+                  
                 </StyledSettingsButton>
 
             </StyledSettingsDiv>
 
             <StyledLogo>
-                <StyledLogoImage src={RælingenLogo}/>
+                <StyledLogoImage src={RaelingenLogo}/>
             </StyledLogo>
 
         </>

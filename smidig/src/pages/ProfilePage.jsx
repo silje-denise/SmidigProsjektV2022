@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import monster from "./../images/BackgroundPattern.png";
+import { Link } from "react-router-dom";
 
 const ArrowWrapper = styled("div")`
     height: 70px;
@@ -23,9 +24,12 @@ const ProfilePage = () => {
     return(
         <>
             <ArrowWrapper>
-                <FontAwesomeIcon icon={faChevronLeft} size={'2x'}/>
+                {/**Link skal gå til hjem */}
+                <Link to={"/"}>
+                     <FontAwesomeIcon icon={faChevronLeft} size={'2x'}/>
+                </Link>
+               
             </ArrowWrapper>
-            {/* <img src={monster}/> */}
             <ProfileHeader/>
             <Badges/>
             <StyledImage src={monster}/>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Dog from '../../images/Dog.png';
 import profilLinje from '../../images/ProfileLine.png';
 import Points from "../common/PointsComponent";
+import { Link } from "react-router-dom";
 
 const HeaderWrapper = styled("div")`
     display:flex;
@@ -61,7 +62,10 @@ const ProfileHeader = () => {
                 <School>Solvik skole</School>
             </UserInfo>
             <ProfileInfoWrapper>
-                <ProfilePicture src={Dog}/>
+                <Link to={"/chooseavatar"}>
+                     <ProfilePicture src={Dog}/>
+                </Link>
+               
             </ProfileInfoWrapper>
             </HeaderGrid>
             <img src={profilLinje}/>

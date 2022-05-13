@@ -3,6 +3,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import {React, useState} from "react";
 import styled from "styled-components";
 import kart from "../images/Map.png";
+import { Link } from "react-router-dom";
 
 
 const PageWrapper = styled("div")`
@@ -102,7 +103,10 @@ const MapPage = () => {
             {/* <Map/> */}
                 <ButtonWrapper>
                     <BackButton>
-                        <FontAwesomeIcon icon={faChevronLeft} size={'2x'}/>
+                       {/* Linken skal gå til hjem/overviewpage */}
+                        <Link to={"/"}>
+                             <FontAwesomeIcon icon={faChevronLeft} size={'2x'}/>
+                        </Link>
                     </BackButton>
                 </ButtonWrapper>
                 <OverlayWrapper>

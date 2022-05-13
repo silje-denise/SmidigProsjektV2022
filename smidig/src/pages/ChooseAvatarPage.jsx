@@ -3,6 +3,9 @@ import styled from "styled-components";
 import AvatarHeader from "../components/group2/AvatarHeader";
 import CharacterSelection from "../components/group2/CharacterSelection";
 import monster from "./../images/BackgroundPattern.png";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const PageWrapper = styled("div")`
     height: 100vh;
@@ -38,18 +41,32 @@ const StyledButton = styled("button")`
 const CharacterSelectionWrapper = styled("div")`
     padding-bottom: 60px;
 `;
-
+const ArrowWrapper = styled("div")`
+    height: 70px;
+    display:flex;
+    align-items:center;
+    padding: 40px 0px 0px 40px;
+    backgrond-image: url(${monster});
+`;
 
 const ChooseAvatarPage = () => {
     return(
         <> 
+         <ArrowWrapper>
+                <Link to={"/profile"}>
+                     <FontAwesomeIcon icon={faChevronLeft} size={'2x'}/>
+                </Link>
+               
+            </ArrowWrapper>
         <StyledImage src={monster}/>
         <PageWrapper>
             <AvatarHeader/>
             <CharacterSelectionWrapper>
                 <CharacterSelection/>
             </CharacterSelectionWrapper>
-            <StyledButton>Fortsett</StyledButton>
+            <Link to={"/profile"}>
+                <StyledButton>Fortsett</StyledButton>
+            </Link>
         </PageWrapper>
         </>
     );

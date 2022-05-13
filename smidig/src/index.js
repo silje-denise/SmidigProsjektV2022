@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter } from 'react-router-dom';
+import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import ChooseAvatarPage from './pages/ChooseAvatarPage';
 import LandingPage from './pages/LandingPage';
 import ProfilePage from './pages/ProfilePage';
@@ -15,13 +15,16 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <React.StrictMode>
   <BrowserRouter>
-    {/*<App />*/}
-    {/* <LandingPage /> */}
-    {/* <ChooseAvatarPage/> */}
-    <ProfilePage/>
-    {/* <SettingsPage /> */}
-    {/* <MapPage/> */}
-    {/* <QuizPage /> */}
+      <Routes>
+        <Route path={"/"} element={<LandingPage/>}/>
+        {/* <Route path={"/overview"} element={<OverviewPage/>}/> */}
+        <Route path={"/profile"} element={<ProfilePage/>}/>
+        <Route path={"/quiz"} element={<QuizPage/>}/>
+        <Route path={"/map"} element={<MapPage/>}/>
+        <Route path={"/settings"} element={<SettingsPage/>}/>
+        <Route path={"/chooseavatar"} element={<ChooseAvatarPage/>}/>
+      </Routes>
+
   </BrowserRouter>
   </React.StrictMode>
 );
