@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 //Foreløpig kun bakgrunn for å se om det funker
-const BackgroundWrapper = styled.BackgroundWrapper`
+const BackgroundWrapper = styled("div")`
     height: 100px;
     width: 100px;
     background-color: #F3F3F3;
 `;
 
-const navbar= () => {
+const Navigation= () => {
     return(
         <BackgroundWrapper>
         <li>
@@ -35,4 +35,4 @@ const navbar= () => {
         </BackgroundWrapper>
     );
 }
-export default navbar;
+export default Navigation;

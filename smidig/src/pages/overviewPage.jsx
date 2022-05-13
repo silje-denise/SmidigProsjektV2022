@@ -1,4 +1,9 @@
-
+import React from 'react';
+import '../../src/App.css';
+import { useEffect, useState, useRef } from 'react';
+import LocationCard from '../components/group3/LocationCard';
+import {motion} from "framer-motion";
+import backgroundPattern from './../images/waterMill.jpg'; 
 
 const OverviewPage = () => {
 
