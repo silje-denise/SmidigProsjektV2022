@@ -4,12 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter } from 'react-router-dom';
+import ChooseAvatarPage from './pages/ChooseAvatarPage';
+import LandingPage from './pages/LandingPage';
+import ProfilePage from './pages/ProfilePage';
+import TempPage from './pages/TempPage.jsx'
+import SettingsPage from './pages/SettingsPage.jsx'
+import MapPage from './pages/MapPage';
+import QuizPage from './pages/QuizPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <React.StrictMode>
   <BrowserRouter>
-    <App />
+    {/*<App />*/}
+    {/* <LandingPage /> */}
+    {/* <ChooseAvatarPage/> */}
+    {/* <ProfilePage/> */}
+    {/* <SettingsPage /> */}
+    <MapPage/>
+    <QuizPage />
   </BrowserRouter>
   </React.StrictMode>
 );
