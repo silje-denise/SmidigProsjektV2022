@@ -12,17 +12,19 @@ import SettingsPage from './pages/SettingsPage.jsx'
 import MapPage from './pages/MapPage';
 import QuizPage from './pages/QuizPage';
 import OverviewPage from './pages/OverviewPage';
+import GamesLandingPage from './pages/GamesLandingPage.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <React.StrictMode>
   
-  <BrowserRouter>
+  <BrowserRouter >
       <Routes>
         <Route path={"/"} element={<LandingPage/>}/>
        <Route path={"/overview"} element={<OverviewPage/>}/> 
         <Route path={"/profile"} element={<ProfilePage/>}/>
         <Route path={"/quiz"} element={<QuizPage/>}/>
+        <Route path={"/games"} element={<GamesLandingPage/>}/>
         <Route path={"/map"} element={<MapPage/>}/>
         <Route path={"/settings"} element={<SettingsPage/>}/>
         <Route path={"/chooseavatar"} element={<ChooseAvatarPage/>}/>
