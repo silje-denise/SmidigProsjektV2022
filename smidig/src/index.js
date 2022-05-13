@@ -9,11 +9,8 @@ import LandingPage from './pages/LandingPage';
 import ProfilePage from './pages/ProfilePage';
 import TempPage from './pages/TempPage.jsx'
 import SettingsPage from './pages/SettingsPage.jsx'
-<<<<<<< HEAD
 import MapPage from './pages/MapPage';
-=======
 import QuizPage from './pages/QuizPage';
->>>>>>> refs/remotes/origin/Gruppe2
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,11 +21,8 @@ root.render(
     {/* <ChooseAvatarPage/> */}
     {/* <ProfilePage/> */}
     {/* <SettingsPage /> */}
-<<<<<<< HEAD
-    <MapPage/>
-=======
+    {/* <MapPage/> */}
     <QuizPage />
->>>>>>> refs/remotes/origin/Gruppe2
   </BrowserRouter>
   </React.StrictMode>
 );
