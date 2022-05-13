@@ -1,9 +1,8 @@
 import React from "react";
-import styled from "styled-components";
-import HelloTest from "../components/HelloTest";
-import CharacterSelection from "../components/CharacterSelection";
-import SkipButton from "../components/SkipButton";
-import AvatarHeader from "../components/AvatarHeader";
+import HelloTest from "../components/group2/Hello";
+import CharacterSelection from "../components/group2/CharacterSelection";
+import SkipButton from "../components/group2/SkipButton";
+import AvatarHeader from "../components/group2/AvatarHeader";
 
 
 const LandingPage = () => {

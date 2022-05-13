@@ -1,8 +1,7 @@
 import React from "react"
-import styled from "styled-components"
 import NextButton from "../components/common/NextButton";
 import XButton from "../components/common/XButton";
-import Quiz from "../components/Quiz";
+import Quiz from "../components/group2/Quiz";
 
 
 

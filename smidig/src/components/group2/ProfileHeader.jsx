@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Dog from '../images/Dog.png';
-import profilLinje from '../images/profilLinje.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faStar} from '@fortawesome/free-solid-svg-icons';
+import Dog from '../../images/Dog.png';
+import profilLinje from '../../images/ProfileLine.png';
+import Points from "../common/PointsComponent";
 
 const HeaderWrapper = styled("div")`
     display:flex;
@@ -30,16 +29,6 @@ const ProfileInfoWrapper = styled("div")`
     align-items:center;
 `;
 
-const Points = styled("div")`
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background-color:#444444;
-    color:white;
-    border-radius:50px;
-    height: 34px;
-    width: 63px;
-`;
 const UserInfo = styled("div")`
     display:flex;
     flex-direction: column;
@@ -55,10 +44,7 @@ const Username = styled("h2")`
 const School = styled("h3")`
     margin:0;
 `;
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-    color:rgb(250,192,42);
-    padding: 5px;
-`;
+
 
 const ProfileHeader = () => {
     return(
@@ -66,8 +52,8 @@ const ProfileHeader = () => {
             <HeaderGrid>
                 <ProfileInfoWrapper>
                     <Points>
-                        <h4> 1 </h4>
-                        <StyledFontAwesomeIcon icon={faStar}/>
+                        {/* <h4> 1 </h4>
+                        <StyledFontAwesomeIcon icon={faStar}/> */}
                     </Points>
                 </ProfileInfoWrapper>
             <UserInfo>

@@ -1,11 +1,11 @@
 import React from "react";
-import AvatarCreationBubble from "../components/AvatarCreationBubble";
-import Badges from "../components/Badges";
-import ProfileHeader from "../components/ProfileHeader";
+import AvatarCreationBubble from "../components/group2/AvatarCreationBubble";
+import Badges from "../components/group2/Badges";
+import ProfileHeader from "../components/group2/ProfileHeader";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import monster from "./../images/monster.png";
+import monster from "./../images/BackgroundPattern.png";
 
 const ArrowWrapper = styled("div")`
     height: 70px;

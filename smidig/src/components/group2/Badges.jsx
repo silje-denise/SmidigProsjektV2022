@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Handyman from "../images/Handyman.png"
-import Hiker from "../images/Hiker.jpg"
-import Smile from "../images/Smile.png"
-import Knowledge from "../images/Knowledge.png"
+import Handyman from "../../images/Handyman.png"
+import Hiker from "../../images/Hiker.jpg"
+import Smile from "../../images/Smile.png"
+import Knowledge from "../../images/Knowledge.png"
 
 const StyledBadgeMainDiv = styled.div`
     position: fixed;
@@ -51,7 +51,7 @@ const Badges = () => {
         <>
             <StyledBadgeMainDiv>
                 <StyledMyBadgesText>
-                    <p> Mine Badges </p>
+                     Mine Badges 
                 </StyledMyBadgesText>
 
                 <StyledBadgesDiv>

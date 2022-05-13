@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import AvatarHeader from "../components/AvatarHeader";
-import CharacterSelection from "../components/CharacterSelection";
-import monster from "./../images/monster.png";
+import AvatarHeader from "../components/group2/AvatarHeader";
+import CharacterSelection from "../components/group2/CharacterSelection";
+import monster from "./../images/BackgroundPattern.png";
 
 const PageWrapper = styled("div")`
     height: 100vh;

@@ -2,8 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import {React, useState} from "react";
 import styled from "styled-components";
-import Map from "../components/Map";
-import kart from "../images/kart2.png";
+import kart from "../images/Map.png";
 
 
 const PageWrapper = styled("div")`

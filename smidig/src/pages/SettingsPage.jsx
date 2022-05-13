@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import Settings from "../components/Settings"
-import monster from "../images/monster.png"
+import Settings from "../components/group2/Settings"
+import monster from "../images/BackgroundPattern.png"
 import XButton from"../components/common/XButton"
 
 const StyledPageWrapper = styled.div`

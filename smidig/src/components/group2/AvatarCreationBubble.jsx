@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import SittingDog from "../images/SittingDog.png"
+import SittingDog from "../../images/SittingDog.png"
 
 const StyledAvatarCreationBubble = styled.div`
     align-content: center;

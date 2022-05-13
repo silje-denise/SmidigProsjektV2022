@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Dog from "../images/Dog.png"
-import Horse from "../images/Horse.png"
-import Cat from "../images/Cat.png"
-import Rat from "../images/Rat.png"
+import Dog from "../../images/Dog.png"
+import Horse from "../../images/Horse.png"
+import Cat from "../../images/Cat.png"
+import Rat from "../../images/Rat.png"
 
 const StyledCharacterSelection = styled.div`
     background: #f5f2f2;

@@ -1,24 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledHelloTest = styled.div`
+const StyledHello = styled.div`
     align-content: center;
     margin-top: 4rem;
     text-align: center;
 `;
 
-const HelloTest = () => {
+const Hello = () => {
     return(
         <>
-            <StyledHelloTest>
+            <StyledHello>
                 <h1>
                     Hei!
                 </h1>
-            </StyledHelloTest>
+            </StyledHello>
         </>
     );
 }
 
 
 
-export default HelloTest
+export default Hello;

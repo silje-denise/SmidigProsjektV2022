@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import RælingenLogo from "../images/RælingenLogo.png"
+import RælingenLogo from "../../images/RaelingenLogo.png"
 
 const StyledSettingsDiv = styled.div`
     font-size: 33px;
