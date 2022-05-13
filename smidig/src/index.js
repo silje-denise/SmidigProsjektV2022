@@ -10,6 +10,7 @@ import ProfilePage from './pages/ProfilePage';
 import TempPage from './pages/TempPage.jsx'
 import SettingsPage from './pages/SettingsPage.jsx'
 import MapPage from './pages/MapPage';
+import QuizPage from './pages/QuizPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,7 @@ root.render(
     {/* <ProfilePage/> */}
     {/* <SettingsPage /> */}
     <MapPage/>
+    <QuizPage />
   </BrowserRouter>
   </React.StrictMode>
 );
