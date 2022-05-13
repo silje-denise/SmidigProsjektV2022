@@ -1,42 +1,265 @@
-.App {
-  text-align: center;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*---------------------------------------------*/
+
+
+.main {
+  position: relative;
+  width: 100%;
+  height: max-content;
+  background-color: blue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.overviewPage {
+  background-color: brown;
+  width: 300px;
+  height: 200px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+
+/*------------ Group 3 --------------*/
+.logo {
+  position: relative;
+  background-image: url("./images/logo.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 128px;
+  width: 200px;
+  left: 0;
+}
+
+.app {
+  width: 100%;
+}
+.overviewPage {
+  position: relative;
+  margin: auto;
+  margin-top: 128px;
+  
+  width: 80%;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  background-image: url("./images/backgroundPattern2.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  width: 100%;
+  opacity: 0.4;
+  right: 0;
+  height: 600px;
+}
+
+.scrollView {
+  padding: 16px 0px 16px 0px;
+  width: 100%;
+  /*background-color: brown;*/
+  margin-top: 64px;
+  overflow: auto;
+  white-space: nowrap;
+  cursor: grab;
+}
+
+.locationView {
+  position: relative;
+  display:inline-block;
+  margin-right: 16px;
+  height: 400px;
+  width: 212px;
+  background-color: aqua;
+  border-radius: 8px;
+  background-image: url("./images/waterMill.jpg");
+  background-size: cover;
+  background-position: center;
+
+  box-shadow: 0px 0px 16px 1px #00000023;
+}
+
+.locationView:hover {
+  transform: scale(1.01);
+  animation: scaler 0.3s forwards;
+  cursor: pointer;
+}
+
+.locationFader {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+  border-radius: 0 0 8px 8px;
+  height: 200px;
+}
+
+.locationDescription {
+  width: max-content;
+  margin: 128px 16px 16px 16px;
+  padding-top: 8px;
+}
+
+.locationDescription p {
+  display: inline-block;
+  margin-right: 16px;
+  font-size: 22px;
   color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+.locationIcon {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background-image: url("./images/locationIcon.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gameShortcut {
+  position: relative;
+  margin: 32px 0px 128px 0px;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(-120deg, rgba(116,197,75,1), rgba(209, 220, 147, 1));
+  border-radius: 32px;
+  box-shadow: 0px 0px 60px 0px rgba(76, 125, 52, 0.2);
+  
 }
 
+<<<<<<< HEAD
 
 .carousel-item{
 min-height: 40rem;
@@ -63,3 +286,49 @@ padding: 40px;
 }
 
 
+=======
+.gameShortcutDescription {
+  
+  color: #262626;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 32px;
+}
+
+.gameShortcutDescription h7 {
+  
+  font-weight: 800;
+  font-size: 36px;
+  
+}
+
+.gameShortcutDescription p {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 20px;
+  opacity: 0.65;
+  line-height: 1.2;
+}
+
+.gameShortcutImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 166px;
+  height: 166px;
+  margin: 16px;
+  background-image: url("./images/shortcutGames.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  
+  
+}
+
+
+@keyframes scaler {
+  0% {transform: scale(1);}
+  100% {transform: scale(1.01);}
+  
+}
+>>>>>>> a3b1a8dda148159095d8f94661251b3ff8e6cfef
