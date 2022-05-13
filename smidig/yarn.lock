@@ -1153,12 +1153,7 @@
   dependencies:
     "@emotion/memoize" "^0.7.4"
 
-"@emotion/memoize@^0.7.4":
-  "integrity" "sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ=="
-  "resolved" "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.5.tgz"
-  "version" "0.7.5"
-
-"@emotion/memoize@0.7.4":
+"@emotion/memoize@^0.7.4", "@emotion/memoize@0.7.4":
   "integrity" "sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw=="
   "resolved" "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.4.tgz"
   "version" "0.7.4"
@@ -1190,31 +1185,31 @@
 
 "@fortawesome/fontawesome-common-types@6.1.1":
   "integrity" "sha512-wVn5WJPirFTnzN6tR95abCx+ocH+3IFLXAgyavnf9hUmN0CfWoDjPT/BAWsUVwSlYYVBeCLJxaqi7ZGe4uSjBA=="
-  "resolved" "https://npm.fontawesome.com/@fortawesome/fontawesome-common-types/-/6.1.1/fontawesome-common-types-6.1.1.tgz"
+  "resolved" "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.1.1.tgz"
   "version" "6.1.1"
 
 "@fortawesome/fontawesome-free@^6.1.1":
   "integrity" "sha512-J/3yg2AIXc9wznaVqpHVX3Wa5jwKovVF0AMYSnbmcXTiL3PpRPfF58pzWucCwEiCJBp+hCNRLWClTomD8SseKg=="
-  "resolved" "https://npm.fontawesome.com/@fortawesome/fontawesome-free/-/6.1.1/fontawesome-free-6.1.1.tgz"
+  "resolved" "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-6.1.1.tgz"
   "version" "6.1.1"
 
 "@fortawesome/fontawesome-svg-core@^6.1.1", "@fortawesome/fontawesome-svg-core@~1 || ~6":
   "integrity" "sha512-NCg0w2YIp81f4V6cMGD9iomfsIj7GWrqmsa0ZsPh59G7PKiGN1KymZNxmF00ssuAlo/VZmpK6xazsGOwzKYUMg=="
-  "resolved" "https://npm.fontawesome.com/@fortawesome/fontawesome-svg-core/-/6.1.1/fontawesome-svg-core-6.1.1.tgz"
+  "resolved" "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.1.1.tgz"
   "version" "6.1.1"
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.1.1"
 
 "@fortawesome/free-solid-svg-icons@^6.1.1":
   "integrity" "sha512-0/5exxavOhI/D4Ovm2r3vxNojGZioPwmFrKg0ZUH69Q68uFhFPs6+dhAToh6VEQBntxPRYPuT5Cg1tpNa9JUPg=="
-  "resolved" "https://npm.fontawesome.com/@fortawesome/free-solid-svg-icons/-/6.1.1/free-solid-svg-icons-6.1.1.tgz"
+  "resolved" "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.1.1.tgz"
   "version" "6.1.1"
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.1.1"
 
 "@fortawesome/react-fontawesome@^0.1.18":
   "integrity" "sha512-RwLIB4TZw0M9gvy5u+TusAA0afbwM4JQIimNH/j3ygd6aIvYPQLqXMhC9ErY26J23rDPyDZldIfPq/HpTTJ/tQ=="
-  "resolved" "https://npm.fontawesome.com/@fortawesome/react-fontawesome/-/0.1.18/react-fontawesome-0.1.18.tgz"
+  "resolved" "https://registry.npmjs.org/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.18.tgz"
   "version" "0.1.18"
   dependencies:
     "prop-types" "^15.8.1"
