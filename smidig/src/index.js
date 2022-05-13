@@ -2,7 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Navigation from './components/Navigation';
 import reportWebVitals from './reportWebVitals';
+<<<<<<< HEAD
+import {BrowserRouter, NavigationType } from 'react-router-dom';
+
+=======
 import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import ChooseAvatarPage from './pages/ChooseAvatarPage';
 import LandingPage from './pages/LandingPage';
@@ -10,6 +15,7 @@ import ProfilePage from './pages/ProfilePage';
 import SettingsPage from './pages/SettingsPage.jsx'
 import MapPage from './pages/MapPage';
 import QuizPage from './pages/QuizPage';
+>>>>>>> 339b7b23b95f3aeb8c2264561063d70171c866c3
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
