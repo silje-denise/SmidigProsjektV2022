@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components"
-import Viking from '../../Images/Viking.png'
+import Viking from '../../images/Viking.png'
 
 const StyledContainerWrappper = styled.div`
 display: flex;
