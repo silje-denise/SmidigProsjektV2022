@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import LocationCard from '../components/group3/LocationCard';
 import {motion} from "framer-motion";
 import backgroundPattern from '../images/waterMill.jpg';
+import GameCard from '../components/gamesLandingPageComponents/GameCard';
 
 const OverviewPage = () => {
 
@@ -25,7 +26,9 @@ const OverviewPage = () => {
               <LocationCard name="Test" image={backgroundPattern}/>
               <LocationCard name="Test" image={backgroundPattern}/>
               <LocationCard name="Test" image={backgroundPattern}/>
-              <LocationCard name="Test" image={backgroundPattern}/>
+                <LocationCard name="Test" image={backgroundPattern}/>
+            
+            
             </motion.div>
           </motion.div>
           <div className='gameShortcut'>
