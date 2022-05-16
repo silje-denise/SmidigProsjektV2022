@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Navigation from './components/Navigation';
+import Navigation from './components/group3/Navigation';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import ChooseAvatarPage from './pages/ChooseAvatarPage';
@@ -20,7 +20,7 @@ root.render(
   
   <BrowserRouter >
       <Routes>
-        <Route path={"/"} element={<LandingPage/>}/>
+        <Route path={"/"} element={<OverviewPage/>}/>
        <Route path={"/overview"} element={<OverviewPage/>}/> 
         <Route path={"/profile"} element={<ProfilePage/>}/>
         <Route path={"/quiz"} element={<QuizPage/>}/>
