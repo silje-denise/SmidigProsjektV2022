@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const StyledSkipButton = styled.div`
     align-content: center;
@@ -17,11 +18,13 @@ const StyledSkipButton = styled.div`
 const SkipButton = () => {
     return(
         <>
+            <Link to="/overview">
             <StyledSkipButton>
                 <p>
                     Hopp over
                 </p>
             </StyledSkipButton>
+            </Link>
         </>
     );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import GoldenStar from '../../Images/GoldenStar.png'
+import GoldenStar from '../../images/GoldenStar.png'
 
 
 const StyledPoints = styled.div`
