@@ -4,6 +4,7 @@ import LocationCard from '../components/group3/LocationCard';
 import {motion} from "framer-motion";
 import backgroundPattern from '../images/waterMill.jpg';
 import GameCard from '../components/gamesLandingPageComponents/GameCard';
+import Navigation from '../components/group3/Navigation';
 
 const OverviewPage = () => {
 
@@ -38,6 +39,7 @@ const OverviewPage = () => {
             </div>
             <div className='gameShortcutImage'></div>
           </div>
+          <Navigation/>
         </div>
       </div>
     );
