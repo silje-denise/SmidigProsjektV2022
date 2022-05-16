@@ -11,7 +11,7 @@ const StyledAvatarCreationBubble = styled.div`
     display: flex;
     position: fixed;    
     justify-content: center;
-    align-items; center;
+    align-items: center;
     margin-left: 5rem;
 `;
 
