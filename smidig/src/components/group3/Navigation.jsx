@@ -68,25 +68,25 @@ const Navigation= () => {
         <NavBar>
             <BackgroundWrapper>
                 
-                    <Link to="/overwiewPage">
+                    <Link to="/overwiew">
                         <OverviewIllustration style={{backgroundImage: `url(${homeIcon})`}}>
                         </OverviewIllustration>
                     </Link>
             
                 
-                    <Link to="/mapPage">
+                    <Link to="/map">
                         <MapIllustration style={{backgroundImage: `url(${mapIcon})`}}>
                         </MapIllustration>
                     </Link>
                 
                 
-                    <Link to="/gamesLandingPage">
+                    <Link to="/games">
                         <GamesLandingIllustration style={{backgroundImage: `url(${gameIcon})`}}>
                         </GamesLandingIllustration>
                     </Link>
                 
                 
-                    <Link to="/profilePage">
+                    <Link to="/profile">
                         <ProfileIllustration style={{backgroundImage: `url(${profileIcon})`}}>
                         </ProfileIllustration>
                     </Link>
