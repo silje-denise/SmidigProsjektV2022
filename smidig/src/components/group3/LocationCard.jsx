@@ -3,9 +3,9 @@ import React from 'react'
 const LocationCard = ({image, name}) => {
 
     return (
-          <div className='locationView' style={{
+          <div className='cardView' style={{
               backgroundImage: `url(${image})`}}>
-              <div className='locationFader'>
+              <div className='fader'>
                 <div className='locationDescription'>
                   <p>{name}</p>
                   <div className='locationIcon'></div>

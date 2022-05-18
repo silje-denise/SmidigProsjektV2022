@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
 html,
 body,
 div,
@@ -193,7 +195,8 @@ table {
   cursor: grab;
 }
 
-.locationView {
+.cardView {
+  
   position: relative;
   display:inline-block;
   margin-right: 16px;
@@ -214,7 +217,7 @@ table {
   cursor: pointer;
 }
 
-.locationFader {
+.fader {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -259,7 +262,7 @@ table {
   
 }
 
-<<<<<<< HEAD
+
 
 .carousel-item{
 min-height: 40rem;
@@ -286,7 +289,7 @@ padding: 40px;
 }
 
 
-=======
+
 .gameShortcutDescription {
   
   color: #262626;
@@ -325,9 +328,97 @@ padding: 40px;
   
 }
 
+.gameCardView {
+  position: relative;
+  display:inline-block;
+  margin-right: 16px;
+  height: 350px;
+  width: 212px;
+  background-color: aqua;
+  border-radius: 16px;
+  background-image: url("./images/waterMill.jpg");
+  background-size: cover;
+  background-position: center;
+
+  box-shadow: 0px 0px 16px 1px #00000023;
+}
+
+.gameCardDescription {
+  position: absolute;
+  width: max-content;
+  margin: 16px 16px 16px 16px;
+  padding-top: 8px;
+  color: aliceblue;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  bottom: 0;
+}
+
+.gameCardDescription h7 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.gameCardDescription p {
+  margin-top: 8px;
+}
+
+.gameCardIllustartion {
+  position: absolute;
+  background-image: url('./images/questionMark.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 160px;
+  height: 180px;
+  margin: 0;
+  right: 0;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 0.7;
+}
+
+.starContainer {
+  position: absolute;
+  background-color: white;
+  width: max-content;
+  height: 32px;
+  border-radius: 16px;
+  right: 0;
+  margin: 16px;
+
+}
+
+.starContainer p{
+  top: 0;
+  margin: 0px 8px 0px 8px;
+  float: left;
+  height: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 2;
+  font-weight: 500;
+  color: #000000;
+  opacity: 0.9;
+
+}
+
+.star {
+  display: inline-block;
+  height: 100%;
+  width: 20px;
+  background-image: url('./images/goldStar.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 0px 8px 0px 0px;
+}
+
 
 @keyframes scaler {
   0% {transform: scale(1);}
   100% {transform: scale(1.01);}
   
 }
+
