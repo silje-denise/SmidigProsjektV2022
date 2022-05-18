@@ -5,6 +5,7 @@ import styled from "styled-components";
 import map from "../images/Map.png";
 import { Link } from "react-router-dom";
 import Navigation from "../components/group3/Navigation";
+import AudioFile from "../audio/pannekaka.mp3";
 
 
 const PageWrapper = styled("div")`
@@ -26,9 +27,9 @@ const OverlayWrapper = styled("div")`
 `;
 
 const Overlay = styled("div")`
-    background-color:rgb(239,241,242);
+    //background-color:rgb(239,241,242);
     border-radius: 50px 50px 0px 0px;
-    //height: 300px;
+    background-color:white;
     width: 100vw;
     display:flex;
     padding: 20px;
@@ -59,7 +60,19 @@ const BackButton = styled("div")`
 `;
 
 const AudioElement = styled("audio")`
+
+&::-webkit-media-controls-panel {
+    background-color: white;
+  }
+  &::-webkit-media-controls-current-time-display{
+      display:none;
+  }
+  &::-webkit-media-controls-time-remaining-display{
+    display:none;
+  }
+
 `;
+
 const ButtonWrapper = styled("div")`
     padding: 20px;
     display:flex;
@@ -76,7 +89,8 @@ const NavWrapper = styled.div`
     position:absolute;
     bottom: 0px;
     z-index:100;
-    background-color:rgba(240,240,240, 0.8);
+    //background-color:rgba(240,240,240, 0.8);
+    background-color:rgba(255,255,255, 0.8);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -144,7 +158,7 @@ const HeaderButtonWrapper = styled("div")`
 const StyledHeaderButton = styled("button")`
     width: 160px;
     height: 50px;
-    border: 2px solid lightgray;
+    border: 2px solid green;
     border-radius: 10px;
     font-size: 23px;
     background-color:white;
@@ -158,8 +172,6 @@ const MapPage = () => {
     const [infoHeader, setInfoHeader] = useState("Byåa");
 
     const handleOnclick = (id)=>{
-       // e.preventDefault();
-        //e.target.height = "600px";
    
        if(!isOpen){
            setIsOpen(true);
@@ -168,6 +180,7 @@ const MapPage = () => {
            if(id === 0){
               setInfoHeader("Byåa");
               setInfoText("Her finner du info om Byåa");
+              
            }else if(id === 1){
             setInfoHeader("Område 1");
             setInfoText("Her finner du info om Område 1");
@@ -222,7 +235,7 @@ const MapPage = () => {
                         {infoHeader}
                     </StyledHeaderText>
                     <div>
-                        <AudioElement controls src="" />
+                        <AudioElement controls src={AudioFile} />
                     </div>
                     <ContentWrapper>
                         {infoText}
