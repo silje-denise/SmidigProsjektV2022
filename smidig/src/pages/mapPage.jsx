@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import {React, useState} from "react";
 import styled from "styled-components";
 import map from "../images/Map.png";
 import { Link } from "react-router-dom";
+import Navigation from "../components/group3/Navigation";
 
 
 const PageWrapper = styled("div")`
@@ -27,7 +28,7 @@ const OverlayWrapper = styled("div")`
 const Overlay = styled("div")`
     background-color:rgb(239,241,242);
     border-radius: 50px 50px 0px 0px;
-    height: 300px;
+    //height: 300px;
     width: 100vw;
     display:flex;
     padding: 20px;
@@ -35,7 +36,8 @@ const Overlay = styled("div")`
     flex-direction: column;
     align-items:center;
     z-index:90;
-    //transform: translateY(500px);
+    box-shadow: 20px 30px 30px 20px gray;
+    height: ${props => (props.visible ? "700px" : "300px")};
 
 `;
 
@@ -51,7 +53,7 @@ const BackButton = styled("div")`
     height: 30px;
     padding: 10px;
     border-radius: 50px;
-    border: 2px gray solid;
+    border: 2px lightgray solid;
     display:flex;
     justify-content:center;
 `;
@@ -60,6 +62,8 @@ const AudioElement = styled("audio")`
 `;
 const ButtonWrapper = styled("div")`
     padding: 20px;
+    display:flex;
+    backdrop-filter: blur(2px);
 `;
 
 const ContentWrapper = styled("div")`
@@ -67,7 +71,8 @@ const ContentWrapper = styled("div")`
     overflow:hidden;
 `;
 
-const NavWrapper = styled("div")`
+
+const NavWrapper = styled.div`
     position:absolute;
     bottom: 0px;
     z-index:100;
@@ -81,7 +86,6 @@ const NavWrapper = styled("div")`
 `;
 
 const AreaWrapper = styled("div")`
-    background-color: red;
     width: 90%;
     height: 50%;
     margin:auto;
@@ -89,8 +93,13 @@ const AreaWrapper = styled("div")`
 `;
 
 const Area1 = styled("button")`
-    background-color: blue;
-    width:100px;
+    background-color: white;
+    border-radius:30px;
+    border: 2px solid green;
+    width:130px;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
     height:50px;
     position:absolute;
     top: 40px;
@@ -101,8 +110,13 @@ const Area2 = styled("button")`
     position:absolute;
     top: 100px;
     right: 50px;
-    background-color: green;
-    width: 70px;
+    background-color: white;
+    border-radius:30px;
+    border: 2px solid green;
+    width:130px;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
     height:50px;
     z-index:50;
 `;
@@ -110,71 +124,117 @@ const Area3 = styled("button")`
     position:absolute;
     bottom: 30px;
     left: 40px;
-    width: 70px;
+    width:130px;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
     height:50px;
-    background-color: pink;
+    background-color: white;
+    border-radius:30px;
+    border: 2px solid green;
     z-index:50;
+`;
+
+const HeaderButtonWrapper = styled("div")`
+    display:flex;
+    justify-content:center;
+    width: 100%;
+`;
+
+const StyledHeaderButton = styled("button")`
+    width: 160px;
+    height: 50px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    font-size: 23px;
+    background-color:white;
+    
 `;
 
 
 const MapPage = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [infoText, setInfoText] = useState("Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
+    const [infoHeader, setInfoHeader] = useState("Byåa");
 
-    const handleOnclick = (e)=>{
-        e.preventDefault();
+    const handleOnclick = (id)=>{
+       // e.preventDefault();
         //e.target.height = "600px";
    
        if(!isOpen){
            setIsOpen(true);
            console.log(isOpen);
-           e.target.style.height = "700px";
+           //e.target.style.height = "700px";
+           if(id === 0){
+              setInfoHeader("Byåa");
+              setInfoText("Her finner du info om Byåa");
+           }else if(id === 1){
+            setInfoHeader("Område 1");
+            setInfoText("Her finner du info om Område 1");
+           }else if(id === 2){
+            setInfoHeader("Område 2");
+            setInfoText("Her finner du info om Område 2");
+           }
+           else if(id === 3){
+            setInfoHeader("Område 3");
+            setInfoText("Her finner du info om Område 3");
+           }
        }else{
            setIsOpen(false);
            console.log(isOpen);
-           e.target.style.height = "300px";
+           //e.target.style.height = "300px";
        }
     }
 
-    function mapClick() {
-       console.log("clicked");
-      
-    }
+  
 
     return(
         
-            <PageWrapper>
+            <><PageWrapper>
             {/* <Map/> */}
 
-                <ButtonWrapper>
-                    <BackButton>
-                        <Link to={"/overview"}>
-                             <FontAwesomeIcon icon={faChevronLeft} size={'2x'}/>
-                        </Link>
-                    </BackButton>
-                </ButtonWrapper>
-                <AreaWrapper>
-                    <Area1 onClick={mapClick}>Område 1</Area1>
-                    <Area2 onClick={mapClick}>Område 2</Area2>
-                    <Area3 onClick={mapClick}>Område 3</Area3>
-                </AreaWrapper>
-               
-                <OverlayWrapper>
-                    <Overlay onClick={handleOnclick}>
-                        <StyledHeaderText>Byåa</StyledHeaderText>
-                        <div>
-                            <AudioElement controls src=""/>
-                        </div>
-                        <ContentWrapper>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.
-                        </ContentWrapper>
-                    </Overlay><NavWrapper>
-                    <div>Navigasjon</div>
+            <ButtonWrapper>
+                <BackButton>
+                    <Link to={"/overview"}>
+                        <FontAwesomeIcon icon={faChevronLeft} size={'2x'} />
+                    </Link>
+                </BackButton> 
+                <HeaderButtonWrapper>
+                    <StyledHeaderButton onClick={() => handleOnclick(0)}>
+                        Byåa
+                    </StyledHeaderButton>
+                </HeaderButtonWrapper>
+            </ButtonWrapper>
+           
+            <AreaWrapper>
+                <Area1 onClick={() => handleOnclick(1)}>
+                    Område 1
+                    <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'green'}/>
+                </Area1>
+                <Area2 onClick={() => handleOnclick(2)}>Område 2
+                <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'green'}/></Area2>
+                <Area3 onClick={() => handleOnclick(3)}>Område 3
+                <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'green'}/></Area3>
+            </AreaWrapper>
+            <OverlayWrapper>
+                <Overlay visible={isOpen} onClick={handleOnclick}>
+                    <StyledHeaderText>
+                        {infoHeader}
+                    </StyledHeaderText>
+                    <div>
+                        <AudioElement controls src="" />
+                    </div>
+                    <ContentWrapper>
+                        {infoText}
+                    </ContentWrapper>
+                </Overlay>
+                <NavWrapper>
+                    {/* <div>Navigasjon</div> */}
+                    <Navigation/>
                 </NavWrapper>
-                </OverlayWrapper>
+            </OverlayWrapper>
                 
-        </PageWrapper>
+        </PageWrapper></>
         
     );
 }
