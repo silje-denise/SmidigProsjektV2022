@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import monster from "./../images/BackgroundPattern.png";
 import { Link } from "react-router-dom";
+import Navigation from "../components/group3/Navigation";
 
 const ArrowWrapper = styled("div")`
     height: 70px;
@@ -18,6 +19,11 @@ const ArrowWrapper = styled("div")`
 const StyledImage = styled("img")`
     width: 100vw;
     height: auto;
+`;
+const NavigationWrapper = styled("div")`
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
 `;
 
 const ProfilePage = () => {
@@ -34,6 +40,9 @@ const ProfilePage = () => {
             <Badges/>
             <StyledImage src={monster}/>
             <AvatarCreationBubble />
+            <NavigationWrapper>
+                <Navigation/>
+            </NavigationWrapper>
         </>
     );
 }
