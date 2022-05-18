@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const StyledPageWrapper = styled.div`
     height: 100vh;
     width: 100vw;
-    z-index:100;
+    z-index: 100;
     position: absolute;
     top: 0px;
     overflow: hidden;
@@ -17,31 +17,31 @@ const StyledPageWrapper = styled.div`
 const StyledBackground = styled.div`
     height: 20rem;
     width: 100%;
-    margin-top: 110%;
+    margin-top: 100%;
     overflow: hidden;
 `;
 
 const StyledBackgroundImage = styled.img`
-    height: 50rem;
+    height: 40rem;
     overflow: hidden;
 `;
 
 const StyledWhiteBox = styled.div`
     height: 4rem;
-    width: 14rem;
+    width: 12rem;
     background-color: white;
     position: absolute;
-    top: 31.5rem;
-    right: 0rem;
+    top: 30rem;
+    right: 1rem;
     border-radius: 1.5rem;
 `;
 
 const StyledSecondWhiteBox = styled.div`
-    height: 12rem;
+    height: 10rem;
     width: 14rem;
     background-color: white;
     position: absolute;
-    top: 45rem;
+    top: 42rem;
     border-radius: 1.5rem;
 `;
 
@@ -49,7 +49,10 @@ const StyledSecondWhiteBox = styled.div`
 const SettingsPage = () => {
     return(
         <>
-        <XButton/>
+            <Link to={"/"}>
+                <XButton/>
+            </Link>
+
             <StyledBackground>
                 <StyledBackgroundImage src={monster} />
             </StyledBackground>

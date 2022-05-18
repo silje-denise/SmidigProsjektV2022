@@ -27,7 +27,7 @@ const OverviewPage = () => {
               <LocationCard name="Test" image={backgroundPattern}/>
               <LocationCard name="Test" image={backgroundPattern}/>
               <LocationCard name="Test" image={backgroundPattern}/>
-                <LocationCard name="Test" image={backgroundPattern}/>
+              <LocationCard name="Test" image={backgroundPattern}/>
             
             
             </motion.div>
