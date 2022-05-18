@@ -40,8 +40,9 @@ const OverviewPage = () => {
             <div className='gameShortcutImage'></div>
           </div>
           <Navigation/>
-        </div>
+        </div>  
       </div>
+
     );
   }
 
