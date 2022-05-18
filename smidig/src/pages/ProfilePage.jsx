@@ -31,9 +31,9 @@ const ProfilePage = () => {
         <>
             <ArrowWrapper>
                 {/**Link skal gå til hjem */}
-                <Link to={"/"}>
+                {/* <Link to={"/"}>
                      <FontAwesomeIcon icon={faChevronLeft} size={'2x'}/>
-                </Link>
+                </Link> */}
                
             </ArrowWrapper>
             <ProfileHeader/>
