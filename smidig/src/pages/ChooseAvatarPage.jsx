@@ -18,7 +18,7 @@ const PageWrapper = styled("div")`
     align-items:center;
     padding:40px;
     box-sizing: border-box;
-    
+    margin-top: 5rem;
 `;
 const StyledImage = styled("img")`
     height: auto;
