@@ -1,7 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import RaelingenLogo from "../../images/RaelingenLogo.png";
-import { Link } from "react-router-dom";
+import { Link, Hash } from "react-router-dom";
+
+import {
+    EmailShareButton,
+    FacebookShareButton,
+    TwitterShareButton,
+    WhatsappShareButton
+} from "react-share";
+
+import {
+    EmailIcon,
+    FacebookIcon,
+    FacebookMessengerIcon,
+    TwitterIcon,
+    WhatsappIcon
+  } from "react-share";
 
 const StyledSettingsDiv = styled.div`
     font-size: 33px;
@@ -33,7 +48,10 @@ const StyledContactUs = styled.div`
 `;
 
 const StyledShareApp = styled.div`
-    margin-top: -2rem;
+    display: none;
+    position: fixed;
+    right: 2.3rem;
+    top: 48rem;
 `;
 
 const StyledLogOff = styled.div`
@@ -57,36 +75,84 @@ const StyledLogoImage = styled.img`
     height: 60px;
 `;
 
+const SharedButton = styled.button`
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 33px;
+    text-align: right;
+    font-weight: 600;
+    margin-right: 4rem;
+    margin-top: 2rem;
+`;
+
+
+function showShare() {
+    var hidDiv = document.getElementById("hiddenDiv");
+
+    if (hidDiv.style.display === "none") {
+        hidDiv.style.display = "block";
+    }
+
+    else {
+        hidDiv.style.display = "none";
+    }
+}
+
+
+
 const Settings = () => {
     return(
         <>
-
             <StyledSettingsDiv>
 
                 <StyledSettings>
-                    <StyledSettingsButton>Innstillinger</StyledSettingsButton>
+                    <Link to={"/"}>
+                        <StyledSettingsButton>Innstillinger</StyledSettingsButton>
+                    </Link>
                 </StyledSettings>
 
                 <StyledAboutUs>
-                    <StyledSettingsButton>Om oss</StyledSettingsButton>
+                    <a href= "https://www.ralingen.kommune.no/">
+                        <StyledSettingsButton>Om oss</StyledSettingsButton>
+                    </a>
                 </StyledAboutUs>
 
                 <StyledContactUs>
-                    <StyledSettingsButton>Kontakt oss</StyledSettingsButton>
+                    <a href= "https://www.ralingen.kommune.no/kontakt-ossviktige-telefonnummer.442197.no.html">
+                        <StyledSettingsButton>Kontakt oss</StyledSettingsButton>
+                    </a>
                 </StyledContactUs>
 
-                <StyledSettingsButton>
-                    <StyledShareApp>
-                        <p>Del appen</p>
-                    </StyledShareApp>
-                </StyledSettingsButton>
+                    <SharedButton onClick={showShare}> 
+                        Del appen
+                    </SharedButton>
+
+                        <StyledShareApp id="hiddenDiv">
+
+                            <EmailShareButton>
+                                <EmailIcon></EmailIcon>
+                            </EmailShareButton>
+
+                            <FacebookShareButton>
+                                <FacebookIcon></FacebookIcon>
+                                <FacebookMessengerIcon></FacebookMessengerIcon>
+                            </FacebookShareButton>
+
+                            <TwitterShareButton>
+                                <TwitterIcon></TwitterIcon>
+                            </TwitterShareButton>
+
+                            <WhatsappShareButton>
+                                <WhatsappIcon></WhatsappIcon>
+                            </WhatsappShareButton>
+
+                        </StyledShareApp>
 
                 <StyledSettingsButton>
-                    
                       <Link to={"/"}>
                           <StyledLogOff>Logg av</StyledLogOff>
                       </Link>  
-                  
                 </StyledSettingsButton>
 
             </StyledSettingsDiv>
