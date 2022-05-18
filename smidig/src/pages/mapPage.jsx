@@ -43,21 +43,21 @@ const Overlay = styled("div")`
 `;
 
 const StyledHeaderText = styled("h3")`
-    font-size: 26px;
+    font-size: 30px;
     padding: 15px;
-
+    font-weight: 600;
 `;
 
-const BackButton = styled("div")`
-    background-color: rgba(255,255,255, 0.5);
-    width: 30px;
-    height: 30px;
-    padding: 10px;
-    border-radius: 50px;
-    border: 2px lightgray solid;
-    display:flex;
-    justify-content:center;
-`;
+// const BackButton = styled("div")`
+//     background-color: rgba(255,255,255, 0.5);
+//     width: 30px;
+//     height: 30px;
+//     padding: 10px;
+//     border-radius: 50px;
+//     border: 2px lightgray solid;
+//     display:flex;
+//     justify-content:center;
+// `;
 
 const AudioElement = styled("audio")`
 
@@ -176,7 +176,7 @@ const MapPage = () => {
        if(!isOpen){
            setIsOpen(true);
            console.log(isOpen);
-           //e.target.style.height = "700px";
+          
            if(id === 0){
               setInfoHeader("Byåa");
               setInfoText("Her finner du info om Byåa");
@@ -195,7 +195,6 @@ const MapPage = () => {
        }else{
            setIsOpen(false);
            console.log(isOpen);
-           //e.target.style.height = "300px";
        }
     }
 
@@ -204,17 +203,15 @@ const MapPage = () => {
     return(
         
             <><PageWrapper>
-            {/* <Map/> */}
-
             <ButtonWrapper>
-                <BackButton>
+                {/* <BackButton>
                     <Link to={"/overview"}>
                         <FontAwesomeIcon icon={faChevronLeft} size={'2x'} />
                     </Link>
-                </BackButton> 
+                </BackButton>  */}
                 <HeaderButtonWrapper>
                     <StyledHeaderButton onClick={() => handleOnclick(0)}>
-                        Byåa
+                        <h1>Byåa</h1>
                     </StyledHeaderButton>
                 </HeaderButtonWrapper>
             </ButtonWrapper>
@@ -242,11 +239,9 @@ const MapPage = () => {
                     </ContentWrapper>
                 </Overlay>
                 <NavWrapper>
-                    {/* <div>Navigasjon</div> */}
                     <Navigation/>
                 </NavWrapper>
-            </OverlayWrapper>
-                
+            </OverlayWrapper>   
         </PageWrapper></>
         
     );
