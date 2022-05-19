@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components"
-import Viking from '../../images/Viking.png'
+import Dog from "../../images/Dog.png"
 
 const StyledContainerWrappper = styled.div`
 display: flex;
@@ -58,7 +58,7 @@ return(
         <StyledInfoP>Følg oss gjennom stien, <br></br>og hjelp avataren</StyledInfoP>
         </StyledHistoryInfo>
         <StyledHistoryImage>
-        <StyledImage src={Viking} alt="Bilde av en viking" /></StyledHistoryImage>
+        <StyledImage src={Dog} alt="Bilde av en hund" /></StyledHistoryImage>
        </StyledContainer>
         </StyledContainerWrappper>
 );
