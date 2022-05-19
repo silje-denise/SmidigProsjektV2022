@@ -72,10 +72,12 @@ const Quiz = () => {
 
     const handleAnswerButtonClick = () => {
       const nextQuestion = currentQuestion + 1;
-
-        setCurrentQuestion(nextQuestion)
-        
-        
+        if (nextQuestion < quizQuestions.length){
+        setCurrentQuestion(nextQuestion);
+        }
+            else {
+                alert("du har ikke fler spørsmål")
+            }
         
     };
 
@@ -122,7 +124,7 @@ const Quiz = () => {
             </StyledQuizDiv>
             
             
-            <NextButton ></NextButton>
+            <NextButton></NextButton>
         </>
     );
 }
