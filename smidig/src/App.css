@@ -146,6 +146,10 @@ table {
   height: 200px;
 }
 
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 
 
 /*------------ Group 3 --------------*/
@@ -163,6 +167,9 @@ table {
 .app {
   width: 100%;
 }
+
+
+
 .overviewPage {
   position: relative;
   margin: auto;
