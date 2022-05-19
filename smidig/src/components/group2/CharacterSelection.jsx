@@ -25,6 +25,17 @@ const StyledCharacters = styled.div`
     margin: 2rem;
     margin-right: 1rem;
     margin-left: 1rem;
+    border: solid;
+    border-color: #f5f2f2;
+    border-width: 0.3rem;
+    border-height: 0.3rem;
+
+    &:hover {
+        border: solid;
+        border-color: green;
+        border-width: 0.3rem;
+        border-height: 0.3rem;
+    }
 `;
 
 const StyledImage = styled.img`

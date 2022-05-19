@@ -1,10 +1,13 @@
 import HistoryDiv from "../components/gamesLandingPageComponents/HistoryDiv"
 import BackroundGames from "../components/gamesLandingPageComponents/BackgroundGames"
-import PointSystem from "../components/gamesLandingPageComponents/pointSystem"
-import GamesSelection from '../components/gamesLandingPageComponents/GameSelection'
+import PointSystem from "../components/gamesLandingPageComponents/PointSystem"
+import GameSelection from '../components/gamesLandingPageComponents/GameSelection'
+import styled from "styled-components"
 
 
-
+const GameLanding = styled.div`
+    margin: 32px;
+`;
 
 
 
@@ -12,12 +15,12 @@ const GamesLandingPage = () => {
 
     return(
         
-    <div>
+    <GameLanding>
      <PointSystem></PointSystem>
      <HistoryDiv></HistoryDiv>
      <BackroundGames></BackroundGames>
-     <GamesSelection></GamesSelection>
-    </div>
+     <GameSelection></GameSelection>
+    </GameLanding>
         
      
     );

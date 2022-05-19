@@ -85,12 +85,13 @@ summary,
 time,
 mark,
 audio,
+button,
 video {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font-family:'Source Sans Pro', sans-serif;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -146,6 +147,10 @@ table {
   height: 200px;
 }
 
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 
 
 /*------------ Group 3 --------------*/
@@ -163,6 +168,9 @@ table {
 .app {
   width: 100%;
 }
+
+
+
 .overviewPage {
   position: relative;
   margin: auto;
@@ -264,28 +272,14 @@ table {
 
 
 
-.carousel-item{
-min-height: 40rem;
-min-width: 30rem;
-padding: 40px;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  border-radius: 2rem;
-  pointer-events: none;
-}
 
 .inner-carousel {
   display: flex;
-  background: lightblue;
 }
 
 .carousel {
   cursor: grab;
   overflow: hidden;
-  background: brown;
 }
 
 
