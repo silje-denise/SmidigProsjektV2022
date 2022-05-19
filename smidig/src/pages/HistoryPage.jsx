@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
-import ExitIconSvg from '../images/x.svg';
+
 import GoldenStar from '../images/goldStar.svg';
 import Avatar from '../images/Viking.png'
 import Navigation from '../components/group3/Navigation';
+import ExitIcon from '../components/group3/ExitIcon';
+import { render } from '@testing-library/react';
+import ExitMenu from '../components/group3/ExitMenu.jsx';
 
 const HistoryPage = () => {
 
@@ -26,14 +29,11 @@ const HistoryPage = () => {
         margin-bottom: 64px;
     `;
 
-    const ExitIcon = styled.div`
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        width: 36px;
-        height: 36px;
-    
+    const ExitButton = styled.button`
+        background-color: white;
     `;
+
+    
 
     const PointBar = styled.div`
         position: relative;
@@ -141,15 +141,25 @@ const HistoryPage = () => {
         font-weight: 700;
     `;
 
+    const ExitPopUp = styled.div`
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        opacity:0.5;
+        top: 0;
+    `;
 
+    const [isOpen, setIsOpen] = useState(false);
 
   return (
       <HistoryPage>
         <HistoryPageContainer>
           <Background></Background>
           <ExitBar>
-              <ExitIcon style={{
-              backgroundImage: `url(${ExitIconSvg})`}}></ExitIcon>
+            <ExitButton onClick={() => setIsOpen(true)}>
+              <ExitIcon opacity='0.75' width="36px" height="36px"></ExitIcon>
+            </ExitButton>
           </ExitBar>
           <PointBar>
                 <PageTitle>Historien</PageTitle>
@@ -159,6 +169,7 @@ const HistoryPage = () => {
               backgroundImage: `url(${GoldenStar})`}}></StarIllustration>
                 </PointContainer>
           </PointBar>
+          
 
           <MapContainer>
               <DialogueBox>
@@ -171,9 +182,10 @@ const HistoryPage = () => {
               </DialogueBox>
           </MapContainer>
           <NextButton>La oss begynne!</NextButton>
+          <ExitMenu open={isOpen} onClose={() => setIsOpen(false)}>Test</ExitMenu>
     
       </HistoryPageContainer>
-      <Navigation></Navigation>
+      
       </HistoryPage>
       
   )

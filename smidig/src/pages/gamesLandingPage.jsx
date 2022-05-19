@@ -3,7 +3,6 @@ import BackroundGames from "../components/gamesLandingPageComponents/BackgroundG
 import PointSystem from "../components/gamesLandingPageComponents/PointSystem"
 import GameSelection from '../components/gamesLandingPageComponents/GameSelection'
 import styled from "styled-components"
-
 import { Link } from "react-router-dom"
 
 
