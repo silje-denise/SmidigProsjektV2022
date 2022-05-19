@@ -13,6 +13,8 @@ import MapPage from './pages/MapPage';
 import QuizPage from './pages/QuizPage';
 import OverviewPage from './pages/OverviewPage';
 import GamesLandingPage from './pages/GamesLandingPage.jsx';
+import HistoryPage from './pages/HistoryPage';
+import HistoryInfoContainer from './components/group3/HistoryInfoContainer.jsx'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,6 +30,8 @@ root.render(
         <Route path={"/map"} element={<MapPage/>}/>
         <Route path={"/settings"} element={<SettingsPage/>}/>
         <Route path={"/chooseavatar"} element={<ChooseAvatarPage/>}/>
+        <Route path={"/history"} element={<HistoryPage/>}/>
+        <Route path={"/history-info"} element={<HistoryInfoContainer/>}/>
       </Routes>
 
   </BrowserRouter>
