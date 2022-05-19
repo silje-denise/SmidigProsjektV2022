@@ -49,7 +49,7 @@ const ArrowWrapper = styled("div")`
     background-image: url(${monster});
 `;
 const StyledLink = styled(Link)`
-    text-decoratiom: none;
+    text-decoration: none;
     color:white;
 `;
 

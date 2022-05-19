@@ -1,8 +1,10 @@
+import HistoryDiv from "../components/gamesLandingPageComponents/HistoryDiv"
+import BackroundGames from "../components/gamesLandingPageComponents/BackgroundGames"
+import PointSystem from "../components/gamesLandingPageComponents/PointSystem"
+import GameSelection from '../components/gamesLandingPageComponents/GameSelection'
+import styled from "styled-components"
 import HistoryDiv from "../components/gamesLandingPageComponents/PointSystem"
 import GameSelection from "../components/gamesLandingPageComponents/HistoryDiv"
-import BackroundGames from "../components/gamesLandingPageComponents/BackgroundGames"
-import PointSystem from "../components/gamesLandingPageComponents/GameSelection"
-import styled from "styled-components"
 
 
 
