@@ -49,14 +49,14 @@ function showQuestion(question) {
   
     questionElement.innerText = question.question
     question.answerOptions.forEach(answer => {
-        const choice = document.createElement('div')
-        choice.innerText = answer.text
-        choice.classList.add('div')
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
         if (answer.correct) {
-            choice.dataset.correct = answer.correct
+            button.dataset.correct = answer.correct
         }
-        choice.addEventListener('click', selectAnswer)
-        questionElement.appendChild(choice)
+        button.addEventListener('click', selectAnswer)
+        questionElement.appendChild(button)
     })
 }
 

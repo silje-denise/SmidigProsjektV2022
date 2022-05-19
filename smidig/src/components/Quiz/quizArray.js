@@ -5,8 +5,10 @@ const quizQuestions = [{
     answerOptions:
     // Q1
         [
-        { text: 'Anfield', correct: true },
-        { text: 'Stamford Bridge', correct: false }
+        { answerText: 'Anfield', correct: true },
+        { answerText: 'Stamford Bridge', correct: false },
+        { answerText: 'Test2', correct: false },
+        { answerText: 'Test', correct: false }
     ]
 },
 {
@@ -14,10 +16,10 @@ const quizQuestions = [{
     answerOptions:
     // Q2
         [
-        { text: 'Van dijk', correct: false },
-        { text: 'Henderson', correct: false },
-        { text: 'Trent-Alexander-Arnold', correct: false },
-        { text: 'Keita', correct: true }
+        { answerText: 'Van dijk', correct: false },
+        { answerText: 'Henderson', correct: false },
+        { answerText: 'Trent-Alexander-Arnold', correct: false },
+        { answerText: 'Keita', correct: true }
     ]
 },
 {
@@ -25,8 +27,8 @@ const quizQuestions = [{
     answerOptions:
     // Q3
         [
-        { text: '9', correct: true },
-        { text: '8', correct: false }
+        { answerText: '9', correct: true },
+        { answerText: '8', correct: false }
     ]
 },
 {
@@ -34,10 +36,10 @@ const quizQuestions = [{
     answerOptions:
     // Q4
         [
-        { text: 'Salah', correct: true },
-        { text: 'Mane', correct: false },
-        { text: 'Navarsete', correct: false },
-        { text: 'Brage', correct: false }
+        { answerText: 'Salah', correct: true },
+        { answerText:'Mane', correct: false },
+        { answerText: 'Navarsete', correct: false },
+        { answerText: 'Brage', correct: false }
 
     ]
 }
