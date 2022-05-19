@@ -18,7 +18,7 @@ const BackgroundWrapper = styled("div")`
 const NavBar = styled.div`
 position: relative;
 width: 100%;
-padding-bottom: 64px;
+padding-bottom: 54px;
 `;
 
 
@@ -26,41 +26,41 @@ const OverviewIllustration = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat ;
-    height: 32px;
-    width: 32px;
+    height: 25px;
+    width: 25px;
     display: inline-block ;
-    margin: 32px 32px 32px 64px;
+    margin: 22px 22px 22px 54px;
 `;
 
 const MapIllustration = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat ;
-    height: 32px;
-    width: 32px;
+    height: 25px;
+    width: 25px;
     display: inline-block ;
-    margin: 32px 32px 32px 32px;
+    margin: 22px;
 `;
 
 const GamesLandingIllustration = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat ;
-    height: 32px;
-    width: 32px;
+    height: 25px;
+    width: 25px;
     transform: scale(1.3);
     display: inline-block ;
-    margin: 32px 32px 32px 32px;
+    margin: 22px;
 `;
 
 const ProfileIllustration = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat ;
-    height: 32px;
-    width: 32px;
+    height: 25px;
+    width: 25px;
     display: inline-block ;
-    margin: 32px 64px 32px 32px;
+    margin: 22px 54px 22px 22px;
 `;
 
 const Navigation= () => {
@@ -68,7 +68,7 @@ const Navigation= () => {
         <NavBar>
             <BackgroundWrapper>
                 
-                    <Link to="/overwiew">
+                    <Link to="/overview">
                         <OverviewIllustration style={{backgroundImage: `url(${homeIcon})`}}>
                         </OverviewIllustration>
                     </Link>

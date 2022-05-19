@@ -33,6 +33,7 @@ const StyledAvatarCreationBubbleText = styled.div`
     width: 10rem;
     border-radius: 50%;
     border-style: solid;
+    border-width: 0.1rem;
     border-color: #79C168;
     background-color: white;
     display: flex;    
@@ -44,6 +45,7 @@ const StyledAvatarCreationBubbleButton = styled.button`
     padding: 0;
     border: none;
     background: none;
+    padding-left: 0.3rem;
     color: #79C168;
 `;
 
@@ -60,7 +62,7 @@ const AvatarCreationBubble = () => {
                         <p>
                             Start med å velge din avatar 
                             <Link to={"/chooseavatar"}>
-                                <StyledAvatarCreationBubbleButton>HER</StyledAvatarCreationBubbleButton>
+                                <StyledAvatarCreationBubbleButton> HER</StyledAvatarCreationBubbleButton>
                             </Link>
                             
                         </p>

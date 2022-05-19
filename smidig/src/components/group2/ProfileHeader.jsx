@@ -21,7 +21,7 @@ const HeaderGrid = styled("div")`
 `;
 
 const ProfilePicture = styled("img")`
-    width: 50px;
+    width: 70px;
 `;
 
 const ProfileInfoWrapper = styled("div")`
@@ -40,10 +40,11 @@ const UserInfo = styled("div")`
 
 const Username = styled("h2")`
     margin:0;
-    
+    font-size: 30px;
 `;
 const School = styled("h3")`
     margin:0;
+    font-size: 22px;
 `;
 
 

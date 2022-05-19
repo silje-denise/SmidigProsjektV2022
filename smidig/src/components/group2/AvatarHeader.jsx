@@ -26,6 +26,7 @@ const StyledHeaderText = styled("h3")`
     @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
     font-size:29px;
     font-family: "Source Sans Pro", sans-serif;
+    margin-top: 1.25rem;
 `;
 
 const AvatarHeader = () => {

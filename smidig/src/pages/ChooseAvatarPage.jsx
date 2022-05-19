@@ -18,7 +18,7 @@ const PageWrapper = styled("div")`
     align-items:center;
     padding:40px;
     box-sizing: border-box;
-    
+    margin-top: 5rem;
 `;
 const StyledImage = styled("img")`
     height: auto;
@@ -48,25 +48,29 @@ const ArrowWrapper = styled("div")`
     padding: 40px 0px 0px 40px;
     background-image: url(${monster});
 `;
+const StyledLink = styled(Link)`
+    text-decoratiom: none;
+    color:white;
+`;
 
 const ChooseAvatarPage = () => {
     return(
         <> 
-         <ArrowWrapper>
+         {/* <ArrowWrapper>
                 <Link to={"/profile"}>
                      <FontAwesomeIcon icon={faChevronLeft} size={'2x'}/>
                 </Link>
                
-            </ArrowWrapper>
+            </ArrowWrapper> */}
         <StyledImage src={monster}/>
         <PageWrapper>
             <AvatarHeader/>
             <CharacterSelectionWrapper>
                 <CharacterSelection/>
             </CharacterSelectionWrapper>
-            <Link to={"/profile"}>
-                <StyledButton>Fortsett</StyledButton>
-            </Link>
+            <StyledLink to={"/profile"}>
+                <StyledButton>Ferdig</StyledButton>
+            </StyledLink>
         </PageWrapper>
         </>
     );

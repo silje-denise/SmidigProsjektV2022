@@ -48,10 +48,13 @@ const StyledQuizElement = styled.div`
     border-color: #37B019;
 `;
 
-const StyledQuizAnswers = styled.p`
+const StyledQuizAnswers = styled.button`
     display: flex;
     justify-content: center;
     text-align: center;
+    padding: 0;
+    border: none;
+    background: none;
 `;
 
 const Quiz = () => {
