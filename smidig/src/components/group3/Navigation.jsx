@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import styled from 'styled-components';
 import homeIcon from '../../images/homeIcon.svg';
 import mapIcon from '../../images/mapIcon.svg';
@@ -8,11 +8,15 @@ import profileIcon from '../../images/profileIcon.svg';
 
 //Foreløpig kun bakgrunn for å se om det funker
 const BackgroundWrapper = styled("div")`
-    width: max-content;
+    width: 300px;
     background-color: #e8e8e8;
     margin: auto;
-    height: max-content;
+    height: 70px;
     border-radius: 42px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 0px 10px;
 `;
 
 const NavBar = styled.div`
@@ -29,8 +33,11 @@ const OverviewIllustration = styled.div`
     height: 25px;
     width: 25px;
     display: inline-block ;
-    margin: 22px 22px 22px 54px;
-`;
+    //margin: 22px 22px 22px 54px;
+    filter: ${props => (props.color ? "invert(1)": "invert(0)")};
+
+
+    `;
 
 const MapIllustration = styled.div`
     background-size: contain;
@@ -39,7 +46,7 @@ const MapIllustration = styled.div`
     height: 25px;
     width: 25px;
     display: inline-block ;
-    margin: 22px;
+    filter: ${props => (props.color ? "invert(1)": "invert(0)")};
 `;
 
 const GamesLandingIllustration = styled.div`
@@ -50,7 +57,8 @@ const GamesLandingIllustration = styled.div`
     width: 25px;
     transform: scale(1.3);
     display: inline-block ;
-    margin: 22px;
+    filter: ${props => (props.color ? "invert(1)": "invert(0)")};
+
 `;
 
 const ProfileIllustration = styled.div`
@@ -60,40 +68,78 @@ const ProfileIllustration = styled.div`
     height: 25px;
     width: 25px;
     display: inline-block ;
-    margin: 22px 54px 22px 22px;
+    filter: ${props => (props.color ? "invert(1)": "invert(0)")};
+
 `;
 
+const StyledLink = styled.div`
+    background-color: green;
+    border-radius: 50px;
+    width: 45px;
+    height: 45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color: ${props => (props.bgColor ? "green": "rgba(0,0,0,0)")};
+    
+`;
+
+const StyledNavLink = styled(NavLink)`
+  
+
+  
+`;
+
+ 
+
 const Navigation= () => {
+
+        const location = useLocation();
+        console.log(location);
+    
+        const switchColor = (path) => {
+             if(location.pathname == path){
+            return true;
+        }
+    }
+       
+
     return(
         <NavBar>
             <BackgroundWrapper>
-                
-                    <Link to="/overview">
-                        <OverviewIllustration style={{backgroundImage: `url(${homeIcon})`}}>
+              <StyledLink bgColor={switchColor("/overview")}>
+                    <StyledNavLink to="/overview" >  
+                        <OverviewIllustration color={switchColor("/overview")} style={{backgroundImage: `url(${homeIcon})`}} >
+                            
                         </OverviewIllustration>
-                    </Link>
+                    </StyledNavLink> </StyledLink>
+
             
-                
-                    <Link to="/map">
-                        <MapIllustration style={{backgroundImage: `url(${mapIcon})`}}>
+                <StyledLink bgColor={switchColor("/map")}>
+                    <StyledNavLink to="/map"  >
+                        <MapIllustration color={switchColor("/map")} style={{backgroundImage: `url(${mapIcon})`}}>
+                            
                         </MapIllustration>
-                    </Link>
+                    </StyledNavLink>
+                    </StyledLink>
                 
-                
-                    <Link to="/games">
-                        <GamesLandingIllustration style={{backgroundImage: `url(${gameIcon})`}}>
+                <StyledLink bgColor={switchColor("/games")}>
+                    <StyledNavLink to="/games"  >
+                        <GamesLandingIllustration color={switchColor("/games")} style={{backgroundImage: `url(${gameIcon})`}}>
+                            
                         </GamesLandingIllustration>
-                    </Link>
-                
-                
-                    <Link to="/profile">
-                        <ProfileIllustration style={{backgroundImage: `url(${profileIcon})`}}>
+                    </StyledNavLink>
+                </StyledLink>
+                <StyledLink bgColor={switchColor("/profile")}>
+                    <StyledNavLink to="/profile"  >
+                        <ProfileIllustration color={switchColor("/profile")} style={{backgroundImage: `url(${profileIcon})`}}>
+                            
                         </ProfileIllustration>
-                    </Link>
-                
+                    </StyledNavLink>
+                </StyledLink>
             </BackgroundWrapper>
         </NavBar>
         
     );
 }
-export default Navigation;
+export default Navigation ;
