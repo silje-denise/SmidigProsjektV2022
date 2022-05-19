@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import quizQuestions from "../Quiz/quizArray";
-import NextButton from "../common/NextButton"
+import NextButton from "../common/NextButton";
+import Points from "../common/PointsComponent";
 
 
 const StyledQuizWrapper = styled.div`
@@ -9,6 +10,8 @@ const StyledQuizWrapper = styled.div`
     display: flex;
     justify-content: center;
 `;
+
+
 
 const StyledQuizQuestion = styled.h3`
     height: 100%;
@@ -34,6 +37,7 @@ const StyledQuizDiv = styled.div`
     font-weight: bold;
     font-size: 35px;
     margin-top: 3rem;
+    
 `;
 
 const StyledQuizElement = styled.button`
@@ -70,38 +74,39 @@ const StyledQuizAnswers = styled.div`
 const Quiz = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
 
-    const handleAnswerButtonClick = () => {
+    const [showScore, setShowScore] = useState(false);
+
+    const [score, setScore] = useState(0);
+
+    const handleAnswerButtonClick = (correct) => {
+
+        if(correct===true) {
+            alert("Dette er riktig svar")
+            setScore(score + 1);
+        }
+            else if (correct===false) {
+                alert("Dette er feil");
+            }
+
       const nextQuestion = currentQuestion + 1;
+
         if (nextQuestion < quizQuestions.length){
         setCurrentQuestion(nextQuestion);
         }
             else {
-                alert("du har ikke fler spørsmål")
+                setShowScore(true)
             }
         
     };
 
 
 
-    /*function selectAnswer(e) {
 
-        const selectedButton = e.target
-        const correct = selectedButton.dataset.correct
-        if (correct) {
-            selectedButton.style.BackroundColor = 'green';
-            
-    
-    
-    
-        } 
-    
-        handleAnswerButtonClick()
-    
-    }
-*/
     return(
         <>
             <StyledQuizWrapper>
+            {/*Score oppdaterer seg ikke fra PointsComponent, men gjør det hvis man lager en enkel div rundt den(?) */}
+                <Points> {score} / {quizQuestions.length} </Points>
                 <StyledQuizQuestion>
                 {quizQuestions[currentQuestion].questionText}
                 </StyledQuizQuestion>
@@ -114,7 +119,7 @@ const Quiz = () => {
                     <StyledQuizAnswers>
                     
                         {quizQuestions[currentQuestion].answerOptions.map((answerOption)=>( 
-                        <StyledQuizElement onClick={handleAnswerButtonClick}> {answerOption.answerText}</StyledQuizElement>))}
+                        <StyledQuizElement onClick={() => handleAnswerButtonClick(answerOption.correct)}> {answerOption.answerText}</StyledQuizElement>))}
                     </StyledQuizAnswers>
         
                 </div>

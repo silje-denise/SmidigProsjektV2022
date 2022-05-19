@@ -69,11 +69,11 @@ function resetState() {
 
 function selectAnswer(e) {
 
-    const selectedChoice = e.target
-    const correct = selectedChoice.dataset.correct
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
     if (correct) {
         score++
-
+        
 
 
 
