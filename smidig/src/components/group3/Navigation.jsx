@@ -16,9 +16,9 @@ const BackgroundWrapper = styled("div")`
 `;
 
 const NavBar = styled.div`
-position: relative;
-width: 100%;
-padding-bottom: 54px;
+    position: relative;
+    width: 100%;
+    padding-bottom: 54px;
 `;
 
 
@@ -63,6 +63,10 @@ const ProfileIllustration = styled.div`
     margin: 22px 54px 22px 22px;
 `;
 
+const SelectedItem = styled.div`
+
+`;
+
 const Navigation= () => {
     return(
         <NavBar>
@@ -79,8 +83,9 @@ const Navigation= () => {
                         </MapIllustration>
                     </Link>
                 
-                
+
                     <Link to="/games">
+                        
                         <GamesLandingIllustration style={{backgroundImage: `url(${gameIcon})`}}>
                         </GamesLandingIllustration>
                     </Link>
