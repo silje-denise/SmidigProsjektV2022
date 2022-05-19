@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import quizQuestions from "../Quiz/quizArray";
+import NextButton from "../common/NextButton"
+
 
 const StyledQuizWrapper = styled.div`
     overflow: hidden; 
@@ -33,7 +36,7 @@ const StyledQuizDiv = styled.div`
     margin-top: 3rem;
 `;
 
-const StyledQuizElement = styled.div`
+const StyledQuizElement = styled.button`
     height: 9rem;
     width: 9.5rem;
     border-radius: 2rem;
@@ -41,6 +44,8 @@ const StyledQuizElement = styled.div`
     margin-right: 0.5rem;
     margin-left: 0.5rem;
     display: flex;
+    width: 45%;
+    box-sizing: border-box;
     justify-content: center;
     text-align: center;
     border: solid;
@@ -48,8 +53,9 @@ const StyledQuizElement = styled.div`
     border-color: #37B019;
 `;
 
-const StyledQuizAnswers = styled.button`
+const StyledQuizAnswers = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     padding: 0;
@@ -57,40 +63,66 @@ const StyledQuizAnswers = styled.button`
     background: none;
 `;
 
+
+
+
+
 const Quiz = () => {
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+
+    const handleAnswerButtonClick = () => {
+      const nextQuestion = currentQuestion + 1;
+
+        setCurrentQuestion(nextQuestion)
+        
+        
+        
+    };
+
+
+
+    /*function selectAnswer(e) {
+
+        const selectedButton = e.target
+        const correct = selectedButton.dataset.correct
+        if (correct) {
+            selectedButton.style.BackroundColor = 'green';
+            
+    
+    
+    
+        } 
+    
+        handleAnswerButtonClick()
+    
+    }
+*/
     return(
         <>
             <StyledQuizWrapper>
                 <StyledQuizQuestion>
-                    Jeg spør deg om noe.
+                {quizQuestions[currentQuestion].questionText}
                 </StyledQuizQuestion>
             </StyledQuizWrapper>
 
             
             <StyledQuizDiv>
-
+            
                 <div>
-                    <StyledQuizElement>
-                        <StyledQuizAnswers>Answer</StyledQuizAnswers>
-                    </StyledQuizElement>
+                    <StyledQuizAnswers>
+                    
+                        {quizQuestions[currentQuestion].answerOptions.map((answerOption)=>( 
+                        <StyledQuizElement onClick={handleAnswerButtonClick}> {answerOption.answerText}</StyledQuizElement>))}
+                    </StyledQuizAnswers>
         
-                    <StyledQuizElement>
-                        <StyledQuizAnswers>Option</StyledQuizAnswers>
-                    </StyledQuizElement>
                 </div>
                 
-                <div>
-                    <StyledQuizElement>
-                        <StyledQuizAnswers>Option</StyledQuizAnswers>
-                    </StyledQuizElement>
-
-                    <StyledQuizElement>
-                        <StyledQuizAnswers>Option</StyledQuizAnswers>
-                    </StyledQuizElement>
-                </div>
+               
 
             </StyledQuizDiv>
-
+            
+            
+            <NextButton ></NextButton>
         </>
     );
 }
@@ -98,3 +130,4 @@ const Quiz = () => {
 
 
 export default Quiz
+

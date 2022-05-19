@@ -3,6 +3,8 @@ import BackroundGames from "../components/gamesLandingPageComponents/BackgroundG
 import PointSystem from "../components/gamesLandingPageComponents/PointSystem"
 import GameSelection from '../components/gamesLandingPageComponents/GameSelection'
 import styled from "styled-components"
+import HistoryDiv from "../components/gamesLandingPageComponents/PointSystem"
+import GameSelection from "../components/gamesLandingPageComponents/HistoryDiv"
 
 
 const GameLanding = styled.div`
