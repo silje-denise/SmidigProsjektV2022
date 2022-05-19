@@ -20,7 +20,6 @@ const GameCard = ({color1, color2, name, description, numberOfStars, gameCardIll
             <p>{description}</p>
             <div className='gameIcon'></div>
             </div>
-        
       </div>
   )
 }
