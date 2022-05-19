@@ -1,13 +1,26 @@
-import { useDeprecatedInvertedScale } from 'framer-motion';
 import React from 'react'
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import ExitIcon from './ExitIcon';
+import { Link } from 'react-router-dom';
 
 const ExitMenu = ({open, onClose}) => {
     if (!open) return null
 
+    const fade = keyframes`
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    `;
+
+    const View = styled.div`
+        animation: ${fade} 0.2s forwards;
+    `;
+
     const MenuContainer = styled.div`
-        background-color: black;
+        background-image: linear-gradient(120deg, rgba(70, 70, 70, 1), rgba(38, 38, 38, 1));
         position: fixed;
         top: 50%;
         left: 50%;
@@ -40,6 +53,7 @@ const ExitMenu = ({open, onClose}) => {
         height: 48px;
         font-size: 20px;
         font-weight: 600;
+        background-image: linear-gradient(120deg, rgba(169, 223, 116, 1), rgba(115, 200, 45, 1));
     `;
 
     const ExitButton = styled.button`
@@ -48,10 +62,30 @@ const ExitMenu = ({open, onClose}) => {
         height: 48px;
         font-size: 20px;
         font-weight: 600;
+        background-image: linear-gradient(120deg, rgba(239, 164, 159, 1), rgba(235, 102, 87, 1));
     `;
 
+    const OverLayDiv = styled.div`
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        opacity: 0.7;
+        filter: blur(8px);
+        z-index: 100;
+    `;
+
+    function redirect() {
+            return <Link to='/games'></Link>
+    }
+
   return (
+      <View>
+    <OverLayDiv></OverLayDiv>
     <MenuContainer>
+        
         <button style={{background: 'none', filter: 'invert(1)', opacity: '1', marginBottom: '20px'}}
             onClick={onClose}>
             <ExitIcon height='24px' width='24px' opacity="0.9"></ExitIcon>
@@ -60,9 +94,10 @@ const ExitMenu = ({open, onClose}) => {
         <MenuText>Vil du avslutte?</MenuText>
         <ButtonsContainer>
             <BackButton onClick={onClose}>Tilbake</BackButton>
-            <ExitButton>Avslutt</ExitButton>
+            <ExitButton><Link to='/games' style={{ textDecoration: 'none', color: 'black' }}>Avslutt</Link></ExitButton>
         </ButtonsContainer>
     </MenuContainer>
+    </View>
   )
 }
 
