@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import quizQuestions from "../Quiz/quizArray";
 import NextButton from "../common/NextButton";
-import Points from "../common/PointsComponent";
+
 
 
 const StyledQuizWrapper = styled.div`
@@ -94,6 +94,7 @@ const Quiz = () => {
         setCurrentQuestion(nextQuestion);
         }
             else {
+                alert("quizen er ferdig")
                 setShowScore(true)
             }
         
@@ -104,9 +105,13 @@ const Quiz = () => {
 
     return(
         <>
+
+        
             <StyledQuizWrapper>
-            {/*Score oppdaterer seg ikke fra PointsComponent, men gjør det hvis man lager en enkel div rundt den(?) */}
-                <Points> {score} / {quizQuestions.length} </Points>
+                {showScore}  (
+            
+                <div> {score}</div>
+                ) 
                 <StyledQuizQuestion>
                 {quizQuestions[currentQuestion].questionText}
                 </StyledQuizQuestion>
@@ -119,7 +124,7 @@ const Quiz = () => {
                     <StyledQuizAnswers>
                     
                         {quizQuestions[currentQuestion].answerOptions.map((answerOption)=>( 
-                        <StyledQuizElement onClick={() => handleAnswerButtonClick(answerOption.correct)}> {answerOption.answerText}</StyledQuizElement>))}
+                        <StyledQuizElement onClick={() => handleAnswerButtonClick(answerOption.correct)}> {answerOption.answerText} </StyledQuizElement>))}
                     </StyledQuizAnswers>
         
                 </div>
@@ -127,6 +132,7 @@ const Quiz = () => {
                
 
             </StyledQuizDiv>
+           
             
             
             <NextButton></NextButton>
