@@ -5,6 +5,7 @@ import PointSystem from "../components/gamesLandingPageComponents/GameSelection"
 import styled from "styled-components"
 
 
+
 const GameLanding = styled.div`
     margin: 32px;
 `;
