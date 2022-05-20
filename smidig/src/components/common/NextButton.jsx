@@ -14,6 +14,7 @@ const StyledNextButton = styled.button`
     color: white;
     border-radius: 3rem;
     font-size: 24px;
+    position: absolute;
 `;
 
 const NextButton = () => {

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import quizQuestions from "../Quiz/quizArray";
 import NextButton from "../common/NextButton";
+import PointsComponent from '../common/PointsComponent'
 
 
 
@@ -57,6 +58,7 @@ const StyledQuizElement = styled.button`
     border-color: #37B019;
 `;
 
+
 const StyledQuizAnswers = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -71,7 +73,12 @@ const StyledQuizAnswers = styled.div`
 
 
 
+
 const Quiz = () => {
+    
+    
+
+  
     const [currentQuestion, setCurrentQuestion] = useState(0);
 
     const [showScore, setShowScore] = useState(false);
@@ -83,23 +90,31 @@ const Quiz = () => {
         if(correct===true) {
             alert("Dette er riktig svar")
             setScore(score + 1);
+
         }
             else if (correct===false) {
                 alert("Dette er feil");
             }
 
-      const nextQuestion = currentQuestion + 1;
+
+  
+
+            
+        
+    };
+
+    const nextQuestion = () => {
+        console.log('hei')
+        const nextQuestion = currentQuestion + 1;
 
         if (nextQuestion < quizQuestions.length){
         setCurrentQuestion(nextQuestion);
         }
             else {
-                alert("quizen er ferdig")
+                console.log("quizen er ferdig")
                 setShowScore(true)
             }
-        
-    };
-
+    }
 
 
 
@@ -110,20 +125,20 @@ const Quiz = () => {
             <StyledQuizWrapper>
                 {showScore}  (
             
-                <div> {score}</div>
+                <PointsComponent>{score}</PointsComponent>
                 ) 
                 <StyledQuizQuestion>
                 {quizQuestions[currentQuestion].questionText}
                 </StyledQuizQuestion>
             </StyledQuizWrapper>
-
+            
             
             <StyledQuizDiv>
             
                 <div>
                     <StyledQuizAnswers>
                     
-                        {quizQuestions[currentQuestion].answerOptions.map((answerOption)=>( 
+                    {quizQuestions[currentQuestion].answerOptions.map((answerOption)=>( 
                         <StyledQuizElement onClick={() => handleAnswerButtonClick(answerOption.correct)}> {answerOption.answerText} </StyledQuizElement>))}
                     </StyledQuizAnswers>
         
@@ -134,8 +149,10 @@ const Quiz = () => {
             </StyledQuizDiv>
            
             
-            
-            <NextButton></NextButton>
+           
+            <NextButton onClick={nextQuestion}></NextButton>
+        
+           
         </>
     );
 }
