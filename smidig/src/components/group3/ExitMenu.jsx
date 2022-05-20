@@ -77,9 +77,6 @@ const ExitMenu = ({open, onClose}) => {
         z-index: 100;
     `;
 
-    function redirect() {
-            return <Link to='/games'></Link>
-    }
 
   return (
       <View>
