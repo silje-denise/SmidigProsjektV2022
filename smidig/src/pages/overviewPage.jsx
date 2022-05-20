@@ -7,6 +7,7 @@ import GameCard from '../components/gamesLandingPageComponents/GameCard';
 import Navigation from '../components/group3/Navigation';
 import settingsIconSvg from '../images/settingsIcon.svg';
 import styled from 'styled-components';
+import SettingsPage from './SettingsPage';
 
 const OverviewPage = () => {
 
@@ -30,6 +31,22 @@ const OverviewPage = () => {
         background-size: contain;
     `;
     
+    const DivSettingPage = styled.div`
+      display: none;
+    `;
+
+    function showOverlay() {
+      var hiddenDiv = document.getElementById("SettingsOverlay");
+  
+      if (hiddenDiv.style.display === "none") {
+          hiddenDiv.style.display = "block";
+      }
+  
+      else {
+          hiddenDiv.style.display = "none";
+      }
+    }
+
     
     return (
       <div className="App">
@@ -37,7 +54,7 @@ const OverviewPage = () => {
         
         <div className='overviewPage'>
         <SettingsBar>
-            <SettingsIcon style={{
+            <SettingsIcon onClick={showOverlay} style={{
               backgroundImage: `url(${settingsIconSvg})`}}></SettingsIcon>
         </SettingsBar>
           <div className='logo'></div>
@@ -60,7 +77,12 @@ const OverviewPage = () => {
             <div className='gameShortcutImage'></div>
           </div>
           <Navigation/>
-        </div>  
+        </div>
+
+        <DivSettingPage id='SettingsOverlay'>
+          <SettingsPage></SettingsPage>
+        </DivSettingPage>
+
       </div>
 
     );

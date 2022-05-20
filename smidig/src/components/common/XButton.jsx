@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const StyledXButton = styled.div`
+const StyledXButton = styled.button`
     height: 6rem;
     width: 4rem;
     margin-left: 1rem;
@@ -11,6 +11,7 @@ const StyledXButton = styled.div`
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background-color: white;
 `;
 
 const XButton = () => {

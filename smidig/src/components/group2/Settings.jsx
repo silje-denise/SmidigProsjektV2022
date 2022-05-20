@@ -39,6 +39,9 @@ const StyledSettingsButton = styled.button`
 
 const StyledSettings = styled.div`
     margin-top: 4rem;
+    color: #209803;
+    font-size: 40px;
+    font-weight: 750;
 `;
 
 const StyledAboutUs = styled.div`
@@ -58,7 +61,7 @@ const StyledLogOff = styled.div`
     font-size: 30px;
     margin-top: 5rem;
     color: #209803;
-    font-weight: 300;
+    font-weight: 400;
     background-color: white;
 `;
 
@@ -86,6 +89,10 @@ const SharedButton = styled.button`
     margin-top: 2rem;
 `;
 
+const LogLink = styled(Link)`
+    color: white;
+`;
+
 
 function showShare() {
     var hidDiv = document.getElementById("hiddenDiv");
@@ -106,11 +113,13 @@ const Settings = () => {
         <>
             <StyledSettingsDiv>
 
-                <StyledSettings>
-                    <Link to={"/"}>
-                        <StyledSettingsButton>Innstillinger</StyledSettingsButton>
-                    </Link>
-                </StyledSettings>
+                <Link to={"/"}>
+                    <StyledSettingsButton>
+                        <StyledSettings>
+                            Meny
+                        </StyledSettings>
+                    </StyledSettingsButton>
+                </Link>
 
                 <StyledAboutUs>
                     <a href= "https://www.ralingen.kommune.no/">
@@ -150,9 +159,9 @@ const Settings = () => {
                         </StyledShareApp>
 
                 <StyledSettingsButton>
-                      <Link to={"/"}>
-                          <StyledLogOff>Logg av</StyledLogOff>
-                      </Link>  
+                      <LogLink to={"/"}>
+                          <StyledLogOff></StyledLogOff>
+                      </LogLink>  
                 </StyledSettingsButton>
 
             </StyledSettingsDiv>
