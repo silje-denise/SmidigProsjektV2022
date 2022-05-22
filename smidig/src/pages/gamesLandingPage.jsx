@@ -5,6 +5,7 @@ import styled from "styled-components"
 import Navigation from "../components/group3/Navigation"
 import HeaderText from "../components/gamesLandingPageComponents/HeaderText"
 import Background from "../images/background.png"
+import { Link } from "react-router-dom"
 
 
 
@@ -40,7 +41,9 @@ const GamesLandingPage = () => {
     <Pointwrapper>
     <Points />
     </Pointwrapper>
+    <Link to="/history">
     <HistoryDiv></HistoryDiv>
+    </Link>
     <HeaderText></HeaderText>
      <GameSelection></GameSelection>
     </GameLanding>

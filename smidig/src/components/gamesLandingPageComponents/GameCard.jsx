@@ -16,7 +16,7 @@ const GameCard = ({color1, color2, name, description, numberOfStars, gameCardIll
             </div>
         
           <div className='gameCardDescription'>
-            <h7>{name}</h7>
+            <h6>{name}</h6>
             <p>{description}</p>
             <div className='gameIcon'></div>
             </div>
