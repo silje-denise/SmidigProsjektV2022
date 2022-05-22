@@ -1,4 +1,4 @@
-import Dog from '../../images/Dog.png'
+
 
 
 const quizQuestions = [{
@@ -6,7 +6,7 @@ const quizQuestions = [{
     answerOptions:
     // Q1
         [
-        { answerText: 'Anfield', image: Dog, correct: true },
+        { answerText: 'Anfield',  correct: true },
         { answerText: 'Stamford Bridge', correct: false },
         { answerText: 'Test2', correct: false },
         { answerText: 'Test', correct: false }
@@ -29,7 +29,9 @@ const quizQuestions = [{
     // Q3
         [
         { answerText: '9', correct: true },
-        { answerText: '8', correct: false }
+        { answerText: '8', correct: false },
+        { answerText: '5', correct: true },
+        { answerText: '10', correct: true }
     ]
 },
 {
