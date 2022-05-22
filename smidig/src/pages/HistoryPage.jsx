@@ -7,7 +7,7 @@ import HistoryMap from '../components/group3/HistoryMap';
 import PointCounterBar from '../components/group3/PointCounterBar';
 import menuAudio from '../audio/menuClick.wav'
 import backgroundPattern from '../images/backgroundPattern2.svg'
-import QuizPage from '../components/group3/QuizPage'
+import QuizComponent from '../components/group3/QuizComponent'
 
 const HistoryPage = () => {
 
@@ -99,7 +99,7 @@ const HistoryPage = () => {
           <div>
             <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
             <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler}/>
-            <QuizPage open={quizPageIsOpen}/>
+            <QuizComponent open={quizPageIsOpen}/>
           </div>
           <ExitMenu open={isOpen} onClose={() => setIsOpen(false)}/>
       </HistoryPageContainer>

@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
-import ProgressDiv from '../group3/ProgressDiv'
+import ProgressDiv from './ProgressDiv'
 import dashedLine from '../../images/dashedLine.svg'
 
-const QuizPage = ({open}) => {
+const QuizComponent = ({open}) => {
   if (!open) return null;
 
   const ProgressBar = styled.div`
@@ -31,4 +31,4 @@ const QuizPage = ({open}) => {
   )
 }
 
-export default QuizPage
+export default QuizComponent
