@@ -7,6 +7,8 @@ import Viking from '../../images/Viking.png'
 import testPicture from '../../images/testPicture.jpg'
 import CheckmarkIcon from '../../images/checkmark.svg'
 import CheckmarkContainer from './CheckmarkContainer'
+import ProgressDiv from '../group3/ProgressDiv'
+import dashedLine from '../../images/dashedLine.svg'
 
 const HistoryInfoContainer = ({open, onClose}) => {
     if (!open) return null
@@ -18,6 +20,7 @@ const HistoryInfoContainer = ({open, onClose}) => {
         border-radius: 16px;
         padding: 16px;
         overflow: auto;
+        margin-bottom: 20px;
     `;
 
     const Title = styled.div`
@@ -47,7 +50,7 @@ const HistoryInfoContainer = ({open, onClose}) => {
 
     const AvatarTextBox = styled.p`
         font-weight: 400;
-        opacity: 0.8;
+        opacity: 0.7;
         font-size: 15px;
         line-height: 1.2;
     `;
@@ -81,7 +84,7 @@ const HistoryInfoContainer = ({open, onClose}) => {
     `;
     
     const TextContainer = styled.div`
-        line-height: 1.2;
+        line-height: 1.3;
     `;
 
     const Oppsumert = styled.div`
@@ -91,6 +94,35 @@ const HistoryInfoContainer = ({open, onClose}) => {
         opacity: 0.8;
     `;
 
+    const ReadyButton = styled.div`
+        height: 80px;
+        background-image: linear-gradient(120deg, rgba(85, 85, 85, 1), rgba(38, 38, 38, 1));
+        margin-top: 32px;
+        border-radius: 8px;
+    `;
+
+    const ReadyText = styled.p`
+        color: white;
+        opacity: 0.85;
+        font-weight: 700;
+        width: 100%;
+        text-align: center;
+        font-size: 32px;
+        height: 100%auto;
+        line-height: 2.4;
+    `;
+
+    const ProgressBar = styled.div`
+        height: 42px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        column-gap: 42px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    `;
+
+    
     
 
 
@@ -129,10 +161,22 @@ const HistoryInfoContainer = ({open, onClose}) => {
                 <Oppsumert>Oppsumert</Oppsumert>
                 
                 <CheckmarkContainer text="Stor plankeproduksjon fra 1832."/>
+                <CheckmarkContainer text="En av Norges største plankeprodesenter."/>
+                <CheckmarkContainer text="Første vindmøllen ble bygget i 1871."/>
             </ContainerBackground>
             
-
+            <ReadyButton onClick={onClose}>
+                <ReadyText>Jeg er klar!</ReadyText>
+            </ReadyButton>
         </ScrollView>
+
+        <ProgressBar style={{
+                    backgroundImage: `url(${dashedLine})`}}>
+                <ProgressDiv number="1" color1="rgba(73, 163, 58,1)" color2="rgba(52, 109, 117, 1)" active="0px 0px 0px 6px rgba(0,0,0,0.2)"/>
+                <ProgressDiv number="2" color1="rgba(254, 209, 86,1)" color2="rgba(246, 163, 88, 1)"/>
+                <ProgressDiv number="3"color1="rgba(244, 150, 142,1)" color2="rgba(245, 138, 91, 1)"/>
+        </ProgressBar>
+
     </div>
   )
 }

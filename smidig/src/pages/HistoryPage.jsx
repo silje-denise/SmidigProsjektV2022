@@ -5,8 +5,13 @@ import ExitMenu from '../components/group3/ExitMenu.jsx';
 import HistoryInfoContainer from '../components/group3/HistoryInfoContainer';
 import HistoryMap from '../components/group3/HistoryMap';
 import PointCounterBar from '../components/group3/PointCounterBar';
+import menuAudio from '../audio/menuClick.wav'
+import backgroundPattern from '../images/backgroundPattern2.svg'
+import QuizPage from '../components/group3/QuizPage'
 
 const HistoryPage = () => {
+
+    const menuClick = new Audio(menuAudio);
 
     const HistoryPage = styled.div`
         margin: 0px 32px;
@@ -20,7 +25,12 @@ const HistoryPage = () => {
     `;
 
     const Background = styled.div`
-
+        position: absolute;
+        
+        
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     `;
 
     const ExitBar = styled.div`
@@ -36,6 +46,11 @@ const HistoryPage = () => {
     
 
     const [isOpen, setIsOpen] = useState(false);
+    function exitMenuHandler() {
+        
+        setIsOpen(true);
+        menuClick.play();
+    }
 
     const [mapIsOpen, setMapIsOpen] = useState(true);
     function mapPageHandler() {
@@ -54,6 +69,17 @@ const HistoryPage = () => {
             setHistoryInfoOpen(true);
         } else {
             setHistoryInfoOpen(false);
+            setQuizPageIsOpen(true);
+        }
+    }
+
+    const [quizPageIsOpen, setQuizPageIsOpen] = useState(false);
+    function quizPageHandler() {
+        if(quizPageIsOpen == false) {
+            setHistoryInfoOpen(false)
+            setQuizPageIsOpen(true)
+        } else {
+            setQuizPageIsOpen(false)
         }
     }
 
@@ -62,10 +88,10 @@ const HistoryPage = () => {
 
   return (
       <HistoryPage>
-        <HistoryPageContainer>
           <Background></Background>
+        <HistoryPageContainer>
           <ExitBar>
-            <ExitButton onClick={() => setIsOpen(true)}>
+            <ExitButton onClick={exitMenuHandler}>
               <ExitIcon opacity='0.5' width="36px" height="36px"></ExitIcon>
             </ExitButton>
             <PointCounterBar points="0" open={pointBarIsOpen}/>
@@ -73,6 +99,7 @@ const HistoryPage = () => {
           <div>
             <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
             <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler}/>
+            <QuizPage open={quizPageIsOpen}/>
           </div>
           <ExitMenu open={isOpen} onClose={() => setIsOpen(false)}/>
       </HistoryPageContainer>
