@@ -2,7 +2,7 @@
 
 ## UTForsk Byåa kultursti
 
-### [GitHub Repository] (https://github.com/silje-denise/SmidigProsjektV2022) [Figma Designfil] (https://www.figma.com/file/gwEoY29f81sC9mVTFL6Weq/Smidig?node-id=0%3A1)
+[GitHub Repository] (https://github.com/silje-denise/SmidigProsjektV2022) [Figma Designfil] (https://www.figma.com/file/gwEoY29f81sC9mVTFL6Weq/Smidig?node-id=0%3A1)
 
 For å starte webapplikasjonen kjør:
 
