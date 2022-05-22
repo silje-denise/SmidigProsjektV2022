@@ -4,6 +4,7 @@ import ExitIcon from '../components/group3/ExitIcon';
 import ExitMenu from '../components/group3/ExitMenu.jsx';
 import HistoryInfoContainer from '../components/group3/HistoryInfoContainer';
 import HistoryMap from '../components/group3/HistoryMap';
+import PointCounterBar from '../components/group3/PointCounterBar';
 
 const HistoryPage = () => {
 
@@ -43,6 +44,7 @@ const HistoryPage = () => {
         } else {
             setMapIsOpen(false);
             setHistoryInfoOpen(true);
+            setPointBarIsOpen(true);
         }
     }
 
@@ -55,6 +57,9 @@ const HistoryPage = () => {
         }
     }
 
+    const [pointBarIsOpen, setPointBarIsOpen] = useState(false);
+    
+
   return (
       <HistoryPage>
         <HistoryPageContainer>
@@ -63,6 +68,7 @@ const HistoryPage = () => {
             <ExitButton onClick={() => setIsOpen(true)}>
               <ExitIcon opacity='0.5' width="36px" height="36px"></ExitIcon>
             </ExitButton>
+            <PointCounterBar points="0" open={pointBarIsOpen}/>
           </ExitBar>
           <div>
             <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
