@@ -46,10 +46,10 @@ const ArrowWrapper = styled("div")`
     display:flex;
     align-items:center;
     padding: 40px 0px 0px 40px;
-    backgrond-image: url(${monster});
+    background-image: url(${monster});
 `;
 const StyledLink = styled(Link)`
-    text-decoratiom: none;
+    text-decoration: none;
     color:white;
 `;
 

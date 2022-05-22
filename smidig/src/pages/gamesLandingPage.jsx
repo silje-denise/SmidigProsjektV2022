@@ -1,30 +1,53 @@
 import HistoryDiv from "../components/gamesLandingPageComponents/HistoryDiv"
-import BackroundGames from "../components/gamesLandingPageComponents/BackgroundGames"
-import PointSystem from "../components/gamesLandingPageComponents/PointSystem"
+import Points from "../components/common/PointsComponent"
 import GameSelection from '../components/gamesLandingPageComponents/GameSelection'
 import styled from "styled-components"
+import Navigation from "../components/group3/Navigation"
+import HeaderText from "../components/gamesLandingPageComponents/HeaderText"
+import Background from "../images/background.png"
 
-import { Link } from "react-router-dom"
 
 
 const GameLanding = styled.div`
     margin: 32px;
+
 `;
+const NavWrapper = styled.div`
+bottom: 0;
+position: absolute;
+width: 100vw;
+
+`;
+const Pointwrapper = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px ;
+`;
+const StyledBackground = styled.div`
+    background-image: url(${Background});
+    width: 100%;
+    height: 100%;
+`;
+
 
 
 
 const GamesLandingPage = () => {
 
     return(
-        
+    <StyledBackground>
     <GameLanding>
-     <PointSystem></PointSystem>
-     <Link to="/history">
-     <HistoryDiv></HistoryDiv>
-     </Link>
-     <BackroundGames></BackroundGames>
+    <Pointwrapper>
+    <Points />
+    </Pointwrapper>
+    <HistoryDiv></HistoryDiv>
+    <HeaderText></HeaderText>
      <GameSelection></GameSelection>
     </GameLanding>
+    <NavWrapper>
+     <Navigation/>
+     </NavWrapper>
+    </StyledBackground>
         
      
     );

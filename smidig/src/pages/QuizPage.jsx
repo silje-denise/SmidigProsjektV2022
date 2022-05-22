@@ -1,9 +1,16 @@
 import React from "react"
-import NextButton from "../components/common/NextButton";
+import styled from "styled-components";
 import XButton from "../components/common/XButton";
 import Quiz from "../components/group2/Quiz";
 import { Link } from "react-router-dom";
+import Navigation from "../components/group3/Navigation";
 
+const NavigationWrapper = styled.div`
+bottom: 0;
+position: absolute;
+width: 100vw;
+`;
+    
 
 const QuizPage = () => {
     return(
@@ -14,7 +21,9 @@ const QuizPage = () => {
         </Link>
             
             <Quiz />
-            <NextButton />
+            <NavigationWrapper>
+                <Navigation/>
+            </NavigationWrapper>
         </> 
     );
 }

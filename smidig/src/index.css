@@ -17,3 +17,9 @@ code {
   height: 1000px;
   background-color: gray;
 }
+.correct{
+  background-color: green !important; 
+}
+.false{
+  background-color: red !important;
+}

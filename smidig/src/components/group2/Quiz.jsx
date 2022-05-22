@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import quizQuestions from "../Quiz/quizArray";
+import NextButton from "../common/NextButton";
+import PointsComponent from '../common/PointsComponent'
+
+
 
 const StyledQuizWrapper = styled.div`
     overflow: hidden; 
     display: flex;
     justify-content: center;
 `;
+
 
 const StyledQuizQuestion = styled.h3`
     height: 100%;
@@ -31,9 +37,10 @@ const StyledQuizDiv = styled.div`
     font-weight: bold;
     font-size: 35px;
     margin-top: 3rem;
+    
 `;
 
-const StyledQuizElement = styled.div`
+const StyledQuizElement = styled.button`
     height: 9rem;
     width: 9.5rem;
     border-radius: 2rem;
@@ -41,15 +48,21 @@ const StyledQuizElement = styled.div`
     margin-right: 0.5rem;
     margin-left: 0.5rem;
     display: flex;
+    width: 45%;
+    box-sizing: border-box;
     justify-content: center;
     text-align: center;
     border: solid;
     border-width: 2px;
     border-color: #37B019;
+    background-color: #ffffff;
+    align-items: center;
 `;
 
-const StyledQuizAnswers = styled.button`
+
+const StyledQuizAnswers = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     padding: 0;
@@ -57,40 +70,93 @@ const StyledQuizAnswers = styled.button`
     background: none;
 `;
 
+
+
+
+
+
 const Quiz = () => {
+    
+    
+
+    const [answerClicked, setAnswerClicked] = useState(-1);
+    
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+
+    const [showScore, setShowScore] = useState(false);
+
+    const [score, setScore] = useState(0);
+
+    const handleAnswerButtonClick = (correct,index)  => {
+        
+       setAnswerClicked(index);
+       
+        
+    };
+
+    const getClassNameForOption = (index) => {
+        
+        if (index === answerClicked) {
+            const isCorrect = quizQuestions[currentQuestion].answerOptions[index].correct
+            if(isCorrect===true){
+                return "correct"
+            }
+            else if(isCorrect===false){
+                return "false"
+            }
+        }
+        
+    }
+    console.log(answerClicked)
+
+    const nextQuestion = () => {
+        console.log('hei')
+        const nextQuestion = currentQuestion + 1;
+
+        if (nextQuestion < quizQuestions.length){
+        setCurrentQuestion(nextQuestion);
+        setAnswerClicked(-1)
+        }
+            else {
+                
+                alert("quizen er ferdig")
+            }
+    }
+
+
+
     return(
         <>
+
+        
             <StyledQuizWrapper>
+                {showScore}  
                 <StyledQuizQuestion>
-                    Jeg spør deg om noe.
+                {quizQuestions[currentQuestion].questionText}
                 </StyledQuizQuestion>
             </StyledQuizWrapper>
-
+            
             
             <StyledQuizDiv>
-
+            
                 <div>
-                    <StyledQuizElement>
-                        <StyledQuizAnswers>Answer</StyledQuizAnswers>
-                    </StyledQuizElement>
+                    <StyledQuizAnswers>
+                    
+                    {quizQuestions[currentQuestion].answerOptions.map((answerOption, index)=>( 
+                        <StyledQuizElement  onClick={() => handleAnswerButtonClick(answerOption.correct, index)} className={getClassNameForOption(index)}> {answerOption.answerText} </StyledQuizElement>))}
+                    </StyledQuizAnswers>
         
-                    <StyledQuizElement>
-                        <StyledQuizAnswers>Option</StyledQuizAnswers>
-                    </StyledQuizElement>
                 </div>
                 
-                <div>
-                    <StyledQuizElement>
-                        <StyledQuizAnswers>Option</StyledQuizAnswers>
-                    </StyledQuizElement>
-
-                    <StyledQuizElement>
-                        <StyledQuizAnswers>Option</StyledQuizAnswers>
-                    </StyledQuizElement>
-                </div>
+               
 
             </StyledQuizDiv>
-
+           
+            
+           
+            <NextButton onClick={nextQuestion}></NextButton>
+        
+           
         </>
     );
 }
@@ -98,3 +164,4 @@ const Quiz = () => {
 
 
 export default Quiz
+
