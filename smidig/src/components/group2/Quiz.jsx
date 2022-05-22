@@ -115,6 +115,7 @@ const Quiz = () => {
 
         if (nextQuestion < quizQuestions.length){
         setCurrentQuestion(nextQuestion);
+        setAnswerClicked(-1)
         }
             else {
                 console.log("quizen er ferdig")
