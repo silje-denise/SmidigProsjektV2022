@@ -141,11 +141,7 @@ table {
   background-color: blue;
 }
 
-.overviewPage {
-  background-color: brown;
-  width: 300px;
-  height: 200px;
-}
+
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -174,8 +170,7 @@ body {
 .overviewPage {
   position: relative;
   margin: auto;
-  margin-top: 128px;
-  
+  margin-top: 64px;
   width: 80%;
 }
 

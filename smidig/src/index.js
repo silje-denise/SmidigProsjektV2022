@@ -6,8 +6,8 @@ import Navigation from './components/group3/Navigation';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import ChooseAvatarPage from './pages/ChooseAvatarPage';
-import LandingPage from './pages/LandingPage';
-import ProfilePage from './pages/ProfilePage';
+import LandingPage from './pages/LandingPage.jsx';
+import ProfilePage from './pages/ProfilePage.jsx';
 import SettingsPage from './pages/SettingsPage.jsx'
 import MapPage from './pages/MapPage';
 import QuizPage from './pages/QuizPage';

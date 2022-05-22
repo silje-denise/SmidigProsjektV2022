@@ -17,10 +17,10 @@ const StyledNextButton = styled.button`
     position: absolute;
 `;
 
-const NextButton = () => {
+const NextButton = ({onClick}) => {
     return(
         <>
-            <StyledNextButton>
+            <StyledNextButton onClick={onClick}>
                 NESTE
             </StyledNextButton>
         </>

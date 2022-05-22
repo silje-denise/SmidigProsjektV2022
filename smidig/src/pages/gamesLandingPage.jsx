@@ -7,6 +7,8 @@ import HeaderText from "../components/gamesLandingPageComponents/HeaderText"
 import Background from "../images/background.png"
 
 
+import { Link } from "react-router-dom"
+
 
 const GameLanding = styled.div`
     margin: 32px;

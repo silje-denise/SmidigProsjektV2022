@@ -13,7 +13,6 @@ const StyledQuizWrapper = styled.div`
 `;
 
 
-
 const StyledQuizQuestion = styled.h3`
     height: 100%;
     width: 20rem;
@@ -56,6 +55,8 @@ const StyledQuizElement = styled.button`
     border: solid;
     border-width: 2px;
     border-color: #37B019;
+    background-color: #ffffff;
+    align-items: center;
 `;
 
 
@@ -78,30 +79,35 @@ const Quiz = () => {
     
     
 
-  
+    const [answerClicked, setAnswerClicked] = useState(-1);
+    
     const [currentQuestion, setCurrentQuestion] = useState(0);
 
     const [showScore, setShowScore] = useState(false);
 
     const [score, setScore] = useState(0);
 
-    const handleAnswerButtonClick = (correct) => {
-
-        if(correct===true) {
-            alert("Dette er riktig svar")
-            setScore(score + 1);
-
-        }
-            else if (correct===false) {
-                alert("Dette er feil");
-            }
-
-
-  
-
-            
+    const handleAnswerButtonClick = (correct,index)  => {
+        
+       setAnswerClicked(index);
+       
         
     };
+
+    const getClassNameForOption = (index) => {
+        
+        if (index === answerClicked) {
+            const isCorrect = quizQuestions[currentQuestion].answerOptions[index].correct
+            if(isCorrect===true){
+                return "correct"
+            }
+            else if(isCorrect===false){
+                return "false"
+            }
+        }
+        
+    }
+    console.log(answerClicked)
 
     const nextQuestion = () => {
         console.log('hei')
@@ -138,8 +144,8 @@ const Quiz = () => {
                 <div>
                     <StyledQuizAnswers>
                     
-                    {quizQuestions[currentQuestion].answerOptions.map((answerOption)=>( 
-                        <StyledQuizElement onClick={() => handleAnswerButtonClick(answerOption.correct)}> {answerOption.answerText} </StyledQuizElement>))}
+                    {quizQuestions[currentQuestion].answerOptions.map((answerOption, index)=>( 
+                        <StyledQuizElement  onClick={() => handleAnswerButtonClick(answerOption.correct, index)} className={getClassNameForOption(index)}> {answerOption.answerText} </StyledQuizElement>))}
                     </StyledQuizAnswers>
         
                 </div>
