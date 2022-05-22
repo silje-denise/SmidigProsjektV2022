@@ -2,47 +2,47 @@
 
 
 const quizQuestions = [{
-    questionText: 'Hva heter stadioen til Liverpool?',
+    questionText: 'Hvilken farge er Ole Brumm?',
     answerOptions:
     // Q1
         [
-        { answerText: 'Anfield',  correct: true },
-        { answerText: 'Stamford Bridge', correct: false },
-        { answerText: 'Test2', correct: false },
-        { answerText: 'Test', correct: false }
+        { answerText: 'Gul',  correct: true },
+        { answerText: 'Blå', correct: false },
+        { answerText: 'Grønn', correct: false },
+        { answerText: 'Hvit', correct: false }
     ]
 },
 {
-    questionText: 'hva heter kapteinen på Liverpool?',
+    questionText: 'Hvilket insekt bygger store tuer i skoen, ofte inntil en trestamme?',
     answerOptions:
     // Q2
         [
-        { answerText: 'Van dijk', correct: false },
-        { answerText: 'Henderson', correct: false },
-        { answerText: 'Trent-Alexander-Arnold', correct: false },
-        { answerText: 'Keita', correct: true }
+        { answerText: 'Bjørn', correct: false },
+        { answerText: 'Veps', correct: false },
+        { answerText: 'Rev', correct: false },
+        { answerText: 'Maur', correct: true }
     ]
 },
 {
-    questionText: 'Hvor mange trofeer har liverpool?',
+    questionText: 'Hva heter hunden til Mikke Mus?',
     answerOptions:
     // Q3
         [
-        { answerText: '9', correct: true },
-        { answerText: '8', correct: false },
-        { answerText: '5', correct: true },
-        { answerText: '10', correct: true }
+        { answerText: 'Pluto', correct: true },
+        { answerText: 'Mikke', correct: false },
+        { answerText: 'Venus', correct: false },
+        { answerText: 'Torgeir', correct: false }
     ]
 },
 {
-    questionText: 'Hvilke spiller selges det mest drakter av?',
+    questionText: 'Hvilken prinsesse sov i hundre år?',
     answerOptions:
     // Q4
         [
-        { answerText: 'Salah', correct: true },
-        { answerText:'Mane', correct: false },
-        { answerText: 'Navarsete', correct: false },
-        { answerText: 'Brage', correct: false }
+        { answerText: 'Tornerose', correct: true },
+        { answerText:'Disney', correct: false },
+        { answerText: 'Daisy', correct: false },
+        { answerText: 'Fiona', correct: false }
 
     ]
 }

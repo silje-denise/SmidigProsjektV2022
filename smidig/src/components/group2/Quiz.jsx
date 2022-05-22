@@ -118,8 +118,8 @@ const Quiz = () => {
         setAnswerClicked(-1)
         }
             else {
-                console.log("quizen er ferdig")
-                setShowScore(true)
+                
+                alert("quizen er ferdig")
             }
     }
 
@@ -130,10 +130,7 @@ const Quiz = () => {
 
         
             <StyledQuizWrapper>
-                {showScore}  (
-            
-                <PointsComponent>{score}</PointsComponent>
-                ) 
+                {showScore}  
                 <StyledQuizQuestion>
                 {quizQuestions[currentQuestion].questionText}
                 </StyledQuizQuestion>
