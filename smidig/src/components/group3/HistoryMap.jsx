@@ -24,13 +24,7 @@ const HistoryMap = ({open, onClose}) => {
     
     `;
 
-    const PointContainer = styled.div`
-        position: relative;
-        height: 64px;
-        border-radius: 64px;
-        float: right;
-        background-color: #222222;
-    `;
+    
 
     
 
@@ -99,10 +93,8 @@ const HistoryMap = ({open, onClose}) => {
       <>
             <PointBar>
                 <PageTitle>Historien</PageTitle>
-                    <PointContainer>
-                        <PointCounter points="0"/>
-                    </PointContainer>
-            </PointBar>
+                    <PointCounter points="0"/>
+                </PointBar>
         
             <MapContainer>
                 <DialogueBox>

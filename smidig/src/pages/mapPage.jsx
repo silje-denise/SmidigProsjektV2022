@@ -179,18 +179,18 @@ const MapPage = () => {
           
            if(id === 0){
               setInfoHeader("Byåa");
-              setInfoText("Her finner du info om Byåa");
+              setInfoText("Her finner du info om Byåa: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
               
            }else if(id === 1){
             setInfoHeader("Område 1");
-            setInfoText("Her finner du info om Område 1");
+            setInfoText(`Her finner du info om Område 1:  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.`);
            }else if(id === 2){
             setInfoHeader("Område 2");
-            setInfoText("Her finner du info om Område 2");
+            setInfoText("Her finner du info om Område 2: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
            }
            else if(id === 3){
             setInfoHeader("Område 3");
-            setInfoText("Her finner du info om Område 3");
+            setInfoText("Her finner du info om Område 3: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
            }
        }else{
            setIsOpen(false);
