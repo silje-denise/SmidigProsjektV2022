@@ -13,9 +13,9 @@ const GameLanding = styled.div`
 
 `;
 const NavWrapper = styled.div`
-position: absolute;
 bottom: 0;
-z-index: 100;
+position: absolute;
+width: 100vw;
 
 `;
 const Pointwrapper = styled.div`
@@ -43,10 +43,10 @@ const GamesLandingPage = () => {
     <HistoryDiv></HistoryDiv>
     <HeaderText></HeaderText>
      <GameSelection></GameSelection>
-     <NavWrapper>
+    </GameLanding>
+    <NavWrapper>
      <Navigation/>
      </NavWrapper>
-    </GameLanding>
     </StyledBackground>
         
      
