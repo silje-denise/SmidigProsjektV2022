@@ -1,4 +1,4 @@
-# SmidigProsjektV2022
+# SmidigProsjektV2022 [![CI](https://github.com/silje-denise/SmidigProsjektV2022/actions/workflows/main.yml/badge.svg)](https://github.com/silje-denise/SmidigProsjektV2022/actions/workflows/main.yml)
 
 [GitHub Repository](https://github.com/silje-denise/SmidigProsjektV2022)
 [Figma Designfil](https://www.figma.com/file/gwEoY29f81sC9mVTFL6Weq/Smidig?node-id=0%3A1)
