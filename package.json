@@ -4,7 +4,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cd smidig && npm build",
+    "build": "cd smidig && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   }
