@@ -9,14 +9,14 @@ import profileIcon from '../../images/profileIcon.svg';
 //Foreløpig kun bakgrunn for å se om det funker
 const BackgroundWrapper = styled("div")`
     width: 300px;
-    background-color: #e8e8e8;
+    background-color: #F3F3F3;
     margin: auto;
     height: 70px;
     border-radius: 42px;
     display:flex;
     justify-content: space-between;
     align-items:center;
-    padding: 0px 10px;
+    padding: 0px 20px;
 `;
 
 const NavBar = styled.div`
@@ -30,8 +30,8 @@ const OverviewIllustration = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat ;
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     display: inline-block ;
     //margin: 22px 22px 22px 54px;
     filter: ${props => (props.color ? "invert(1)": "invert(0)")};
@@ -43,8 +43,8 @@ const MapIllustration = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat ;
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     display: inline-block ;
     filter: ${props => (props.color ? "invert(1)": "invert(0)")};
 `;
@@ -53,8 +53,8 @@ const GamesLandingIllustration = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat ;
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     transform: scale(1.3);
     display: inline-block ;
     filter: ${props => (props.color ? "invert(1)": "invert(0)")};
@@ -65,8 +65,8 @@ const ProfileIllustration = styled.div`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat ;
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     display: inline-block ;
     filter: ${props => (props.color ? "invert(1)": "invert(0)")};
 
@@ -75,12 +75,12 @@ const ProfileIllustration = styled.div`
 const StyledLink = styled.div`
     background-color: green;
     border-radius: 50px;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color: ${props => (props.bgColor ? "green": "rgba(0,0,0,0)")};
+    background-color: ${props => (props.bgColor ? "#209803": "rgba(0,0,0,0)")};
     
 `;
 
