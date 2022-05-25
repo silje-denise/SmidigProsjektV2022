@@ -112,14 +112,11 @@ const Settings = () => {
     return(
         <>
             <StyledSettingsDiv>
-
-                <Link to={"/"}>
-                    <StyledSettingsButton>
-                        <StyledSettings>
-                            Meny
-                        </StyledSettings>
-                    </StyledSettingsButton>
-                </Link>
+                <StyledSettingsButton>
+                    <StyledSettings>
+                        Meny
+                    </StyledSettings>
+                </StyledSettingsButton>
 
                 <StyledAboutUs>
                     <a href= "https://www.ralingen.kommune.no/">
