@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import {React, useState} from "react";
 import styled from "styled-components";
 import map from "../images/Map.png";
-import { Link } from "react-router-dom";
 import Navigation from "../components/group3/Navigation";
 import AudioFile from "../audio/pannekaka.mp3";
 
@@ -14,7 +13,6 @@ const PageWrapper = styled("div")`
     width: 100vw;
     background-image: url(${map});
 `;
-
 
 const OverlayWrapper = styled("div")`
     height: 90vh;
@@ -27,7 +25,6 @@ const OverlayWrapper = styled("div")`
 `;
 
 const Overlay = styled("div")`
-    //background-color:rgb(239,241,242);
     border-radius: 50px 50px 0px 0px;
     background-color:white;
     width: 100vw;
@@ -39,7 +36,6 @@ const Overlay = styled("div")`
     z-index:90;
     box-shadow: 20px 30px 30px 20px gray;
     height: ${props => (props.visible ? "700px" : "300px")};
-
 `;
 
 const StyledHeaderText = styled("h3")`
@@ -47,17 +43,6 @@ const StyledHeaderText = styled("h3")`
     padding: 15px;
     font-weight: 600;
 `;
-
-// const BackButton = styled("div")`
-//     background-color: rgba(255,255,255, 0.5);
-//     width: 30px;
-//     height: 30px;
-//     padding: 10px;
-//     border-radius: 50px;
-//     border: 2px lightgray solid;
-//     display:flex;
-//     justify-content:center;
-// `;
 
 const AudioElement = styled("audio")`
 
@@ -70,7 +55,6 @@ const AudioElement = styled("audio")`
   &::-webkit-media-controls-time-remaining-display{
     display:none;
   }
-
 `;
 
 const ButtonWrapper = styled("div")`
@@ -84,16 +68,13 @@ const ContentWrapper = styled("div")`
     overflow:hidden;
 `;
 
-
 const NavWrapper = styled.div`
     position:absolute;
     bottom: 0px;
     z-index:100;
-    //background-color:rgba(240,240,240, 0.8);
     background-color:rgba(255,255,255, 0.8);
     display:flex;
-    justify-content:center;
-    align-items:center;
+    align-items:flex-end;
     width: 100%;
     height: 140px;
     backdrop-filter: blur(2px);
@@ -161,8 +142,7 @@ const StyledHeaderButton = styled("button")`
     border: 2px solid green;
     border-radius: 10px;
     font-size: 23px;
-    background-color:white;
-    
+    background-color:white; 
 `;
 
 
@@ -198,17 +178,11 @@ const MapPage = () => {
        }
     }
 
-  
 
     return(
-        
-            <><PageWrapper>
+            <>
+            <PageWrapper>
             <ButtonWrapper>
-                {/* <BackButton>
-                    <Link to={"/overview"}>
-                        <FontAwesomeIcon icon={faChevronLeft} size={'2x'} />
-                    </Link>
-                </BackButton>  */}
                 <HeaderButtonWrapper>
                     <StyledHeaderButton onClick={() => handleOnclick(0)}>
                         <h1>Byåa</h1>
@@ -242,7 +216,8 @@ const MapPage = () => {
                     <Navigation/>
                 </NavWrapper>
             </OverlayWrapper>   
-        </PageWrapper></>
+        </PageWrapper>
+        </>
         
     );
 }
