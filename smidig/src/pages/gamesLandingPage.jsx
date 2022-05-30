@@ -30,6 +30,11 @@ const StyledBackground = styled.div`
     height: 100%;
 `;
 
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+`;
+
 
 
 
@@ -41,9 +46,9 @@ const GamesLandingPage = () => {
     <Pointwrapper>
     <Points />
     </Pointwrapper>
-    <Link to="/history">
+    <StyledLink to="/history">
     <HistoryDiv></HistoryDiv>
-    </Link>
+    </StyledLink>
     <HeaderText></HeaderText>
      <GameSelection></GameSelection>
     </GameLanding>

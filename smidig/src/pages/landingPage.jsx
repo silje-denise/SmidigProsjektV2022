@@ -39,7 +39,7 @@ const LandingPage = () => {
             <CharacterSelection />
 
             <ButtonDiv>
-                <StyledLink to={"/profile"}>
+                <StyledLink to={"/overview"}>
                     <StyledButton>
                         Ferdig
                     </StyledButton>
