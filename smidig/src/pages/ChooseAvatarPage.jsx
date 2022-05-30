@@ -4,8 +4,6 @@ import AvatarHeader from "../components/group2/AvatarHeader";
 import CharacterSelection from "../components/group2/CharacterSelection";
 import monster from "./../images/BackgroundPattern.png";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const PageWrapper = styled("div")`
     height: 100vh;
@@ -29,7 +27,6 @@ const StyledButton = styled("button")`
     width:150px;
     height:40px;
     border: 2px solid #209803;
-    font-size:20px;
     padding: 15px;
     display:flex;
     background-color:white;
@@ -41,13 +38,7 @@ const StyledButton = styled("button")`
 const CharacterSelectionWrapper = styled("div")`
     padding-bottom: 60px;
 `;
-const ArrowWrapper = styled("div")`
-    height: 70px;
-    display:flex;
-    align-items:center;
-    padding: 40px 0px 0px 40px;
-    background-image: url(${monster});
-`;
+
 const StyledLink = styled(Link)`
     text-decoration: none;
     color:white;
@@ -56,12 +47,6 @@ const StyledLink = styled(Link)`
 const ChooseAvatarPage = () => {
     return(
         <> 
-         {/* <ArrowWrapper>
-                <Link to={"/profile"}>
-                     <FontAwesomeIcon icon={faChevronLeft} size={'2x'}/>
-                </Link>
-               
-            </ArrowWrapper> */}
         <StyledImage src={monster}/>
         <PageWrapper>
             <AvatarHeader/>
@@ -69,12 +54,13 @@ const ChooseAvatarPage = () => {
                 <CharacterSelection/>
             </CharacterSelectionWrapper>
             <StyledLink to={"/profile"}>
-                <StyledButton>Ferdig</StyledButton>
+                <StyledButton>
+                    <h3>Ferdig</h3>
+                </StyledButton>
             </StyledLink>
         </PageWrapper>
         </>
     );
 }
-
 
 export default ChooseAvatarPage;

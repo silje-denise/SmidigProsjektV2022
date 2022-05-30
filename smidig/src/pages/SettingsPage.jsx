@@ -49,16 +49,6 @@ const StyledBackgroundImage = styled.img`
     overflow: hidden;
 `;
 
-const StyledWhiteBox = styled.div`
-    height: 4rem;
-    width: 12rem;
-    background-color: white;
-    position: absolute;
-    top: 30rem;
-    right: 1rem;
-    border-radius: 1.5rem;
-`;
-
 const StyledSecondWhiteBox = styled.div`
     height: 10rem;
     width: 14rem;
@@ -73,7 +63,6 @@ const HideSettings = styled.div`
 `;
 
 const SettingsPage = () => {
-
     function hideOverlay() {
         var visibleDiv = document.getElementById("SettingsOverlay");
     
@@ -88,28 +77,19 @@ const SettingsPage = () => {
     
     return(
         <>
-
         <HideSettings id="SettingsOverlay">
-            
             <WhiteBackground>
-
                 <StyledXButton onClick={()=>hideOverlay()}>
                     <FontAwesomeIcon icon={faXmark} size="3x"/>
                 </StyledXButton>
-
                 <StyledBackground>
                     <StyledBackgroundImage src={monster} />
                 </StyledBackground>
-
-                {/* <StyledWhiteBox /> */}
                 <StyledSecondWhiteBox />
-
                 <StyledPageWrapper>
                     <Settings />
                 </StyledPageWrapper>
-
             </WhiteBackground>
-
         </HideSettings>
         </>
     );

@@ -27,6 +27,4 @@ const NextButton = ({onClick}) => {
     );
 }
 
-
-
-export default NextButton
+export default NextButton;

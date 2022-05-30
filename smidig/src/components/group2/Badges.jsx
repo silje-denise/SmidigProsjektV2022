@@ -12,8 +12,7 @@ const StyledBadgeMainDiv = styled.div`
     height: 5rem;
 `;
 
-const StyledMyBadgesText = styled.p`
-    font-size: 21px;
+const StyledMyBadgesText = styled.h3`
     position: fixed;
     left: 2rem;
 `;

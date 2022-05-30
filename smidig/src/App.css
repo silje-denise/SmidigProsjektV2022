@@ -94,6 +94,27 @@ video {
   font-family:'Source Sans Pro', sans-serif;
   vertical-align: baseline;
 }
+
+/* Global styles */
+p,div{
+  font-size: 16px;
+  font-weight: 400;
+}
+h1{
+  font-size: 32px;
+  font-weight: 700;
+}
+h2{
+  font-size: 26px;
+  font-weight: 600;
+}
+h3{
+  font-size: 22px;
+  font-weight: 500;
+}
+
+
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,

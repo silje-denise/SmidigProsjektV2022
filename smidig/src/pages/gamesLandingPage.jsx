@@ -8,16 +8,14 @@ import Background from "../images/background.png"
 import { Link } from "react-router-dom"
 
 
-
 const GameLanding = styled.div`
     margin: 32px;
 
 `;
 const NavWrapper = styled.div`
-bottom: 0;
-position: absolute;
-width: 100vw;
-
+    bottom: 0;
+    position: absolute;
+    width: 100vw;
 `;
 const Pointwrapper = styled.div`
     display: flex;
@@ -36,30 +34,23 @@ const StyledLink = styled(Link)`
 `;
 
 
-
-
 const GamesLandingPage = () => {
-
     return(
-    <StyledBackground>
-    <GameLanding>
-    <Pointwrapper>
-    <Points />
-    </Pointwrapper>
-    <StyledLink to="/history">
-    <HistoryDiv></HistoryDiv>
-    </StyledLink>
-    <HeaderText></HeaderText>
-     <GameSelection></GameSelection>
-    </GameLanding>
-    <NavWrapper>
-     <Navigation/>
-     </NavWrapper>
-    </StyledBackground>
-        
-     
+            <StyledBackground>
+            <GameLanding>
+                <Pointwrapper>
+                    <Points />
+                </Pointwrapper>
+                <StyledLink to="/history">
+                    <HistoryDiv/>
+                </StyledLink>
+                <HeaderText/>
+                <GameSelection/>
+            </GameLanding>
+            <NavWrapper>
+                <Navigation/>
+            </NavWrapper>
+            </StyledBackground>
     );
-    
-    
     }
     export default GamesLandingPage

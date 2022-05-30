@@ -20,7 +20,7 @@ const StyledPoints = styled("div")`
 `;
 
 
-const Points = () =>{
+const PointsComponent = () =>{
     return(
         <StyledPoints>
             <h4> 1 </h4>
@@ -29,5 +29,5 @@ const Points = () =>{
     );
 }
 
-export default Points;
+export default PointsComponent;
 

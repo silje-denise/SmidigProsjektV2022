@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import SittingDog from "../../images/SittingDog.png"
+import React from "react";
+import styled from "styled-components";
+import SittingDog from "../../images/SittingDog.png";
 import { Link } from "react-router-dom";
 
 const StyledAvatarCreationBubble = styled.div`
@@ -52,27 +52,21 @@ const StyledAvatarCreationBubbleButton = styled.button`
 const AvatarCreationBubble = () => {
     return(
         <>
-
-                <StyledAvatarCreationBubblePerson>
-                    <StyledAvatarCreationBubbleImage src={SittingDog} />
-                </StyledAvatarCreationBubblePerson>
-
-                <StyledAvatarCreationBubble>
-                    <StyledAvatarCreationBubbleText>
-                        <p>
-                            Start med å velge din avatar 
-                            <Link to={"/chooseavatar"}>
-                                <StyledAvatarCreationBubbleButton> HER</StyledAvatarCreationBubbleButton>
-                            </Link>
-                            
-                        </p>
-                    </StyledAvatarCreationBubbleText>
-                </StyledAvatarCreationBubble>
-
+            <StyledAvatarCreationBubblePerson>
+                <StyledAvatarCreationBubbleImage src={SittingDog} />
+            </StyledAvatarCreationBubblePerson>
+            <StyledAvatarCreationBubble>
+                <StyledAvatarCreationBubbleText>
+                    <p>
+                        Start med å velge din avatar 
+                        <Link to={"/chooseavatar"}>
+                            <StyledAvatarCreationBubbleButton> HER</StyledAvatarCreationBubbleButton>
+                        </Link>
+                    </p>
+                </StyledAvatarCreationBubbleText>
+            </StyledAvatarCreationBubble>
         </>
     );
 }
 
-
-
-export default AvatarCreationBubble
+export default AvatarCreationBubble;

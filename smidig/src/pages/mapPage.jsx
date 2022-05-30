@@ -38,8 +38,7 @@ const Overlay = styled("div")`
     height: ${props => (props.visible ? "700px" : "300px")};
 `;
 
-const StyledHeaderText = styled("h3")`
-    font-size: 30px;
+const StyledHeaderText = styled("h1")`
     padding: 15px;
     font-weight: 600;
 `;
@@ -185,19 +184,20 @@ const MapPage = () => {
             <ButtonWrapper>
                 <HeaderButtonWrapper>
                     <StyledHeaderButton onClick={() => handleOnclick(0)}>
-                        <h1>Byåa</h1>
+                        <h2>Byåa</h2>
                     </StyledHeaderButton>
                 </HeaderButtonWrapper>
             </ButtonWrapper>
-           
             <AreaWrapper>
                 <Area1 onClick={() => handleOnclick(1)}>
-                    Område 1
+                    <p>Område 1</p>
                     <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'green'}/>
                 </Area1>
-                <Area2 onClick={() => handleOnclick(2)}>Område 2
+                <Area2 onClick={() => handleOnclick(2)}>
+                    <p>Område 2</p>
                 <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'green'}/></Area2>
-                <Area3 onClick={() => handleOnclick(3)}>Område 3
+                <Area3 onClick={() => handleOnclick(3)}>
+                    <p>Område 3</p>
                 <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'green'}/></Area3>
             </AreaWrapper>
             <OverlayWrapper>
@@ -217,10 +217,8 @@ const MapPage = () => {
                 </NavWrapper>
             </OverlayWrapper>   
         </PageWrapper>
-        </>
-        
+        </>   
     );
 }
-
 
 export default MapPage;

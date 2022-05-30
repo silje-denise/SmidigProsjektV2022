@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import RaelingenLogo from "../../images/RaelingenLogo.png";
-import { Link, Hash } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import {
     EmailShareButton,
     FacebookShareButton,
@@ -19,7 +18,6 @@ import {
   } from "react-share";
 
 const StyledSettingsDiv = styled.div`
-    font-size: 33px;
     text-align: right;
     margin-right: 0rem;
     font-weight: 700;
@@ -30,18 +28,14 @@ const StyledSettingsButton = styled.button`
     padding: 0;
     border: none;
     background: none;
-    font-size: 33px;
     text-align: right;
     margin-right: 4rem;
     margin-top: 2rem;
-    font-weight: 600;
 `;
 
 const StyledSettings = styled.div`
     margin-top: 4rem;
     color: #209803;
-    font-size: 40px;
-    font-weight: 750;
 `;
 
 const StyledAboutUs = styled.div`
@@ -66,25 +60,23 @@ const StyledLogOff = styled.div`
 `;
 
 const StyledLogo = styled.div`
-    width: 130px;
+    width: 220px;
     height: 60px;
-    margin-top: 12.5rem;
+    margin-top: 15.5rem;
     margin-left: 2.5rem;
     background-color: white;
 `;
 
 const StyledLogoImage = styled.img`
-    width: 130px;
-    height: 60px;
+    width: 200px;
+    //height: 160px;
 `;
 
 const SharedButton = styled.button`
     padding: 0;
     border: none;
     background: none;
-    font-size: 33px;
     text-align: right;
-    font-weight: 600;
     margin-right: 4rem;
     margin-top: 2rem;
 `;
@@ -106,71 +98,58 @@ function showShare() {
     }
 }
 
-
-
 const Settings = () => {
     return(
         <>
             <StyledSettingsDiv>
                 <StyledSettingsButton>
                     <StyledSettings>
-                        Meny
+                       <h1>Meny</h1> 
                     </StyledSettings>
                 </StyledSettingsButton>
-
                 <StyledAboutUs>
                     <a href= "https://www.ralingen.kommune.no/">
-                        <StyledSettingsButton>Om oss</StyledSettingsButton>
+                        <StyledSettingsButton>
+                            <h2>Om oss</h2>
+                        </StyledSettingsButton>
                     </a>
                 </StyledAboutUs>
-
                 <StyledContactUs>
                     <a href= "https://www.ralingen.kommune.no/kontakt-ossviktige-telefonnummer.442197.no.html">
-                        <StyledSettingsButton>Kontakt oss</StyledSettingsButton>
+                        <StyledSettingsButton>
+                            <h2>Kontakt oss</h2>
+                        </StyledSettingsButton>
                     </a>
                 </StyledContactUs>
-
-                    <SharedButton onClick={showShare}> 
-                        Del appen
-                    </SharedButton>
-
-                        <StyledShareApp id="hiddenDiv">
-
-                            <EmailShareButton>
-                                <EmailIcon></EmailIcon>
-                            </EmailShareButton>
-
-                            <FacebookShareButton>
-                                <FacebookIcon></FacebookIcon>
-                                <FacebookMessengerIcon></FacebookMessengerIcon>
-                            </FacebookShareButton>
-
-                            <TwitterShareButton>
-                                <TwitterIcon></TwitterIcon>
-                            </TwitterShareButton>
-
-                            <WhatsappShareButton>
-                                <WhatsappIcon></WhatsappIcon>
-                            </WhatsappShareButton>
-
-                        </StyledShareApp>
-
+                <SharedButton onClick={showShare}> 
+                    <h2>Del appen</h2>
+                </SharedButton>
+                <StyledShareApp id="hiddenDiv">
+                    <EmailShareButton>
+                        <EmailIcon/>
+                    </EmailShareButton>
+                    <FacebookShareButton>
+                        <FacebookIcon/>
+                        <FacebookMessengerIcon/>
+                    </FacebookShareButton>
+                    <TwitterShareButton>
+                        <TwitterIcon/>
+                    </TwitterShareButton>
+                    <WhatsappShareButton>
+                        <WhatsappIcon/>
+                    </WhatsappShareButton>
+                </StyledShareApp>
                 <StyledSettingsButton>
                       <LogLink to={"/"}>
                           <StyledLogOff></StyledLogOff>
                       </LogLink>  
                 </StyledSettingsButton>
-
             </StyledSettingsDiv>
-
             <StyledLogo>
                 <StyledLogoImage src={RaelingenLogo}/>
             </StyledLogo>
-
         </>
     );
 }
-
-
 
 export default Settings
