@@ -73,14 +73,14 @@ const ProfileIllustration = styled.div`
 `;
 
 const StyledLink = styled.div`
-    background-color: green;
+    background-color: rgb(103,179,70);
     border-radius: 50px;
     width: 50px;
     height: 50px;
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color: ${props => (props.bgColor ? "#209803": "rgba(0,0,0,0)")};
+    background-color: ${props => (props.bgColor ? "rgb(103,179,70)": "rgba(0,0,0,0)")};
     
 `;
 

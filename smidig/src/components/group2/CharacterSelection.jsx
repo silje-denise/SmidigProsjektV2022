@@ -32,7 +32,7 @@ const StyledCharacters = styled.div`
 
     &:hover {
         border: solid;
-        border-color: green;
+        border-color: rgb(103,179,70);
         border-width: 0.3rem;
         border-height: 0.3rem;
     }

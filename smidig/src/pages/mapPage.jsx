@@ -89,7 +89,7 @@ const AreaWrapper = styled("div")`
 const Area1 = styled("button")`
     background-color: white;
     border-radius:30px;
-    border: 2px solid green;
+    border: 2px solid rgb(103,179,70);
     width:130px;
     display:flex;
     align-items:center;
@@ -106,7 +106,7 @@ const Area2 = styled("button")`
     right: 50px;
     background-color: white;
     border-radius:30px;
-    border: 2px solid green;
+    border: 2px solid rgb(103,179,70);
     width:130px;
     display:flex;
     align-items:center;
@@ -125,7 +125,7 @@ const Area3 = styled("button")`
     height:50px;
     background-color: white;
     border-radius:30px;
-    border: 2px solid green;
+    border: 2px solid rgb(103,179,70);
     z-index:50;
 `;
 
@@ -138,7 +138,7 @@ const HeaderButtonWrapper = styled("div")`
 const StyledHeaderButton = styled("button")`
     width: 160px;
     height: 50px;
-    border: 2px solid green;
+    border: 2px solid rgb(103,179,70);
     border-radius: 10px;
     font-size: 23px;
     background-color:white; 
@@ -191,14 +191,14 @@ const MapPage = () => {
             <AreaWrapper>
                 <Area1 onClick={() => handleOnclick(1)}>
                     <p>Område 1</p>
-                    <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'green'}/>
+                    <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'rgb(103,179,70)'}/>
                 </Area1>
                 <Area2 onClick={() => handleOnclick(2)}>
                     <p>Område 2</p>
-                <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'green'}/></Area2>
+                <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'rgb(103,179,70)'}/></Area2>
                 <Area3 onClick={() => handleOnclick(3)}>
                     <p>Område 3</p>
-                <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'green'}/></Area3>
+                <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'rgb(103,179,70)'}/></Area3>
             </AreaWrapper>
             <OverlayWrapper>
                 <Overlay visible={isOpen} onClick={handleOnclick}>

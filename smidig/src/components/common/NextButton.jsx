@@ -10,7 +10,7 @@ const StyledNextButton = styled.button`
     align-items: center;
     justify-content: center;
     border: none;
-    background-color: #37B019;
+    background-color: rgb(103,179,70);
     color: white;
     border-radius: 3rem;
     font-size: 24px;

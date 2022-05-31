@@ -26,7 +26,7 @@ const StyledButton = styled("button")`
     border-radius:40px;
     width:150px;
     height:40px;
-    border: 2px solid #209803;
+    border: 2px solid rgb(103,179,70);
     padding: 15px;
     display:flex;
     background-color:white;

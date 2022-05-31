@@ -34,7 +34,7 @@ const StyledAvatarCreationBubbleText = styled.div`
     border-radius: 50%;
     border-style: solid;
     border-width: 0.1rem;
-    border-color: #79C168;
+    border-color: rgb(103,179,70);
     background-color: white;
     display: flex;    
     justify-content: center;
@@ -46,7 +46,7 @@ const StyledAvatarCreationBubbleButton = styled.button`
     border: none;
     background: none;
     padding-left: 0.3rem;
-    color: #79C168;
+    color: rgb(103,179,70);
 `;
 
 const AvatarCreationBubble = () => {

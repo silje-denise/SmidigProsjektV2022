@@ -35,13 +35,7 @@ const StyledSettingsButton = styled.button`
 
 const StyledSettings = styled.div`
     margin-top: 4rem;
-    color: #209803;
-`;
-
-const StyledAboutUs = styled.div`
-`;
-
-const StyledContactUs = styled.div`
+    color: rgb(103,179,70);
 `;
 
 const StyledShareApp = styled.div`
@@ -69,7 +63,6 @@ const StyledLogo = styled.div`
 
 const StyledLogoImage = styled.img`
     width: 200px;
-    //height: 160px;
 `;
 
 const SharedButton = styled.button`
@@ -107,20 +100,20 @@ const Settings = () => {
                        <h1>Meny</h1> 
                     </StyledSettings>
                 </StyledSettingsButton>
-                <StyledAboutUs>
+                <div>
                     <a href= "https://www.ralingen.kommune.no/">
                         <StyledSettingsButton>
                             <h2>Om oss</h2>
                         </StyledSettingsButton>
                     </a>
-                </StyledAboutUs>
-                <StyledContactUs>
+                </div>
+                <div>
                     <a href= "https://www.ralingen.kommune.no/kontakt-ossviktige-telefonnummer.442197.no.html">
                         <StyledSettingsButton>
                             <h2>Kontakt oss</h2>
                         </StyledSettingsButton>
                     </a>
-                </StyledContactUs>
+                </div>
                 <SharedButton onClick={showShare}> 
                     <h2>Del appen</h2>
                 </SharedButton>
@@ -152,4 +145,4 @@ const Settings = () => {
     );
 }
 
-export default Settings
+export default Settings;
