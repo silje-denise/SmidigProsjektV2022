@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import ProgressDiv from './ProgressDiv'
 import dashedLine from '../../images/dashedLine.svg'
@@ -77,36 +77,61 @@ const QuizComponent = ({open}) => {
       display: inline-block;
     `;
 
-    const QuizQuestionContainer = styled.div`
-      margin: 48px 0px;
-    `;
+  const QuizQuestionContainer = styled.div`
+  margin: 48px 0px;
+  `;
 
-    const QuestionCategory = styled.p`
-      width: 100%auto;
-      text-align: center;
-      font-weight: 700;
-      font-style: italic;
-      opacity: 0.5;
-      margin-bottom: 16px;
-    `;
+  const QuestionCategory = styled.p`
+  width: 100%auto;
+  text-align: center;
+  font-weight: 700;
+  font-style: italic;
+  opacity: 0.5;
+  margin-bottom: 16px;
+  `;
 
-    const Question = styled.div`
-      width: 100%;
-      text-align: center;
-      font-size: 22px;
-      font-weight: 700;
-      opacity: 0.8;
-    `;
+  const Question = styled.div`
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  opacity: 0.8;
+  `;
 
-    const AnswerAlternatives = styled.div`
-      
-    `;
+  const AnswerAlternatives = styled.div`
+
+  `;
 
 
-const QuestionArray = ["Når ble Rælingen kommune grunnlagt?", "Hvilke farger har våpenskjoldet?", 
-"Hvilke kommuner grenser til Rælingen kommune?", ""];
+
     
 
+  const questionsArray = [
+    {
+    question: "Når ble Rælingen kommune grunnlagt?",
+      answers: [
+        {ansText: "1921", isCorrect: false},
+        {ansText: "1929", isCorrect: true},
+        {ansText: "1991", isCorrect: false},
+        {ansText: "2012", isCorrect: false}
+      ],
+    },
+    {
+      question: "Hvordan lagde vi planker på 1920-tallet?",
+      answers: [
+        {ansText: "Sag", isCorrect: false},
+        {ansText: "Øks", isCorrect: true},
+        {ansText: "Motorsag", isCorrect: false},
+        {ansText: "Sirkelsag", isCorrect: false}
+      ],
+    }, 
+  ];
+
+  const [openQuestion, setOpenQuestion] = useState(0);
+  const quizHandler = () => {
+    setOpenQuestion(openQuestion+1);
+  }
+  
   return (
     <div>
       <QuizCard>
@@ -124,14 +149,13 @@ const QuestionArray = ["Når ble Rælingen kommune grunnlagt?", "Hvilke farger h
         
         <QuizQuestionContainer>
             <QuestionCategory>Spørsmål:</QuestionCategory>
-            <Question>Når ble Rælingen kommune grunnlagt?</Question>
+            <Question>{questionsArray[openQuestion]}</Question>
         </QuizQuestionContainer>
 
         <AnswerAlternatives>
-          <QuestionAlternative text="1921"/>
-          <QuestionAlternative text="1929"/>
-          <QuestionAlternative text="1991"/>
-          <QuestionAlternative text="2012"/>
+          {questionsArray[openQuestion].answers.map((ansAlternative) => 
+            <QuestionAlternative text={ansAlternative.ansText}/>
+          )}
         </AnswerAlternatives>
 
         

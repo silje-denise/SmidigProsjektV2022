@@ -84,6 +84,8 @@ const HistoryPage = () => {
     }
 
     const [pointBarIsOpen, setPointBarIsOpen] = useState(false);
+
+    
     
 
   return (
