@@ -3,7 +3,6 @@ import React, { useEffect, useState, useRef } from 'react'
 import LocationCard from '../components/group3/LocationCard';
 import {motion} from "framer-motion";
 import backgroundPattern from '../images/waterMill.jpg';
-import GameCard from '../components/gamesLandingPageComponents/GameCard';
 import Navigation from '../components/group3/Navigation';
 import settingsIconSvg from '../images/settingsIcon.svg';
 import styled from 'styled-components';

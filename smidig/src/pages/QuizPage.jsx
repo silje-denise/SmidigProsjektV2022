@@ -6,20 +6,17 @@ import { Link } from "react-router-dom";
 import Navigation from "../components/group3/Navigation";
 
 const NavigationWrapper = styled.div`
-bottom: 0;
-position: absolute;
-width: 100vw;
+    bottom: 0;
+    position: absolute;
+    width: 100vw;
 `;
     
-
 const QuizPage = () => {
     return(
         <>
-        {/**Link skal tilbake til GamesLandingPage */}
-        <Link to={"/"}>
-            <XButton />
-        </Link>
-            
+            <Link to={"/games"}>
+                <XButton />
+            </Link>
             <Quiz />
             <NavigationWrapper>
                 <Navigation/>

@@ -1,5 +1,5 @@
 import React from "react";
-import HelloTest from "../components/group2/Hello";
+import Hello from "../components/group2/Hello";
 import CharacterSelection from "../components/group2/CharacterSelection";
 import SkipButton from "../components/group2/SkipButton";
 import AvatarHeader from "../components/group2/AvatarHeader";
@@ -34,25 +34,21 @@ const StyledLink = styled(Link)`
 const LandingPage = () => {
     return(
         <>
-            <HelloTest />
+            <Hello />
             <AvatarHeader />
             <CharacterSelection />
-
             <ButtonDiv>
-                <StyledLink to={"/profile"}>
+                <StyledLink to={"/overview"}>
                     <StyledButton>
-                        Ferdig
+                        <h3>Ferdig</h3>
                     </StyledButton>
                 </StyledLink>
             </ButtonDiv>
-
             <Link to={"/overview"}>
                 <SkipButton />
             </Link>
-            
         </>
     );
 }
 
-
-export default LandingPage
+export default LandingPage;

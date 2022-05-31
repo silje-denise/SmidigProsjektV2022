@@ -15,7 +15,7 @@ const HeaderWrapper = styled("div")`
 
 const HeaderGrid = styled("div")`
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     width: 100vw;
     height:150px;
 `;
@@ -38,13 +38,12 @@ const UserInfo = styled("div")`
    
 `;
 
-const Username = styled("h2")`
+const Username = styled("h1")`
     margin:0;
-    font-size: 30px;
 `;
-const School = styled("h3")`
+const School = styled("h2")`
     margin:0;
-    font-size: 22px;
+    text-align:right;
 `;
 
 
@@ -54,8 +53,6 @@ const ProfileHeader = () => {
             <HeaderGrid>
                 <ProfileInfoWrapper>
                     <Points>
-                        {/* <h4> 1 </h4>
-                        <StyledFontAwesomeIcon icon={faStar}/> */}
                     </Points>
                 </ProfileInfoWrapper>
             <UserInfo>
@@ -66,7 +63,6 @@ const ProfileHeader = () => {
                 <Link to={"/chooseavatar"}>
                      <ProfilePicture src={Dog}/>
                 </Link>
-               
             </ProfileInfoWrapper>
             </HeaderGrid>
             <img src={profilLinje}/>

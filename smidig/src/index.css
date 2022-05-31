@@ -18,7 +18,7 @@ code {
   background-color: gray;
 }
 .correct{
-  background-color: green !important; 
+  background-color: rgb(103,179,70) !important; 
 }
 .false{
   background-color: red !important;

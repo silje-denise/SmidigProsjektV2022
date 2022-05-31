@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-//import {FontAwesomeIcon} from '@fortawesome/fontawesome-free';
-//mport {faUser} from '@fortawesome/free-solid-svg-icons';
 import Dog from '../../images/Dog.png';
 
 const StyledAvatarHeader = styled("div")`
@@ -22,10 +20,7 @@ const StyledAvatarImage = styled("img")`
     width: 100px;
     height: 100px;
 `;
-const StyledHeaderText = styled("h3")`
-    @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
-    font-size:29px;
-    font-family: "Source Sans Pro", sans-serif;
+const StyledHeaderText = styled("h2")`
     margin-top: 1.25rem;
 `;
 
@@ -33,7 +28,6 @@ const AvatarHeader = () => {
     return(
         <>
             <StyledAvatarHeader>
-                {/*<FontAwesomeIcon icon={faUser} size={'2x'}/>*/}
                <StyledAvatarImageWrapper>
                    <StyledAvatarImage src={Dog}/>
                </StyledAvatarImageWrapper>
