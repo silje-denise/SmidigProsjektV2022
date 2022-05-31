@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useRef , useEffect, useState } from "react";
 import React from "react";
@@ -9,11 +8,10 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledLink = styled(Link)`
-height: 100%;
-`
+  height: 100%;
+`;
 
 function GameSelection(){
-
   const [width, setWidth] = useState(0);
   const carousel = useRef();
 

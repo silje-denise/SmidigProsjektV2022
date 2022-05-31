@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import SittingDog from "../../images/SittingDog.png"
+import React from "react";
+import styled from "styled-components";
+import SittingDog from "../../images/SittingDog.png";
 import { Link } from "react-router-dom";
 
 const StyledAvatarCreationBubble = styled.div`
@@ -34,7 +34,7 @@ const StyledAvatarCreationBubbleText = styled.div`
     border-radius: 50%;
     border-style: solid;
     border-width: 0.1rem;
-    border-color: #79C168;
+    border-color: rgb(103,179,70);
     background-color: white;
     display: flex;    
     justify-content: center;
@@ -46,33 +46,27 @@ const StyledAvatarCreationBubbleButton = styled.button`
     border: none;
     background: none;
     padding-left: 0.3rem;
-    color: #79C168;
+    color: rgb(103,179,70);
 `;
 
 const AvatarCreationBubble = () => {
     return(
         <>
-
-                <StyledAvatarCreationBubblePerson>
-                    <StyledAvatarCreationBubbleImage src={SittingDog} />
-                </StyledAvatarCreationBubblePerson>
-
-                <StyledAvatarCreationBubble>
-                    <StyledAvatarCreationBubbleText>
-                        <p>
-                            Start med å velge din avatar 
-                            <Link to={"/chooseavatar"}>
-                                <StyledAvatarCreationBubbleButton> HER</StyledAvatarCreationBubbleButton>
-                            </Link>
-                            
-                        </p>
-                    </StyledAvatarCreationBubbleText>
-                </StyledAvatarCreationBubble>
-
+            <StyledAvatarCreationBubblePerson>
+                <StyledAvatarCreationBubbleImage src={SittingDog} />
+            </StyledAvatarCreationBubblePerson>
+            <StyledAvatarCreationBubble>
+                <StyledAvatarCreationBubbleText>
+                    <p>
+                        Start med å velge din avatar 
+                        <Link to={"/chooseavatar"}>
+                            <StyledAvatarCreationBubbleButton> HER</StyledAvatarCreationBubbleButton>
+                        </Link>
+                    </p>
+                </StyledAvatarCreationBubbleText>
+            </StyledAvatarCreationBubble>
         </>
     );
 }
 
-
-
-export default AvatarCreationBubble
+export default AvatarCreationBubble;

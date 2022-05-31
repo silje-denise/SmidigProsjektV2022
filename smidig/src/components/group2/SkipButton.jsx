@@ -24,9 +24,9 @@ const SkipButton = () => {
         <>
             <StyledLink to="/overview">
             <StyledSkipButton>
-                <p>
+                <h3>
                     Hopp over
-                </p>
+                </h3>
             </StyledSkipButton>
             </StyledLink>
         </>

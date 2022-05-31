@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import React from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import styled from 'styled-components';
 import homeIcon from '../../images/homeIcon.svg';
 import mapIcon from '../../images/mapIcon.svg';
 import gameIcon from '../../images/gameIcon.svg';
 import profileIcon from '../../images/profileIcon.svg';
 
-//Foreløpig kun bakgrunn for å se om det funker
 const BackgroundWrapper = styled("div")`
     width: 300px;
     background-color: #F3F3F3;
@@ -35,8 +34,6 @@ const OverviewIllustration = styled.div`
     display: inline-block ;
     //margin: 22px 22px 22px 54px;
     filter: ${props => (props.color ? "invert(1)": "invert(0)")};
-
-
     `;
 
 const MapIllustration = styled.div`
@@ -73,73 +70,62 @@ const ProfileIllustration = styled.div`
 `;
 
 const StyledLink = styled.div`
-    background-color: green;
+    background-color: rgb(103,179,70);
     border-radius: 50px;
     width: 50px;
     height: 50px;
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color: ${props => (props.bgColor ? "#209803": "rgba(0,0,0,0)")};
+    background-color: ${props => (props.bgColor ? "rgb(103,179,70)": "rgba(0,0,0,0)")};
     
 `;
-
-const StyledNavLink = styled(NavLink)`
-  
-
-  
-`;
-
- 
 
 const Navigation= () => {
-
         const location = useLocation();
-        console.log(location);
     
         const switchColor = (path) => {
-             if(location.pathname == path){
+             if(location.pathname === path){
             return true;
         }
     }
        
-
     return(
         <NavBar>
             <BackgroundWrapper>
               <StyledLink bgColor={switchColor("/overview")}>
-                    <StyledNavLink to="/overview" >  
+                    <NavLink to="/overview" >  
                         <OverviewIllustration color={switchColor("/overview")} style={{backgroundImage: `url(${homeIcon})`}} >
                             
                         </OverviewIllustration>
-                    </StyledNavLink> </StyledLink>
+                    </NavLink> </StyledLink>
 
             
                 <StyledLink bgColor={switchColor("/map")}>
-                    <StyledNavLink to="/map"  >
+                    <NavLink to="/map"  >
                         <MapIllustration color={switchColor("/map")} style={{backgroundImage: `url(${mapIcon})`}}>
                             
                         </MapIllustration>
-                    </StyledNavLink>
+                    </NavLink>
                     </StyledLink>
                 
                 <StyledLink bgColor={switchColor("/games")}>
-                    <StyledNavLink to="/games"  >
+                    <NavLink to="/games"  >
                         <GamesLandingIllustration color={switchColor("/games")} style={{backgroundImage: `url(${gameIcon})`}}>
                             
                         </GamesLandingIllustration>
-                    </StyledNavLink>
+                    </NavLink>
                 </StyledLink>
                 <StyledLink bgColor={switchColor("/profile")}>
-                    <StyledNavLink to="/profile"  >
+                    <NavLink to="/profile"  >
                         <ProfileIllustration color={switchColor("/profile")} style={{backgroundImage: `url(${profileIcon})`}}>
                             
                         </ProfileIllustration>
-                    </StyledNavLink>
+                    </NavLink>
                 </StyledLink>
             </BackgroundWrapper>
         </NavBar>
         
     );
 }
-export default Navigation ;
+export default Navigation;

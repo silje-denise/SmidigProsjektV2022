@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const StyledXButton = styled.button`
@@ -26,4 +26,4 @@ const XButton = () => {
 
 
 
-export default XButton
+export default XButton;

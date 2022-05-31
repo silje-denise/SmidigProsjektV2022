@@ -1,8 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
-
-
+import React from 'react';
 
 const GameCard = ({color1, color2, name, description, numberOfStars, gameCardIllustration}) => {
   return (
@@ -16,13 +12,12 @@ const GameCard = ({color1, color2, name, description, numberOfStars, gameCardIll
             </div>
         
           <div className='gameCardDescription'>
-            <h6>{name}</h6>
-            <p>{description}</p>
+            <h2>{name}</h2>
+            <h3>{description}</h3>
             <div className='gameIcon'></div>
             </div>
       </div>
-  )
+  );
 }
 
-
-export default GameCard
+export default GameCard;

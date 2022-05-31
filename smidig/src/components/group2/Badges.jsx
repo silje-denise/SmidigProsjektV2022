@@ -12,8 +12,7 @@ const StyledBadgeMainDiv = styled.div`
     height: 5rem;
 `;
 
-const StyledMyBadgesText = styled.p`
-    font-size: 21px;
+const StyledMyBadgesText = styled.h3`
     position: fixed;
     left: 2rem;
 `;
@@ -31,7 +30,7 @@ const StyledBadgesDiv = styled.div`
 const StyledBadges = styled.div`
     height: 4rem;
     width: 4rem;
-    background-color: #79C168;
+    background-color: rgba(103,179,70, 0.8);
     border-radius: 50%;
     margin: 2rem;
     margin-right: 0.5rem;
