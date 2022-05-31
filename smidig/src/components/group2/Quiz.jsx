@@ -71,7 +71,6 @@ const Quiz = () => {
     }
 
     const nextQuestion = () => {
-        console.log('hei')
         const nextQuestion = currentQuestion + 1;
 
         if (nextQuestion < quizQuestions.length){

@@ -154,7 +154,6 @@ const MapPage = () => {
    
        if(!isOpen){
            setIsOpen(true);
-           console.log(isOpen);
           
            if(id === 0){
               setInfoHeader("Byåa");
@@ -173,7 +172,6 @@ const MapPage = () => {
            }
        }else{
            setIsOpen(false);
-           console.log(isOpen);
        }
     }
 
