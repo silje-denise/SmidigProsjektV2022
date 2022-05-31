@@ -104,7 +104,7 @@ const QuizComponent = ({open}) => {
 
 
 const QuestionArray = ["Når ble Rælingen kommune grunnlagt?", "Hvilke farger har våpenskjoldet?", 
-"Hvilke kommuner grenser til Rælingen kommune?"];
+"Hvilke kommuner grenser til Rælingen kommune?", ""];
     
 
   return (
