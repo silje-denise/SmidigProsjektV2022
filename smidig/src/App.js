@@ -2,16 +2,18 @@
 import './App.css';
 import OverviewPage from './pages/OverviewPage';
 import { Link, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 
 function App() {
+
+
+  const [score, setScore] = useState(0);
+
   return (
     <div className="App">
       <div className='navBar'>
       </div>
       <div className='main'>
-        <Routes>
-          <Route path='/overview' element={<overviewPage/>}/>
-        </Routes>
 
       </div>
       <header className="App-header">
@@ -19,7 +21,6 @@ function App() {
           Velkommen guys!
         </p>
       </header>
-      <Link to="/overview" component={OverviewPage}><p>overviewPage</p></Link>
     </div>
   )
 }

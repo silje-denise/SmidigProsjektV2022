@@ -41,9 +41,47 @@ const HistoryPage = () => {
         background-color: white;
     `;
 
+
+const questionsArray = [
+    {
+    question: "Når ble Rælingen kommune grunnlagt?",
+      answers: [
+        {ansText: "1921", isCorrect: false},
+        {ansText: "1929", isCorrect: true},
+        {ansText: "1991", isCorrect: false},
+        {ansText: "2012", isCorrect: false}
+      ],
+    },
+    {
+      question: "Hvordan lagde vi planker på 1920-tallet?",
+      answers: [
+        {ansText: "Sag", isCorrect: false},
+        {ansText: "Øks", isCorrect: true},
+        {ansText: "Motorsag", isCorrect: false},
+        {ansText: "Sirkelsag", isCorrect: false}
+      ],
+    },
+    {
+      question: "Hvor kommer Ole Brum og gjengen fra?",
+      answers: [
+        {ansText: "Universal Studios", isCorrect: false},
+        {ansText: "Disney", isCorrect: true},
+        {ansText: "Fox", isCorrect: false},
+        {ansText: "BBC", isCorrect: false}
+      ],
+    },
+    {
+      question: "Hvem er Kendrick Lamar?",
+      answers: [
+        {ansText: "Artist", isCorrect: true},
+        {ansText: "Skuespiller", isCorrect: false},
+        {ansText: "Politiker", isCorrect: false},
+        {ansText: "Fotballspiller", isCorrect: false}
+      ],
+    }, 
+  ];
     
 
-    
 
     const [isOpen, setIsOpen] = useState(false);
     function exitMenuHandler() {
@@ -85,6 +123,31 @@ const HistoryPage = () => {
 
     const [pointBarIsOpen, setPointBarIsOpen] = useState(false);
 
+    const [score, setScore] = useState(0);
+
+    const [openQuestion, setOpenQuestion] = useState(0);
+    const [showAnswerStatusCorrect, setShowAnswerStatusCorrect] = useState("none");
+    const [showAnswerStatusWrong, setShowAnswerStatusWrong] = useState("none");
+    
+
+    const quizHandler = (isCorrect) => {
+        const nextQuestion = openQuestion + 1;
+        if(isCorrect === true) {
+            setScore(score+1)
+            setShowAnswerStatusCorrect("true")
+            setShowAnswerStatusWrong("none")
+        }else {
+            setShowAnswerStatusCorrect("none")
+            setShowAnswerStatusWrong("true")
+        }
+
+        if (nextQuestion < 4){
+            setOpenQuestion(nextQuestion);
+        } else {
+            {/* Her kan du aktivere neste side etter quiz! */}
+        }
+    }
+
     
     
 
@@ -96,12 +159,12 @@ const HistoryPage = () => {
             <ExitButton onClick={exitMenuHandler}>
               <ExitIcon opacity='0.5' width="36px" height="36px"></ExitIcon>
             </ExitButton>
-            <PointCounterBar points="0" open={pointBarIsOpen}/>
+            <PointCounterBar points={score} open={pointBarIsOpen}/>
           </ExitBar>
           <div>
             <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
             <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler}/>
-            <QuizComponent open={quizPageIsOpen}/>
+            <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsArray} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
           </div>
           <ExitMenu open={isOpen} onClose={() => setIsOpen(false)}/>
       </HistoryPageContainer>

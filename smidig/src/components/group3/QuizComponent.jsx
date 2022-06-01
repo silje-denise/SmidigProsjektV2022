@@ -1,12 +1,19 @@
 import React, { useState } from 'react'
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import ProgressDiv from './ProgressDiv'
 import dashedLine from '../../images/dashedLine.svg'
 import AvatarIllu from '../../images/Viking.png'
 import QuestionAlternative from './QuestionAlternative';
+import checkmarkCircle from '../../images/checkmarkCircle.svg';
+import xCircle from '../../images/xCircle.svg';
 
-const QuizComponent = ({open}) => {
+const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAnswer, wrongAnswer}) => {
   if (!open) return null;
+
+  const fader = keyframes`
+    from {opacity:0}
+    to {opacity:1}
+  `;
 
   const ProgressBar = styled.div`
         height: 42px;
@@ -22,7 +29,7 @@ const QuizComponent = ({open}) => {
       position:relative;
       background-color: white;
       box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.20);
-      margin: 64px 0px;
+      margin: 32px 0px;
       border-radius: 32px;
       padding: 16px;
     `;
@@ -96,48 +103,51 @@ const QuizComponent = ({open}) => {
   font-size: 22px;
   font-weight: 700;
   opacity: 0.8;
+  animation: ${fader} 1s forwards linear;
   `;
 
   const AnswerAlternatives = styled.div`
 
   `;
 
+  const AnswerStatus = styled.button`
+    position: relative;
+    height: 48px;
+    width: 100%;
+    background-image: linear-gradient(120deg, rgba(169, 223, 116, 1), rgba(115, 200, 45, 1));
+    margin-top: 32px;
+    border-radius: 24px;
+    color: #e8e8e8;
+    font-weight: 600;
+    font-size: 24px;
+  `;
+ 
+  const AnswerStatusText = styled.p`
+    font-size: 22px;
+    font-weight: 600;
+    color: black;
+    opacity: 0.7;
+  `;
 
-
+  const AnswerStatusIcon = styled.div`
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    top: 0;
+    width: 34px;
+    height: 48px;
+    margin-left: 8px;
     
-
-  const questionsArray = [
-    {
-    question: "Når ble Rælingen kommune grunnlagt?",
-      answers: [
-        {ansText: "1921", isCorrect: false},
-        {ansText: "1929", isCorrect: true},
-        {ansText: "1991", isCorrect: false},
-        {ansText: "2012", isCorrect: false}
-      ],
-    },
-    {
-      question: "Hvordan lagde vi planker på 1920-tallet?",
-      answers: [
-        {ansText: "Sag", isCorrect: false},
-        {ansText: "Øks", isCorrect: true},
-        {ansText: "Motorsag", isCorrect: false},
-        {ansText: "Sirkelsag", isCorrect: false}
-      ],
-    }, 
-  ];
-
-  const [openQuestion, setOpenQuestion] = useState(0);
-  const quizHandler = () => {
-    setOpenQuestion(openQuestion+1);
-  }
+  `;
   
   return (
     <div>
       <QuizCard>
         <QuizStatusBar> 
           <StatusQuiz>
-            <StatusText>1/4</StatusText>
+            <StatusText>{openQuestion + 1}/{questionsArray.length}</StatusText>
           </StatusQuiz>
 
           <AvatarSatus>
@@ -149,13 +159,28 @@ const QuizComponent = ({open}) => {
         
         <QuizQuestionContainer>
             <QuestionCategory>Spørsmål:</QuestionCategory>
-            <Question>{questionsArray[openQuestion]}</Question>
+            <Question>{questionsArray[openQuestion].question}</Question>
         </QuizQuestionContainer>
 
         <AnswerAlternatives>
           {questionsArray[openQuestion].answers.map((ansAlternative) => 
+          <div onClick={() => quizHandler(ansAlternative.isCorrect)}>
             <QuestionAlternative text={ansAlternative.ansText}/>
+          </div>
           )}
+          <AnswerStatus style={{
+                    display: `${rightAnswer}`}}>
+            <AnswerStatusText>Korrekt!</AnswerStatusText>
+            <AnswerStatusIcon style={{
+                    backgroundImage: `url(${checkmarkCircle})`}}></AnswerStatusIcon>
+          </AnswerStatus>
+          <AnswerStatus style={{
+                    backgroundImage: `linear-gradient(120deg, rgba(239, 164, 159, 1), rgba(235, 102, 87, 1))`,
+                    display: `${wrongAnswer}`}}>
+            <AnswerStatusText>Feil</AnswerStatusText>
+            <AnswerStatusIcon style={{
+                    backgroundImage: `url(${xCircle})`}}></AnswerStatusIcon>
+          </AnswerStatus>
         </AnswerAlternatives>
 
         
