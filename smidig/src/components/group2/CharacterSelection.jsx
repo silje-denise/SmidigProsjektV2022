@@ -49,19 +49,19 @@ const CharacterSelection = () => {
             <StyledCharacterSelection>
                 <div>
                     <StyledCharacters > 
-                        <StyledImage src={Dog}></StyledImage>
+                        <StyledImage src={Dog} alt="Image of a dog"></StyledImage>
                     </StyledCharacters>
 
                     <StyledCharacters > 
-                        <StyledImage src={Cat}></StyledImage>
+                        <StyledImage src={Cat} alt="Image of a cat"></StyledImage>
                     </StyledCharacters>
                 </div>
                 <div>
                     <StyledCharacters > 
-                        <StyledImage src={Rat}></StyledImage>
+                        <StyledImage src={Rat} alt="Image of a rat"></StyledImage>
                     </StyledCharacters>
                     <StyledCharacters > 
-                        <StyledImage src={Horse}></StyledImage>
+                        <StyledImage src={Horse} alt="Image of a horse"></StyledImage>
                     </StyledCharacters>
                 </div>
             </StyledCharacterSelection>

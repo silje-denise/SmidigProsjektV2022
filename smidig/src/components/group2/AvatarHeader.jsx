@@ -29,7 +29,7 @@ const AvatarHeader = () => {
         <>
             <StyledAvatarHeader>
                <StyledAvatarImageWrapper>
-                   <StyledAvatarImage src={Dog}/>
+                   <StyledAvatarImage src={Dog} alt="The chosen avatar (interchangable)"/>
                </StyledAvatarImageWrapper>
                 <StyledHeaderText>Velg din avatar</StyledHeaderText>
             </StyledAvatarHeader>

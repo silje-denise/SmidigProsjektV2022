@@ -30,7 +30,7 @@ const ProfilePage = () => {
             </ArrowWrapper>
             <ProfileHeader/>
             <Badges/>
-            <StyledImage src={monster}/>
+            <StyledImage src={monster} alt="The background has a green and blue pattern looking like >"/>
             <AvatarCreationBubble />
             <NavigationWrapper>
                 <Navigation/>
