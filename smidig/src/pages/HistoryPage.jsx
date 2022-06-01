@@ -6,7 +6,6 @@ import HistoryInfoContainer from '../components/group3/HistoryInfoContainer';
 import HistoryMap from '../components/group3/HistoryMap';
 import PointCounterBar from '../components/group3/PointCounterBar';
 import menuAudio from '../audio/menuClick.wav'
-import backgroundPattern from '../images/backgroundPattern2.svg'
 import QuizComponent from '../components/group3/QuizComponent'
 
 const HistoryPage = () => {
@@ -54,7 +53,7 @@ const HistoryPage = () => {
 
     const [mapIsOpen, setMapIsOpen] = useState(true);
     function mapPageHandler() {
-        if (mapIsOpen == false) {
+        if (mapIsOpen === false) {
             setMapIsOpen(true);
         } else {
             setMapIsOpen(false);
@@ -65,7 +64,7 @@ const HistoryPage = () => {
 
     const [historyInfoIsOpen, setHistoryInfoOpen] = useState(false);
     function historyInfoHandler() {
-        if (historyInfoIsOpen == false) {
+        if (historyInfoIsOpen === false) {
             setHistoryInfoOpen(true);
         } else {
             setHistoryInfoOpen(false);
@@ -75,7 +74,7 @@ const HistoryPage = () => {
 
     const [quizPageIsOpen, setQuizPageIsOpen] = useState(false);
     function quizPageHandler() {
-        if(quizPageIsOpen == false) {
+        if(quizPageIsOpen === false) {
             setHistoryInfoOpen(false)
             setQuizPageIsOpen(true)
         } else {
