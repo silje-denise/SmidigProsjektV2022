@@ -1,13 +1,10 @@
 
 import './App.css';
-import OverviewPage from './pages/OverviewPage';
-import { Link, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
 
 function App() {
 
 
-  const [score, setScore] = useState(0);
+  
 
   return (
     <div className="App">

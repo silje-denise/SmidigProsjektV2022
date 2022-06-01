@@ -56,22 +56,22 @@ const Badges = () => {
                 <StyledBadgesDiv>
                     <div>
                         <StyledBadges>
-                            <StyledBadgeImage src={Handyman}/>
+                            <StyledBadgeImage src={Handyman} alt="Handyman badge"/>
                         </StyledBadges>
                     </div>
                     <div>
                         <StyledBadges>
-                            <StyledBadgeImage src={Hiker}/>
+                            <StyledBadgeImage src={Hiker} alt="Hiker badge"/>
                         </StyledBadges>
                     </div>
                     <div>
                         <StyledBadges>
-                            <StyledBadgeImage src={Smile}/>
+                            <StyledBadgeImage src={Smile} alt="Smiley badge"/>
                         </StyledBadges>
                     </div>
                     <div>
                         <StyledBadges>
-                            <StyledBadgeImage src={Knowledge}/>
+                            <StyledBadgeImage src={Knowledge} alt="Knowledge badge"/>
                         </StyledBadges>
                     </div>
                 </StyledBadgesDiv>

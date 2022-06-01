@@ -132,11 +132,6 @@ const Settings = () => {
                         <WhatsappIcon/>
                     </WhatsappShareButton>
                 </StyledShareApp>
-                <StyledSettingsButton>
-                      <LogLink to={"/"}>
-                          <StyledLogOff></StyledLogOff>
-                      </LogLink>  
-                </StyledSettingsButton>
             </StyledSettingsDiv>
             <StyledLogo>
                 <StyledLogoImage src={RaelingenLogo}/>
