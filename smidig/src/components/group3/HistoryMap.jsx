@@ -12,7 +12,7 @@ const HistoryMap = ({open, onClose}) => {
     const TitleBar = styled.div`
         position: relative;
         width: 100%;
-        height: 64px;
+        height: 42px;
         margin-bottom: 16px;
     `;
 
@@ -31,7 +31,7 @@ const HistoryMap = ({open, onClose}) => {
 
     const MapContainer = styled.div`
         position: relative;
-        height: 512px;
+        height: 544px;
         background-color: #d5d5d5;
         border-radius: 32px;
         margin-bottom: 16px;

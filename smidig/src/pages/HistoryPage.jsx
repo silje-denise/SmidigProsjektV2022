@@ -122,7 +122,7 @@ const questionsArray = [
         }
     }
 
-    const [pointBarIsOpen, setPointBarIsOpen] = useState(false);
+    const [pointBarIsOpen, setPointBarIsOpen] = useState(true);
     const [historyCheckpointIsOpen, setHistoryCheckpointIsOpen] = useState(false);
     const checkpointHandler = () => {
       if(historyCheckpointIsOpen == true) {
