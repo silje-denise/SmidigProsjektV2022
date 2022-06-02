@@ -10,6 +10,7 @@ import SettingsPage from './SettingsPage';
 import Logo from '../images/RaelingenLogo.png';
 import { getAvatarSource } from '../getAvatarSource';
 import {Link} from 'react-router-dom';
+import Dog from '../images/Dog.png';
 
 const OverviewPage = () => {
 
