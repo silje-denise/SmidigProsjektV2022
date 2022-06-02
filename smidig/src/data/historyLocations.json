@@ -1,0 +1,31 @@
+
+{"historyLocations": [
+    {
+        "id": 1,
+        "name": "Osteåsen",
+        "coordinates": [59.932484, -348.931581],
+        "description": "Her var det stor sagproduksjon tildig i 1920-tallet.",
+        "points": 0
+    },
+    {
+        "id": 2,
+        "name": "test2",
+        "coordinates": [59.9284, -348.91581],
+        "description": "Her var det stor sagproduksjon tildig i 1920-tallet.",
+        "points": 0
+    },
+    {
+        "id": 3,
+        "name": "test3",
+        "coordinates": [59.9384, -348.981],
+        "description": "Her var det stor sagproduksjon tildig i 1920-tallet.",
+        "points": 0
+    },
+    {
+        "id": 4,
+        "name": "test4",
+        "coordinates": [59.92, -348.91],
+        "description": "Her var det stor sagproduksjon tildig i 1920-tallet.",
+        "points": 0
+    }
+]}
