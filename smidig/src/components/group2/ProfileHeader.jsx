@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Dog from '../../images/Dog.png';
 import profilLinje from '../../images/ProfileLine.png';
 import Points from "../common/PointsComponent";
 import { Link } from "react-router-dom";
-
+import { getAvatarSource } from "../../getAvatarSource";
 const HeaderWrapper = styled("div")`
     display:flex;
     justify-content:center;
@@ -61,7 +60,7 @@ const ProfileHeader = () => {
             </UserInfo>
             <ProfileInfoWrapper>
                 <Link to={"/chooseavatar"}>
-                     <ProfilePicture src={Dog}/>
+                     <ProfilePicture src={getAvatarSource()}/>
                 </Link>
             </ProfileInfoWrapper>
             </HeaderGrid>

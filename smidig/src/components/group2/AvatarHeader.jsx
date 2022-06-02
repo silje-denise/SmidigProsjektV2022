@@ -24,12 +24,12 @@ const StyledHeaderText = styled("h2")`
     margin-top: 1.25rem;
 `;
 
-const AvatarHeader = () => {
+const AvatarHeader = ({source}) => {
     return(
         <>
             <StyledAvatarHeader>
                <StyledAvatarImageWrapper>
-                   <StyledAvatarImage src={Dog} alt="The chosen avatar (interchangable)"/>
+                   <StyledAvatarImage src={source} alt="The chosen avatar (interchangable)"/>
                </StyledAvatarImageWrapper>
                 <StyledHeaderText>Velg din avatar</StyledHeaderText>
             </StyledAvatarHeader>

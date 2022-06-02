@@ -16,7 +16,7 @@ const StyledCharacterSelection = styled.div`
     margin: auto;
 `;
 
-const StyledCharacters = styled.div`
+const StyledCharacters = styled.button`
     height: 5rem;
     width: 5rem;
     background-color: lightblue;
@@ -43,24 +43,25 @@ const StyledImage = styled.img`
     width: 5rem;
 `;
 
-const CharacterSelection = () => {
+const CharacterSelection = ({handleClick, selctedAvatar}) => {
+   
     return(
         <>
             <StyledCharacterSelection>
                 <div>
-                    <StyledCharacters > 
+                    <StyledCharacters onClick={()=> handleClick("Dog")} > 
                         <StyledImage src={Dog} alt="Image of a dog"></StyledImage>
                     </StyledCharacters>
 
-                    <StyledCharacters > 
+                    <StyledCharacters onClick={()=> handleClick("Cat")} > 
                         <StyledImage src={Cat} alt="Image of a cat"></StyledImage>
                     </StyledCharacters>
                 </div>
                 <div>
-                    <StyledCharacters > 
+                    <StyledCharacters onClick={()=> handleClick("Rat")}> 
                         <StyledImage src={Rat} alt="Image of a rat"></StyledImage>
                     </StyledCharacters>
-                    <StyledCharacters > 
+                    <StyledCharacters onClick={()=> handleClick("Horse")}> 
                         <StyledImage src={Horse} alt="Image of a horse"></StyledImage>
                     </StyledCharacters>
                 </div>
