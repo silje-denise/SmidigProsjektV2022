@@ -32,8 +32,6 @@ const HistoryPage = () => {
 
     const Background = styled.div`
         position: absolute;
-        
-        
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -86,8 +84,6 @@ const questionsArray = [
       ],
     }, 
   ];
-    
-
     
     const [isOpen, setIsOpen] = useState(false);
     function exitMenuHandler() {
@@ -150,8 +146,6 @@ const questionsArray = [
     const [showGoldenStar4, setShowGoldenStar4] = useState("100%");
     
 
-    
-
     const quizHandler = (isCorrect) => {
         const nextQuestion = openQuestion + 1;
         if(isCorrect === true) {
@@ -188,11 +182,6 @@ const questionsArray = [
         }
     }
 
-    
-
-    
-    
-
   return (
       <HistoryPage>
           <Background></Background>
@@ -212,7 +201,7 @@ const questionsArray = [
           <ExitMenu open={isOpen} onClose={() => setIsOpen(false)}/>
       </HistoryPageContainer>
       </HistoryPage>
-  )
+  );
 }
 
-export default HistoryPage
+export default HistoryPage;

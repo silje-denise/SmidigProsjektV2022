@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
 import XButton from "../components/common/XButton";
 import Quiz from "../components/group2/Quiz";
 import { Link } from "react-router-dom";
-import Navigation from "../components/group3/Navigation";
+import Navigation from "../components/common/Navigation";
 
 const NavigationWrapper = styled.div`
     bottom: 0;
@@ -25,5 +25,4 @@ const QuizPage = () => {
     );
 }
 
-
-export default QuizPage
+export default QuizPage;

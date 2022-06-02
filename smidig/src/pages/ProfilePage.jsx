@@ -4,7 +4,7 @@ import Badges from "../components/group2/Badges";
 import ProfileHeader from "../components/group2/ProfileHeader";
 import styled from "styled-components";
 import monster from "./../images/BackgroundPattern.png";
-import Navigation from "../components/group3/Navigation";
+import Navigation from "../components/common/Navigation";
 
 const ArrowWrapper = styled("div")`
     height: 70px;
@@ -26,8 +26,7 @@ const NavigationWrapper = styled("div")`
 const ProfilePage = () => {
     return(
         <>
-            <ArrowWrapper> 
-            </ArrowWrapper>
+            <ArrowWrapper/> 
             <ProfileHeader/>
             <Badges/>
             <StyledImage src={monster} alt="The background has a green and blue pattern looking like >"/>
@@ -38,6 +37,5 @@ const ProfilePage = () => {
         </>
     );
 }
-
 
 export default ProfilePage;

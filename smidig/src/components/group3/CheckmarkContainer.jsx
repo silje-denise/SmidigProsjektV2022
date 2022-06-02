@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import checkmark from '../../images/checkmark.svg'
-import selectedAudio from '../../audio/selectSound.wav'
-
+import checkmark from '../../images/checkmark.svg';
+import selectedAudio from '../../audio/selectSound.wav';
 
 
 const CheckmarkContainer = ({text}) => {
@@ -14,7 +13,6 @@ const CheckmarkContainer = ({text}) => {
 
     const selectedSound = new Audio(selectedAudio);
     
-
     const Checkmark = styled.div`
         position: relative;
         height: 56px;
@@ -56,15 +54,10 @@ const CheckmarkContainer = ({text}) => {
     `;
 
 
-    
-
-
-
-
     function check() {
         selectedSound.play()
 
-        if (isChecked == "linear-gradient(120deg, rgba(85, 85, 85, 1), rgba(38, 38, 38, 1))"){
+        if (isChecked === "linear-gradient(120deg, rgba(85, 85, 85, 1), rgba(38, 38, 38, 1))"){
             setIsChecked("linear-gradient(120deg, rgba(169, 223, 116, 1), rgba(115, 200, 45, 1));");
             setTextColor("rgba(0, 0, 0, 0.75)");
             setShowDiv("hidden");
@@ -79,17 +72,16 @@ const CheckmarkContainer = ({text}) => {
     }
 
 
-
   return (
-                <Checkmark onClick={check}>
-                    <CheckmarkIllustration/>
-                    <CheckmarkIcon style={{
+        <Checkmark onClick={check}>
+            <CheckmarkIllustration/>
+                <CheckmarkIcon style={{
                     backgroundImage: `url(${showIcon})`}}/>
                     <CheckmarkText>
                         {text}
                     </CheckmarkText>
-                </Checkmark>
-  )
+        </Checkmark>
+  );
 }
 
-export default CheckmarkContainer
+export default CheckmarkContainer;
