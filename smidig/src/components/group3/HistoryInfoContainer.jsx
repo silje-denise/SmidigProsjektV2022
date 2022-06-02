@@ -101,7 +101,7 @@ const HistoryInfoContainer = ({open, onClose}) => {
                         hjelpe meg med tresaging?" illustration={Viking} color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)"/>
 
             <Title>
-                <p>Ostavågen</p>
+                Ostavågen
             </Title>
             
             <ContainerBackground>

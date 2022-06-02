@@ -68,7 +68,6 @@ const OverviewPage = () => {
             
             </motion.div>
           </motion.div>
-          
           <Navigation/>
         </div>
 
