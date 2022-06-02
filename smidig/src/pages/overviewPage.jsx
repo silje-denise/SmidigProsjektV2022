@@ -8,7 +8,7 @@ import settingsIconSvg from '../images/settingsIcon.svg';
 import styled from 'styled-components';
 import SettingsPage from './SettingsPage';
 import Logo from '../images/RaelingenLogo.png';
-import Dog from '../images/Dog.png';
+import { getAvatarSource } from '../getAvatarSource';
 import {Link} from 'react-router-dom';
 
 const OverviewPage = () => {
@@ -40,7 +40,6 @@ const OverviewPage = () => {
     const NavWrapper = styled.div`
       position:absolute;
       bottom: 0px;
-      z-index:100;
       background-color:rgba(255,255,255,1);
       display:flex;
       align-items:flex-end;

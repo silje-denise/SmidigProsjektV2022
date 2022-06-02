@@ -45,24 +45,16 @@ const StyledShareApp = styled.div`
     top: 48rem;
 `;
 
-const StyledLogOff = styled.div`
-    font-size: 30px;
-    margin-top: 5rem;
-    color: #209803;
-    font-weight: 400;
-    background-color: white;
-`;
-
 const StyledLogo = styled.div`
-    width: 220px;
+    width: 100px;
     height: 60px;
-    margin-top: 15.5rem;
+    margin-top: 22rem;
     margin-left: 2.5rem;
     background-color: white;
 `;
 
 const StyledLogoImage = styled.img`
-    width: 200px;
+    width: 150px;
 `;
 
 const SharedButton = styled.button`
