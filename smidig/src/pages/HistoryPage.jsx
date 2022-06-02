@@ -6,7 +6,6 @@ import HistoryInfoContainer from '../components/group3/HistoryInfoContainer';
 import HistoryMap from '../components/group3/HistoryMap';
 import PointCounterBar from '../components/group3/PointCounterBar';
 import menuAudio from '../audio/menuClick.wav'
-import backgroundPattern from '../images/backgroundPattern2.svg'
 import QuizComponent from '../components/group3/QuizComponent'
 import { HistoryCheckpoint } from '../components/group3/HistoryCheckpoint';
 import HistoryIntroduction from '../audio/historyIntroduction.mp3'
@@ -99,7 +98,7 @@ const questionsArray = [
 
     const [mapIsOpen, setMapIsOpen] = useState(true);
     function mapPageHandler() {
-        if (mapIsOpen == false) {
+        if (mapIsOpen === false) {
             setMapIsOpen(true);
         } else {
             setMapIsOpen(false);
@@ -111,7 +110,7 @@ const questionsArray = [
 
     const [historyInfoIsOpen, setHistoryInfoOpen] = useState(false);
     function historyInfoHandler() {
-        if (historyInfoIsOpen == false) {
+        if (historyInfoIsOpen === false) {
             setHistoryInfoOpen(true);
         } else {
             setHistoryInfoOpen(false);
@@ -122,7 +121,7 @@ const questionsArray = [
 
     const [quizPageIsOpen, setQuizPageIsOpen] = useState(false);
     function quizPageHandler() {
-        if(quizPageIsOpen == false) {
+        if(quizPageIsOpen === false) {
             setHistoryInfoOpen(false)
             setQuizPageIsOpen(true)
         } else {
@@ -133,7 +132,7 @@ const questionsArray = [
     const [pointBarIsOpen, setPointBarIsOpen] = useState(true);
     const [historyCheckpointIsOpen, setHistoryCheckpointIsOpen] = useState(false);
     const checkpointHandler = () => {
-      if(historyCheckpointIsOpen == true) {
+      if(historyCheckpointIsOpen === true) {
         setHistoryCheckpointIsOpen(false)
         setMapIsOpen(true)
       }
@@ -168,16 +167,16 @@ const questionsArray = [
             setOpenQuestion(nextQuestion);
         } else {
           
-            if (score == 1) {
+            if (score === 1) {
               setShowGoldenStar1("0%")
-            } else if (score == 2) {
+            } else if (score === 2) {
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
-            } else if (score == 3) {
+            } else if (score === 3) {
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
               setShowGoldenStar3("0%")
-            } else if (score == 4) {
+            } else if (score === 4) {
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
               setShowGoldenStar3("0%")
