@@ -109,7 +109,7 @@ const HistoryMap = ({open, onClose}) => {
         background-size: cover;
         background-repeat: no-repeat;
         height: 100%;
-        border-radius: px;
+        border-radius: 16px;
         width: 100%;
     `;
 
@@ -156,7 +156,8 @@ const HistoryMap = ({open, onClose}) => {
                                 longitude={point.coordinates[1]}>
                                     <MarkerIcon onClick={(e) => {
                                         e.preventDefault();
-                                        setPointActive(point)
+                                        setPointActive(point);
+
                                     }} 
                                      style={{backgroundImage: `url(${mapLocationIcon})`}}/>
                             </Marker>
