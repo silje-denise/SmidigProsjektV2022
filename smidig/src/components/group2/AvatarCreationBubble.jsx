@@ -53,7 +53,7 @@ const AvatarCreationBubble = () => {
     return(
         <>
             <StyledAvatarCreationBubblePerson>
-                <StyledAvatarCreationBubbleImage src={SittingDog} />
+                <StyledAvatarCreationBubbleImage src={SittingDog} alt="Sitting dog"/>
             </StyledAvatarCreationBubblePerson>
             <StyledAvatarCreationBubble>
                 <StyledAvatarCreationBubbleText>

@@ -9,6 +9,7 @@ import CheckmarkIcon from '../../images/checkmark.svg'
 import CheckmarkContainer from './CheckmarkContainer'
 import ProgressDiv from '../group3/ProgressDiv'
 import dashedLine from '../../images/dashedLine.svg'
+import { AvatarBox } from './AvatarBox'
 
 const HistoryInfoContainer = ({open, onClose}) => {
     if (!open) return null
@@ -30,41 +31,6 @@ const HistoryInfoContainer = ({open, onClose}) => {
         margin-bottom: 8px;
     `;
 
-    const AvatarContainer = styled.div`
-        position: relative;
-        background-color: white;
-        border-radius: 14px;
-        padding: 16px;
-        margin-bottom: 32px;
-    `;
-
-    const AvatarTextContainer = styled.div`
-        width: 65%;
-    `;
-    const AvatarTextTitle = styled.p`  
-        font-weight: 600;
-        font-size: 20px;
-        opacity: 0.8;
-        margin-bottom: 8px;
-    `;
-
-    const AvatarTextBox = styled.p`
-        font-weight: 400;
-        opacity: 0.7;
-        font-size: 15px;
-        line-height: 1.2;
-    `;
-
-    const AvatarIllustration = styled.div`
-        position: absolute;
-        width: 30%;
-        right: 8px;
-        top: 8px;
-        bottom: 8px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-    `;
 
     const Picture = styled.div`
         height: 180px;
@@ -131,19 +97,11 @@ const HistoryInfoContainer = ({open, onClose}) => {
     <div>
         <ScrollView>
 
-            <AvatarContainer>
-                <AvatarTextContainer>
-                    <AvatarTextTitle>Her er Ostavågen!</AvatarTextTitle>
-                    <AvatarTextBox>Dette er mitt hjem. Hva synest du? Er du klar for å
-                        hjelpe meg med tresaging?
-                    </AvatarTextBox>
-                </AvatarTextContainer>
-                <AvatarIllustration style={{
-                backgroundImage: `url(${Viking})`}}/>
-            </AvatarContainer>
+            <AvatarBox title="Her er Ostavågen!" body="Dette er mitt hjem. Hva synest du? Er du klar for å
+                        hjelpe meg med tresaging?" illustration={Viking} color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)"/>
 
             <Title>
-                <p>Ostavågen</p>
+                Ostavågen
             </Title>
             
             <ContainerBackground>

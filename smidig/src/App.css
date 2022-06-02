@@ -220,6 +220,7 @@ body {
   overflow: auto;
   white-space: nowrap;
   cursor: grab;
+  margin-bottom: 32px;
 }
 
 .cardView {
