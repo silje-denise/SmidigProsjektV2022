@@ -8,7 +8,7 @@ import settingsIconSvg from '../images/settingsIcon.svg';
 import styled from 'styled-components';
 import SettingsPage from './SettingsPage';
 import Logo from '../images/RaelingenLogo.png';
-import Dog from '../images/Dog.png';
+import { getAvatarSource } from '../getAvatarSource';
 import {Link} from 'react-router-dom';
 
 const OverviewPage = () => {
@@ -113,7 +113,7 @@ const OverviewPage = () => {
               backgroundImage: `url(${settingsIconSvg})`}}></SettingsIcon>
         </SettingsBar>
         <ProfileIcon>
-          <StyledImg src={Dog}/>
+          <StyledImg src={getAvatarSource()}/>
         </ProfileIcon>
         </Header>
 
