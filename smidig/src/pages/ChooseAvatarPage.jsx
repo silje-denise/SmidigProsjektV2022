@@ -44,6 +44,8 @@ const StyledLink = styled(Link)`
     color:white;
 `;
 
+// FUNCTION that updates local storage key for the pic url to a new value
+
 const ChooseAvatarPage = () => {
     return(
         <> 

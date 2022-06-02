@@ -43,6 +43,8 @@ const StyledImage = styled.img`
     width: 5rem;
 `;
 
+// The select menu has the results of a query to the image array of the user
+
 const CharacterSelection = () => {
     return(
         <>

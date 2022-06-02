@@ -43,7 +43,6 @@ const OverviewPage = () => {
       // width: 80%;
       position:absolute;
       bottom: 0px;
-      z-index:100;
       background-color:rgba(255,255,255,1);
       display:flex;
       align-items:flex-end;
