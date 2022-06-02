@@ -15,6 +15,12 @@ const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAn
     to {opacity:1}
   `;
 
+const faderToClear = keyframes`
+from {opacity:1}
+to {opacity:0.5}
+`;
+
+
   const ProgressBar = styled.div`
         height: 42px;
         display: grid;
@@ -103,7 +109,7 @@ const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAn
   font-size: 22px;
   font-weight: 700;
   opacity: 0.8;
-  animation: ${fader} 1s forwards linear;
+  animation: ${fader} 0.3s forwards linear;
   `;
 
   const AnswerAlternatives = styled.div`
@@ -120,6 +126,7 @@ const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAn
     color: #e8e8e8;
     font-weight: 600;
     font-size: 24px;
+    animation: ${faderToClear} 2s forwards linear;
   `;
  
   const AnswerStatusText = styled.p`

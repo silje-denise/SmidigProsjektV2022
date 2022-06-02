@@ -8,6 +8,7 @@ import PointCounterBar from '../components/group3/PointCounterBar';
 import menuAudio from '../audio/menuClick.wav'
 import backgroundPattern from '../images/backgroundPattern2.svg'
 import QuizComponent from '../components/group3/QuizComponent'
+import { HistoryCheckpoint } from '../components/group3/HistoryCheckpoint';
 
 const HistoryPage = () => {
 
@@ -122,12 +123,26 @@ const questionsArray = [
     }
 
     const [pointBarIsOpen, setPointBarIsOpen] = useState(false);
+    const [historyCheckpointIsOpen, setHistoryCheckpointIsOpen] = useState(false);
+    const checkpointHandler = () => {
+      if(historyCheckpointIsOpen == true) {
+        setHistoryCheckpointIsOpen(false)
+        setMapIsOpen(true)
+      }
+    }
 
     const [score, setScore] = useState(0);
 
     const [openQuestion, setOpenQuestion] = useState(0);
     const [showAnswerStatusCorrect, setShowAnswerStatusCorrect] = useState("none");
     const [showAnswerStatusWrong, setShowAnswerStatusWrong] = useState("none");
+
+    const [showGoldenStar1, setShowGoldenStar1] = useState("100%");
+    const [showGoldenStar2, setShowGoldenStar2] = useState("100%");
+    const [showGoldenStar3, setShowGoldenStar3] = useState("100%");
+    const [showGoldenStar4, setShowGoldenStar4] = useState("100%");
+    
+
     
 
     const quizHandler = (isCorrect) => {
@@ -144,9 +159,31 @@ const questionsArray = [
         if (nextQuestion < 4){
             setOpenQuestion(nextQuestion);
         } else {
-            {/* Her kan du aktivere neste side etter quiz! */}
+          
+            if (score == 1) {
+              setShowGoldenStar1("0%")
+            } else if (score == 2) {
+              setShowGoldenStar1("0%")
+              setShowGoldenStar2("0%")
+            } else if (score == 3) {
+              setShowGoldenStar1("0%")
+              setShowGoldenStar2("0%")
+              setShowGoldenStar3("0%")
+            } else if (score == 4) {
+              setShowGoldenStar1("0%")
+              setShowGoldenStar2("0%")
+              setShowGoldenStar3("0%")
+              setShowGoldenStar4("0%")
+            }
+            setQuizPageIsOpen(false);
+            
+            setHistoryCheckpointIsOpen(true);
+
+            
         }
     }
+
+    
 
     
     
@@ -165,6 +202,7 @@ const questionsArray = [
             <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
             <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler}/>
             <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsArray} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
+            <HistoryCheckpoint open={historyCheckpointIsOpen} star1={showGoldenStar1} star2={showGoldenStar2} star3={showGoldenStar3} star4={showGoldenStar4} points={score} onClose={checkpointHandler}/>
           </div>
           <ExitMenu open={isOpen} onClose={() => setIsOpen(false)}/>
       </HistoryPageContainer>
