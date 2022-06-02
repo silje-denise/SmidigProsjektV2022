@@ -9,10 +9,16 @@ import menuAudio from '../audio/menuClick.wav'
 import backgroundPattern from '../images/backgroundPattern2.svg'
 import QuizComponent from '../components/group3/QuizComponent'
 import { HistoryCheckpoint } from '../components/group3/HistoryCheckpoint';
+import HistoryIntroduction from '../audio/historyIntroduction.mp3'
+import Ostavagen from '../audio/Ostavagen.mp3';
+import sporsmalIntro from '../audio/sporsmalIntro.mp3';
 
 const HistoryPage = () => {
 
     const menuClick = new Audio(menuAudio);
+    const historyIntro = new Audio(HistoryIntroduction);
+    const ostavagenAudio = new Audio(Ostavagen);
+    const sporsmalIntroAudio = new Audio(sporsmalIntro);
 
     const HistoryPage = styled.div`
         margin: 0px 32px;
@@ -83,7 +89,7 @@ const questionsArray = [
   ];
     
 
-
+    
     const [isOpen, setIsOpen] = useState(false);
     function exitMenuHandler() {
         
@@ -99,6 +105,7 @@ const questionsArray = [
             setMapIsOpen(false);
             setHistoryInfoOpen(true);
             setPointBarIsOpen(true);
+            ostavagenAudio.play()
         }
     }
 
@@ -109,6 +116,7 @@ const questionsArray = [
         } else {
             setHistoryInfoOpen(false);
             setQuizPageIsOpen(true);
+            sporsmalIntroAudio.play()
         }
     }
 
