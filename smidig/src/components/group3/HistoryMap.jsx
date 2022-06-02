@@ -3,15 +3,16 @@ import styled from 'styled-components';
 import GoldenStar from '../../images/goldStar.svg';
 import Avatar from '../../images/Viking.png'
 import PointCounter from './PointCounter';
+import testMap from '../../images/testMap.png';
 
 
 const HistoryMap = ({open, onClose}) => {
     if (!open) return null
 
-    const PointBar = styled.div`
+    const TitleBar = styled.div`
         position: relative;
         width: 100%;
-        height: 64px;
+        height: 42px;
         margin-bottom: 16px;
     `;
 
@@ -30,7 +31,7 @@ const HistoryMap = ({open, onClose}) => {
 
     const MapContainer = styled.div`
         position: relative;
-        height: 512px;
+        height: 544px;
         background-color: #d5d5d5;
         border-radius: 32px;
         margin-bottom: 16px;
@@ -87,16 +88,27 @@ const HistoryMap = ({open, onClose}) => {
         font-weight: 700;
     `;
 
+    const MapDiv = styled.div`
+        position: relative;
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        border-radius: 32px;
+        width: 100%;
+    `;
+
     
 
   return (
       <>
-            <PointBar>
+            <TitleBar>
                 <PageTitle>Historien</PageTitle>
-                    <PointCounter points="0"/>
-                </PointBar>
+            </TitleBar>
         
             <MapContainer>
+                <MapDiv style={{
+                backgroundImage: `url(${testMap})`}}/>
                 <DialogueBox>
                     <Dialogue>
                         <DialogueTitle>Hei og velkommen!</DialogueTitle>

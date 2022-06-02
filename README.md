@@ -2,7 +2,6 @@
 
 [GitHub](https://github.com/silje-denise/SmidigProsjektV2022),
 [Figma](https://www.figma.com/file/gwEoY29f81sC9mVTFL6Weq/Smidig?node-id=0%3A1),
-[Heroku]()
 
 ###### av Silje, Sandra, Anneli, Adrian, Brage, Ismail og Eivind ved Høyskolen Kristiania
 
@@ -19,7 +18,7 @@ cd smidig
 npm start
 ```
 
-Gå til localhost:3000, eller gå til [HerokuApp]() for å se appen rett i din nettleser (Chrome er anbefalt)
+Gå til http://localhost:3000/ for å se appen i din nettleser (Chrome er anbefalt)
 
 ## Om oss
 Vi er en gruppe på syv personer fra Frontend- og mobilutvikling og E-Business ved Høyskolen Kristiania i Bergen. 
