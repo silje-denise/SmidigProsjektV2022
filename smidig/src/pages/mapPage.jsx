@@ -3,7 +3,7 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import {React, useState} from "react";
 import styled from "styled-components";
 import map from "../images/Map.png";
-import Navigation from "../components/group3/Navigation";
+import Navigation from "../components/common/Navigation";
 import AudioFile from "../audio/pannekaka.mp3";
 
 
