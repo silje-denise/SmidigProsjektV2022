@@ -176,10 +176,8 @@ const questionsArray = [
               setShowGoldenStar4("0%")
             }
             setQuizPageIsOpen(false);
-            
             setHistoryCheckpointIsOpen(true);
-
-            
+            setOpenQuestion(0);
         }
     }
 

@@ -68,13 +68,7 @@ const OverviewPage = () => {
             
             </motion.div>
           </motion.div>
-          <div className='gameShortcut'>
-            <div className='gameShortcutDescription'>
-              <h7>Test kunnskapen<br/>din her!</h7>
-              <p>Spill deg gjennom Rælingen<br/>sin kulturhistorie!</p>
-            </div>
-            <div className='gameShortcutImage'></div>
-          </div>
+          
           <Navigation/>
         </div>
 
