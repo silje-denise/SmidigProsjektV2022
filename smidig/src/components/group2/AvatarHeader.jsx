@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Dog from '../../images/Dog.png';
+
 
 const StyledAvatarHeader = styled("div")`
     height: 200px;
