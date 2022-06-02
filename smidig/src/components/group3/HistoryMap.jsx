@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import GoldenStar from '../../images/goldStar.svg';
 import Avatar from '../../images/Viking.png'
 import PointCounter from './PointCounter';
 import testMap from '../../images/testMap.png';
@@ -9,9 +8,7 @@ import mapLocationIcon from '../../images/mapLocationIcon.svg';
 import historyLocations from '../../data/historyLocations.json';
 
 
-
 const HistoryMap = ({open, onClose}) => {
-
     const [viewState, setViewState] = React.useState({
         latitude: 59.932484,
         longitude: -348.931581,
@@ -40,10 +37,6 @@ const HistoryMap = ({open, onClose}) => {
     
     `;
 
-    
-
-    
-
     const MapContainer = styled.div`
         position: relative;
         height: 544px;
@@ -64,14 +57,12 @@ const HistoryMap = ({open, onClose}) => {
 
     const Dialogue = styled.div`
         margin: 16px;
-
     `;
 
     const DialogueTitle = styled.p`
         font-size: 22px;
         font-weight: 700;
         margin-bottom: 8px;
-
     `;
     
     const DialoguePhrase = styled.p`
@@ -87,9 +78,6 @@ const HistoryMap = ({open, onClose}) => {
         right: 8px;
         top: 8px;
         bottom: 8px;
-        
-
-
     `;
 
     const NextButton = styled.div`
@@ -128,10 +116,6 @@ const HistoryMap = ({open, onClose}) => {
         background-color: white;
 
     `;
-
-   
-    
-    
 
   return (
       <>
@@ -185,7 +169,7 @@ const HistoryMap = ({open, onClose}) => {
             </MapContainer>
             <NextButton onClick={onClose}>La oss begynne!</NextButton>
             </>
-  )
+  );
 }
 
-export default HistoryMap
+export default HistoryMap;

@@ -132,7 +132,7 @@ const questionsArray = [
     const [pointBarIsOpen, setPointBarIsOpen] = useState(true);
     const [historyCheckpointIsOpen, setHistoryCheckpointIsOpen] = useState(false);
     const checkpointHandler = () => {
-      if(historyCheckpointIsOpen == true) {
+      if(historyCheckpointIsOpen === true) {
         setHistoryCheckpointIsOpen(false)
         setMapIsOpen(true)
       }
@@ -167,16 +167,16 @@ const questionsArray = [
             setOpenQuestion(nextQuestion);
         } else {
           
-            if (score == 1) {
+            if (score === 1) {
               setShowGoldenStar1("0%")
-            } else if (score == 2) {
+            } else if (score === 2) {
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
-            } else if (score == 3) {
+            } else if (score === 3) {
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
               setShowGoldenStar3("0%")
-            } else if (score == 4) {
+            } else if (score === 4) {
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
               setShowGoldenStar3("0%")
