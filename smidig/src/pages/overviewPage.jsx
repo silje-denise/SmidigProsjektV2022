@@ -3,13 +3,14 @@ import React, { useEffect, useState, useRef } from 'react'
 import LocationCard from '../components/group3/LocationCard';
 import {motion} from "framer-motion";
 import backgroundPattern from '../images/waterMill.jpg';
-import Navigation from '../components/group3/Navigation';
+import Navigation from '../components/common/Navigation';
 import settingsIconSvg from '../images/settingsIcon.svg';
 import styled from 'styled-components';
 import SettingsPage from './SettingsPage';
 import Logo from '../images/RaelingenLogo.png';
-import Dog from '../images/Dog.png';
+import { getAvatarSource } from '../getAvatarSource';
 import {Link} from 'react-router-dom';
+import Dog from '../images/Dog.png';
 
 const OverviewPage = () => {
 
@@ -38,9 +39,6 @@ const OverviewPage = () => {
     `;
 
     const NavWrapper = styled.div`
-      // position: absolute;
-      // bottom: 0;
-      // width: 80%;
       position:absolute;
       bottom: 0px;
       background-color:rgba(255,255,255,1);
@@ -102,38 +100,37 @@ const OverviewPage = () => {
     
     return (
       <div className="App">
-        <div className='background'></div>
-        
+        <div className='background'/>
         <div className='overviewPage'>
-
-
           <Header>
-        <SettingsBar>
-            <SettingsIcon onClick={showOverlay} style={{
-              backgroundImage: `url(${settingsIconSvg})`}}></SettingsIcon>
-        </SettingsBar>
-        <ProfileIcon>
-          <StyledImg src={Dog}/>
-        </ProfileIcon>
+            <SettingsBar>
+              <SettingsIcon onClick={showOverlay} style={{
+                backgroundImage: `url(${settingsIconSvg})`}}></SettingsIcon>
+            </SettingsBar>
+            <Link to={"/profile"}>
+              <ProfileIcon> 
+                <StyledImg src={Dog}/>   
+              </ProfileIcon>
+            </Link>
         </Header>
-
-
-
         <LogoContainer>
           <StyledLogo>
             <h1>UT</h1>
             <h1>FORSK</h1>
           </StyledLogo>
-          <StyledImg src={Logo}></StyledImg>
+          <StyledImg src={Logo}/>
           </LogoContainer>
-
           <motion.div ref={carusel} className='scrollView' >
             <motion.div drag="x" dragConstraints={{ right: 0, left: -width}}>
-            <Link to={"/map"}> <LocationCard name="Vannmølla" image={backgroundPattern}></LocationCard></Link>
-            <Link to={"/map"}><LocationCard name="Sagen" image={backgroundPattern}/></Link>
-            <Link to={"/map"}><LocationCard name="Låven" image={backgroundPattern}/></Link>
-            
-            
+              <Link to={"/map"}>
+                <LocationCard name="Vannmølla" image={backgroundPattern}/>
+              </Link>
+              <Link to={"/map"}>
+                <LocationCard name="Sagen" image={backgroundPattern}/>
+              </Link>
+              <Link to={"/map"}>
+                <LocationCard name="Låven" image={backgroundPattern}/>
+              </Link>
             </motion.div>
           </motion.div>
           {/* <div className='gameShortcut'>
@@ -146,13 +143,10 @@ const OverviewPage = () => {
           <NavWrapper>
              <Navigation/>
           </NavWrapper>
-         
         </div>
-
         <DivSettingPage id='SettingsOverlay'>
-          <SettingsPage></SettingsPage>
+          <SettingsPage/>
         </DivSettingPage>
-
       </div>
 
     );

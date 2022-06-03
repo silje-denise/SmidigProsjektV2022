@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import ProgressDiv from './ProgressDiv'
-import dashedLine from '../../images/dashedLine.svg'
-import AvatarIllu from '../../images/Viking.png'
+import ProgressDiv from './ProgressDiv';
+import dashedLine from '../../images/dashedLine.svg';
+import AvatarIllu from '../../images/Viking.png';
 import QuestionAlternative from './QuestionAlternative';
 import checkmarkCircle from '../../images/checkmarkCircle.svg';
 import xCircle from '../../images/xCircle.svg';
@@ -15,11 +15,10 @@ const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAn
     to {opacity:1}
   `;
 
-const faderToClear = keyframes`
-from {opacity:1}
-to {opacity:0.5}
-`;
-
+  const faderToClear = keyframes`
+    from {opacity:1}
+    to {opacity:0.5}
+  `;
 
   const ProgressBar = styled.div`
         height: 42px;
@@ -38,10 +37,6 @@ to {opacity:0.5}
       margin: 32px 0px;
       border-radius: 32px;
       padding: 16px;
-    `;
-
-    const QuizStatusBar = styled.div`
-    
     `;
 
     const StatusQuiz = styled.div`
@@ -152,23 +147,20 @@ to {opacity:0.5}
   return (
     <div>
       <QuizCard>
-        <QuizStatusBar> 
+        <div> 
           <StatusQuiz>
             <StatusText>{openQuestion + 1}/{questionsArray.length}</StatusText>
           </StatusQuiz>
-
           <AvatarSatus>
             <AvatarText>Kan du hjelpe meg å svare?</AvatarText>
             <Avatar style={{
                     backgroundImage: `url(${AvatarIllu})`}}/>
           </AvatarSatus>
-        </QuizStatusBar>
-        
+        </div>
         <QuizQuestionContainer>
             <QuestionCategory>Spørsmål:</QuestionCategory>
             <Question>{questionsArray[openQuestion].question}</Question>
         </QuizQuestionContainer>
-
         <AnswerAlternatives>
           {questionsArray[openQuestion].answers.map((ansAlternative) => 
           <div onClick={() => quizHandler(ansAlternative.isCorrect)}>
@@ -189,18 +181,15 @@ to {opacity:0.5}
                     backgroundImage: `url(${xCircle})`}}></AnswerStatusIcon>
           </AnswerStatus>
         </AnswerAlternatives>
-
-        
       </QuizCard>
-
-        <ProgressBar style={{
-                    backgroundImage: `url(${dashedLine})`}}>
-                <ProgressDiv number="1" color1="rgba(73, 163, 58,1)" color2="rgba(52, 109, 117, 1)"/>
-                <ProgressDiv number="2" color1="rgba(254, 209, 86,1)" color2="rgba(246, 163, 88, 1)" active="0px 0px 0px 6px rgba(0,0,0,0.2)"/>
-                <ProgressDiv number="3"color1="rgba(244, 150, 142,1)" color2="rgba(245, 138, 91, 1)"/>
-        </ProgressBar>
+      <ProgressBar style={{
+                  backgroundImage: `url(${dashedLine})`}}>
+        <ProgressDiv number="1" color1="rgba(73, 163, 58,1)" color2="rgba(52, 109, 117, 1)"/>
+        <ProgressDiv number="2" color1="rgba(254, 209, 86,1)" color2="rgba(246, 163, 88, 1)" active="0px 0px 0px 6px rgba(0,0,0,0.2)"/>
+        <ProgressDiv number="3"color1="rgba(244, 150, 142,1)" color2="rgba(245, 138, 91, 1)"/>
+      </ProgressBar>
     </div>
-  )
+  );
 }
 
-export default QuizComponent
+export default QuizComponent;

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import AvatarHeader from "../components/group2/AvatarHeader";
 import CharacterSelection from "../components/group2/CharacterSelection";
 import monster from "./../images/BackgroundPattern.png";
 import { Link } from "react-router-dom";
+import { getAvatarSource } from "../getAvatarSource";
 
 const PageWrapper = styled("div")`
     height: 100vh;
@@ -47,13 +48,21 @@ const StyledLink = styled(Link)`
 // FUNCTION that updates local storage key for the pic url to a new value
 
 const ChooseAvatarPage = () => {
+    
+    const [selectedAvatar, setSelectedAvatar] = useState(localStorage.getItem("valgtAvatar"))
+    
+    const handleClick = (type) => {
+        localStorage.setItem("valgtAvatar",type) 
+        setSelectedAvatar(type)
+    }
+
     return(
         <> 
         <StyledImage src={monster}/>
         <PageWrapper>
-            <AvatarHeader/>
+            <AvatarHeader source={getAvatarSource(selectedAvatar)}/>
             <CharacterSelectionWrapper>
-                <CharacterSelection/>
+                <CharacterSelection handleClick={handleClick} selctedAvatar={selectedAvatar}/>
             </CharacterSelectionWrapper>
             <StyledLink to={"/profile"}>
                 <StyledButton>

@@ -1,11 +1,11 @@
-import HistoryDiv from "../components/group1/HistoryDiv"
-import Points from "../components/common/PointsComponent"
-import GameSelection from '../components/group1/GameSelection'
-import styled from "styled-components"
-import Navigation from "../components/group3/Navigation"
-import HeaderText from "../components/group1/HeaderText"
-import Background from "../images/background.png"
-import { Link } from "react-router-dom"
+import HistoryDiv from "../components/group1/HistoryDiv";
+import Points from "../components/common/PointsComponent";
+import GameSelection from '../components/group1/GameSelection';
+import styled from "styled-components";
+import Navigation from "../components/common/Navigation";
+import HeaderText from "../components/group1/HeaderText";
+import Background from "../images/background.png";
+import { Link } from "react-router-dom";
 
 
 const GameLanding = styled.div`
@@ -36,7 +36,7 @@ const StyledLink = styled(Link)`
 
 const GamesLandingPage = () => {
     return(
-            <StyledBackground>
+        <StyledBackground>
             <GameLanding>
                 <Pointwrapper>
                     <Points />
@@ -50,7 +50,7 @@ const GamesLandingPage = () => {
             <NavWrapper>
                 <Navigation/>
             </NavWrapper>
-            </StyledBackground>
+        </StyledBackground>
     );
-    }
-    export default GamesLandingPage
+}
+export default GamesLandingPage;
