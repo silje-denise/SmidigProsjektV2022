@@ -96,7 +96,7 @@ const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, 
     justify-content: center;
     position: fixed;
     right: 2.5rem;
-    z-index: 200;
+    z-index: 100;
   `;
 
     const StyledImg = styled.img`
@@ -109,16 +109,13 @@ const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, 
   return (
     <div>
         <ScrollView>
-            <AvatarBox title="Her er Ostavågen!" body="Dette er mitt hjem. Hva synest du? Er du klar for å
-                        hjelpe meg med tresaging?" color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)">
+            <AvatarBox title={avatarTtile} body={avatarBody} color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)">
             
             <ProfileIcon> 
                 <StyledImg src={getAvatarSource()}/>   
             </ProfileIcon>
             
             </AvatarBox>
-
-            <AvatarBox title={avatarTtile} body={avatarBody} illustration={avatarIllustration} color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)"/>
 
             <Title>
                 {title}
