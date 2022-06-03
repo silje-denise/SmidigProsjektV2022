@@ -109,13 +109,7 @@ const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, 
   return (
     <div>
         <ScrollView>
-            <AvatarBox title={avatarTtile} body={avatarBody} color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)">
-            
-            <ProfileIcon> 
-                <StyledImg src={getAvatarSource()}/>   
-            </ProfileIcon>
-            
-            </AvatarBox>
+            <AvatarBox title={avatarTtile} illustration={getAvatarSource()} body={avatarBody} color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)" />
 
             <Title>
                 {title}

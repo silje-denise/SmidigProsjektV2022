@@ -7,6 +7,7 @@ import QuestionAlternative from './QuestionAlternative';
 import checkmarkCircle from '../../images/checkmarkCircle.svg';
 import xCircle from '../../images/xCircle.svg';
 import waterMill from '../../images/waterMill.jpg';
+import { getAvatarSource } from '../../getAvatarSource';
 
 const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAnswer, wrongAnswer}) => {
   if (!open) return null;
@@ -75,6 +76,8 @@ const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAn
       background-repeat: no-repeat;
       background-position: center;
       display: inline-block;
+      position: relative;
+      right: 0.4rem;
       float: right;
     `;
 
@@ -144,6 +147,11 @@ const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAn
     margin-left: 8px;
     
   `;
+
+  const StyledImg = styled.img`
+  height: auto;
+  width: auto;
+  `;
   
   return (
     <div>
@@ -154,8 +162,9 @@ const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAn
           </StatusQuiz>
           <AvatarSatus>
             <AvatarText>Kan du hjelpe meg å svare?</AvatarText>
-            <Avatar style={{
-                    backgroundImage: `url(${AvatarIllu})`}}/>
+            <Avatar>
+              <StyledImg src={getAvatarSource()}/>   
+            </Avatar>
           </AvatarSatus>
         </div>
         <QuizQuestionContainer>
