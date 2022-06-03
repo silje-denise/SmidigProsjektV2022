@@ -52,7 +52,7 @@ const ChooseAvatarPage = () => {
     const [selectedAvatar, setSelectedAvatar] = useState(localStorage.getItem("valgtAvatar"))
     
     const handleClick = (type) => {
-        localStorage.setItem("valgtAvatar",type) 
+        localStorage.setItem("valgtAvatar", type) 
         setSelectedAvatar(type)
     }
 
@@ -62,7 +62,7 @@ const ChooseAvatarPage = () => {
         <PageWrapper>
             <AvatarHeader source={getAvatarSource(selectedAvatar)}/>
             <CharacterSelectionWrapper>
-                <CharacterSelection handleClick={handleClick} selctedAvatar={selectedAvatar}/>
+                <CharacterSelection handleClick={handleClick} selectedAvatar={selectedAvatar}/>
             </CharacterSelectionWrapper>
             <StyledLink to={"/profile"}>
                 <StyledButton>

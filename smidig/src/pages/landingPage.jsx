@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Hello from "../components/group2/Hello";
 import CharacterSelection from "../components/group2/CharacterSelection";
 import SkipButton from "../components/group2/SkipButton";
 import AvatarHeader from "../components/group2/AvatarHeader";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { getAvatarSource } from "../getAvatarSource";
 
 const ButtonDiv = styled.div`
     justify-content: center;
@@ -21,7 +22,7 @@ const StyledButton = styled("button")`
     font-size:20px;
     padding: 15px;
     display:flex;
-    background-color:white;
+    background-color: white;
     justify-content: center;
     align-items:center;
 `;
@@ -32,11 +33,19 @@ const StyledLink = styled(Link)`
 `;
 
 const LandingPage = () => {
+
+    const [selectedAvatar, setSelectedAvatar] = useState(localStorage.getItem("valgtAvatar"))
+    
+    const handleClick = (type) => {
+        localStorage.setItem("valgtAvatar", type) 
+        setSelectedAvatar(type)
+    }
+
     return(
         <>
             <Hello />
-            <AvatarHeader />
-            <CharacterSelection />
+            <AvatarHeader source={getAvatarSource(selectedAvatar)}/>
+            <CharacterSelection handleClick={handleClick} selctedAvatar={selectedAvatar}/>
             <ButtonDiv>
                 <StyledLink to={"/overview"}>
                     <StyledButton>

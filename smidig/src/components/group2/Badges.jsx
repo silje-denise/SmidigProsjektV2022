@@ -14,14 +14,15 @@ const StyledBadgeMainDiv = styled.div`
 
 const StyledMyBadgesText = styled.h3`
     position: fixed;
-    left: 2rem;
+    top: 19rem;
+    left: 1.75rem;
 `;
 
 const StyledBadgesDiv = styled.div`
     width: 100%;
     height: 10rem;
     position: fixed;
-    top: 22rem;
+    top: 20rem;
     left: 0.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -211,6 +211,7 @@ body {
   width: 100%;
   right: 0;
   height: 600px;
+  z-index: -2;
 }
 
 .scrollView {

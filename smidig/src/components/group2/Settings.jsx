@@ -66,10 +66,6 @@ const SharedButton = styled.button`
     margin-top: 2rem;
 `;
 
-const LogLink = styled(Link)`
-    color: white;
-`;
-
 
 function showShare() {
     var hidDiv = document.getElementById("hiddenDiv");

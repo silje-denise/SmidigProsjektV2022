@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 
 const GameLanding = styled.div`
     margin: 32px;
-
 `;
+
 const NavWrapper = styled.div`
     bottom: 0;
     position: absolute;

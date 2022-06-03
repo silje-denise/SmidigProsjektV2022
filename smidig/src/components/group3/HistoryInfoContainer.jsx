@@ -7,6 +7,7 @@ import CheckmarkContainer from './CheckmarkContainer';
 import ProgressDiv from '../group3/ProgressDiv';
 import dashedLine from '../../images/dashedLine.svg';
 import { AvatarBox } from './AvatarBox';
+import { getAvatarSource } from '../../getAvatarSource';
 
 const HistoryInfoContainer = ({open, onClose}) => {
     if (!open) return null
@@ -84,12 +85,35 @@ const HistoryInfoContainer = ({open, onClose}) => {
         background-position: center;
     `;
 
+    const ProfileIcon = styled.div`
+    border-radius: 50px;
+    width: 5rem;
+    height: 5rem;
+    display:flex;
+    justify-content: center;
+    position: fixed;
+    right: 2.5rem;
+    z-index: 200;
+  `;
+
+    const StyledImg = styled.img`
+      height: 5rem;
+      width: 5rem;
+      z-index: 200;
+    `;
+
 
   return (
     <div>
         <ScrollView>
             <AvatarBox title="Her er Ostavågen!" body="Dette er mitt hjem. Hva synest du? Er du klar for å
-                        hjelpe meg med tresaging?" illustration={Viking} color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)"/>
+                        hjelpe meg med tresaging?" color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)">
+            
+            <ProfileIcon> 
+                <StyledImg src={getAvatarSource()}/>   
+            </ProfileIcon>
+            
+            </AvatarBox>
             <Title>
                 Ostavågen
             </Title>

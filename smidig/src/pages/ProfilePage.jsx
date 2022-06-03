@@ -13,19 +13,42 @@ const ArrowWrapper = styled("div")`
     padding: 40px 0px 0px 40px;
     backgrond-image: url(${monster});
 `;
+
 const StyledImage = styled("img")`
-    width: 100vw;
+    width: 100%;
     height: auto;
 `;
+
 const NavigationWrapper = styled("div")`
     position: absolute;
     bottom: 0px;
     width: 100vw;
 `;
 
+const StyledWhiteBox = styled.div`
+    height: 2rem;
+    width: 7rem;
+    background-color: white;
+    position: absolute;
+    top: 19rem;
+    left: 1.75rem;
+`;
+
+const StyledWhiteBox2 = styled.div`
+    height: 10rem;
+    width: 20rem;
+    background-color: white;
+    position: absolute;
+    top: 30rem;
+    left: -2rem;
+    transform: rotate(20deg);
+`;
+
 const ProfilePage = () => {
     return(
         <>
+            <StyledWhiteBox />
+            <StyledWhiteBox2 />
             <ArrowWrapper/> 
             <ProfileHeader/>
             <Badges/>
