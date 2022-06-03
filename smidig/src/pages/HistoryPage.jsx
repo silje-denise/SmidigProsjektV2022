@@ -356,21 +356,21 @@ const questionsStory1 = [
           <div style={{display: story2}}>
             <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
             <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler} title="Teststed2" body="Lorum ipsum tester tester tester tester tester tester ij sefijd efijowefo wo fwioehf gww roifjweiog wg orug wo fwie ofjiowe fwieof weoigh weigw" 
-              fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${backgroundPattern}`} avatarTtile="Dette er Jergården!" avatarBody="Her bodde det mange innen skogsvirksomhet." avatarIllustration={`${Viking}`}/>
+              fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${waterMill}`} avatarTtile="Dette er Jergården!" avatarBody="Her bodde det mange innen skogsvirksomhet." avatarIllustration={`${Viking}`}/>
             <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsStory2} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
             <HistoryCheckpoint open={historyCheckpointIsOpen} star1={showGoldenStar1} star2={showGoldenStar2} star3={showGoldenStar3} star4={showGoldenStar4} points={score} onClose={checkpointHandler}/>
           </div>
           <div style={{display: story3}}>
             <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
             <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler} title="Teststed3" body="Lorum ipsum tester tester tester tester tester tester ij sefijd efijowefo wo fwioehf gww roifjweiog wg orug wo fwie ofjiowe fwieof weoigh weigw" 
-              fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${backgroundPattern}`} avatarTtile="Test3" avatarBody="Her bodde det mange innen skogsvirksomhet." avatarIllustration={`${Viking}`}/>
+              fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${waterMill}`} avatarTtile="Test3" avatarBody="Her bodde det mange innen skogsvirksomhet." avatarIllustration={`${Viking}`}/>
             <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsStory3} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
             <HistoryCheckpoint open={historyCheckpointIsOpen} star1={showGoldenStar1} star2={showGoldenStar2} star3={showGoldenStar3} star4={showGoldenStar4} points={score} onClose={checkpointHandler}/>
           </div>
           <div style={{display: story4}}>
             <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
             <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler} title="Teststed4" body="Lorum ipsum tester tester tester tester tester tester ij sefijd efijowefo wo fwioehf gww roifjweiog wg orug wo fwie ofjiowe fwieof weoigh weigw" 
-              fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${backgroundPattern}`} avatarTtile="Test4" avatarBody="Her bodde det mange innen skogsvirksomhet." avatarIllustration={`${Viking}`}/>
+              fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${waterMill}`} avatarTtile="Test4" avatarBody="Her bodde det mange innen skogsvirksomhet." avatarIllustration={`${Viking}`}/>
             <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsStory4} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
             <HistoryCheckpoint open={historyCheckpointIsOpen} star1={showGoldenStar1} star2={showGoldenStar2} star3={showGoldenStar3} star4={showGoldenStar4} points={score} onClose={checkpointHandler}/>
           </div>
