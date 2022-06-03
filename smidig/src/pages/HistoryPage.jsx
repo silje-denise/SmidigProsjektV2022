@@ -12,6 +12,8 @@ import { HistoryCheckpoint } from '../components/group3/HistoryCheckpoint';
 import HistoryIntroduction from '../audio/historyIntroduction.mp3'
 import Ostavagen from '../audio/Ostavagen.mp3';
 import sporsmalIntro from '../audio/sporsmalIntro.mp3';
+import Viking from '../images/Viking.png'
+import waterMill from '../images/waterMill.jpg';
 
 const HistoryPage = () => {
 
@@ -49,7 +51,7 @@ const HistoryPage = () => {
     `;
 
 
-const questionsArray = [
+const questionsStory1 = [
     {
     question: "Når ble Rælingen kommune grunnlagt?",
       answers: [
@@ -87,9 +89,129 @@ const questionsArray = [
       ],
     }, 
   ];
+
+  const questionsStory2 = [
+    {
+    question: "Test spørs 1",
+      answers: [
+        {ansText: "testsvar1", isCorrect: false},
+        {ansText: "testsvar2", isCorrect: false},
+        {ansText: "riktigtestsvar3", isCorrect: true},
+        {ansText: "testsvar4", isCorrect: false}
+      ],
+    },
+    {
+      question: "Test spørs 2",
+      answers: [
+        {ansText: "testsvar1", isCorrect: false},
+        {ansText: "testsvar2", isCorrect: false},
+        {ansText: "testsvar3", isCorrect: false},
+        {ansText: "riktigtestsvar4", isCorrect: true}
+      ],
+    },
+    {
+      question: "Test spørs 3",
+      answers: [
+        {ansText: "riktigtestsvar1", isCorrect: true},
+        {ansText: "testsvar2", isCorrect: false},
+        {ansText: "testsvar3", isCorrect: false},
+        {ansText: "testsvar4", isCorrect: false}
+      ],
+    },
+    {
+      question: "Test spørs 4",
+      answers: [
+        {ansText: "testsvar1", isCorrect: false},
+        {ansText: "riktigtestsvar2", isCorrect: true},
+        {ansText: "testsvar3", isCorrect: false},
+        {ansText: "testsvar4", isCorrect: false}
+      ],
+    }, 
+  ];
+
+  const questionsStory3 = [
+    {
+    question: "Test spørs 1",
+      answers: [
+        {ansText: "testsvar1", isCorrect: false},
+        {ansText: "testsvar2", isCorrect: false},
+        {ansText: "riktigtestsvar3", isCorrect: true},
+        {ansText: "testsvar4", isCorrect: false}
+      ],
+    },
+    {
+      question: "Test spørs 2",
+      answers: [
+        {ansText: "testsvar1", isCorrect: false},
+        {ansText: "testsvar2", isCorrect: false},
+        {ansText: "testsvar3", isCorrect: false},
+        {ansText: "riktigtestsvar4", isCorrect: true}
+      ],
+    },
+    {
+      question: "Test spørs 3",
+      answers: [
+        {ansText: "riktigtestsvar1", isCorrect: true},
+        {ansText: "testsvar2", isCorrect: false},
+        {ansText: "testsvar3", isCorrect: false},
+        {ansText: "testsvar4", isCorrect: false}
+      ],
+    },
+    {
+      question: "Test spørs 4",
+      answers: [
+        {ansText: "testsvar1", isCorrect: false},
+        {ansText: "riktigtestsvar2", isCorrect: true},
+        {ansText: "testsvar3", isCorrect: false},
+        {ansText: "testsvar4", isCorrect: false}
+      ],
+    }, 
+  ];
+
+  const questionsStory4 = [
+    {
+    question: "Test spørs 1",
+      answers: [
+        {ansText: "testsvar1", isCorrect: false},
+        {ansText: "testsvar2", isCorrect: false},
+        {ansText: "riktigtestsvar3", isCorrect: true},
+        {ansText: "testsvar4", isCorrect: false}
+      ],
+    },
+    {
+      question: "Test spørs 2",
+      answers: [
+        {ansText: "testsvar1", isCorrect: false},
+        {ansText: "testsvar2", isCorrect: false},
+        {ansText: "testsvar3", isCorrect: false},
+        {ansText: "riktigtestsvar4", isCorrect: true}
+      ],
+    },
+    {
+      question: "Test spørs 3",
+      answers: [
+        {ansText: "riktigtestsvar1", isCorrect: true},
+        {ansText: "testsvar2", isCorrect: false},
+        {ansText: "testsvar3", isCorrect: false},
+        {ansText: "testsvar4", isCorrect: false}
+      ],
+    },
+    {
+      question: "Test spørs 4",
+      answers: [
+        {ansText: "testsvar1", isCorrect: false},
+        {ansText: "riktigtestsvar2", isCorrect: true},
+        {ansText: "testsvar3", isCorrect: false},
+        {ansText: "testsvar4", isCorrect: false}
+      ],
+    }, 
+  ];
     
 
-    
+  const [story1, setStory1] = useState("true");
+  const [story2, setStory2] = useState("none");
+  const [story3, setStory3] = useState("none");
+  const [story4, setStory4] = useState("none");
     const [isOpen, setIsOpen] = useState(false);
     function exitMenuHandler() {
         
@@ -98,14 +220,20 @@ const questionsArray = [
     }
 
     const [mapIsOpen, setMapIsOpen] = useState(true);
-    function mapPageHandler() {
+    function mapPageHandler(story) {
+        setScore(0);
+        setShowGoldenStar1("100%")
+        setShowGoldenStar2("100%")
+        setShowGoldenStar3("100%")
+        setShowGoldenStar4("100%")
         if (mapIsOpen == false) {
             setMapIsOpen(true);
+            
         } else {
             setMapIsOpen(false);
             setHistoryInfoOpen(true);
             setPointBarIsOpen(true);
-            ostavagenAudio.play()
+            {/*ostavagenAudio.play()*/}
         }
     }
 
@@ -116,7 +244,7 @@ const questionsArray = [
         } else {
             setHistoryInfoOpen(false);
             setQuizPageIsOpen(true);
-            sporsmalIntroAudio.play()
+            {/*sporsmalIntroAudio.play()*/}
         }
     }
 
@@ -135,11 +263,26 @@ const questionsArray = [
     const checkpointHandler = () => {
       if(historyCheckpointIsOpen == true) {
         setHistoryCheckpointIsOpen(false)
+        if(story1 == "true"){
+          setStory1("none");
+          setStory2("true");
+        } else if(story2 == "true"){
+          setStory2("none");
+          setStory3("true");
+        } else if(story3 == "true"){
+          setStory3("none");
+          setStory4("true");
+        } else if(story4 == "true") {
+          setStory4("none");
+          setStory1("true");
+          {/*Her må du legge til total score checkpoint for alle sstoriene!*/}
+        }
         setMapIsOpen(true)
       }
     }
 
     const [score, setScore] = useState(0);
+    const [totalScore, setTotalScore] = useState(0);
 
     const [openQuestion, setOpenQuestion] = useState(0);
     const [showAnswerStatusCorrect, setShowAnswerStatusCorrect] = useState("none");
@@ -154,7 +297,7 @@ const questionsArray = [
     
 
     const quizHandler = (isCorrect) => {
-        const nextQuestion = openQuestion + 1;
+        
         if(isCorrect === true) {
             setScore(score+1)
             setShowAnswerStatusCorrect("true")
@@ -163,32 +306,36 @@ const questionsArray = [
             setShowAnswerStatusCorrect("none")
             setShowAnswerStatusWrong("true")
         }
-
+        const nextQuestion = openQuestion + 1;
         if (nextQuestion < 4){
             setOpenQuestion(nextQuestion);
         } else {
-          
+            
             if (score == 1) {
               setShowGoldenStar1("0%")
             } else if (score == 2) {
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
             } else if (score == 3) {
+              alert("denne kjører 3" + score)
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
               setShowGoldenStar3("0%")
             } else if (score == 4) {
+              alert("denne kjører 4" + score)
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
               setShowGoldenStar3("0%")
               setShowGoldenStar4("0%")
             }
+            setTotalScore(totalScore + score);
             setQuizPageIsOpen(false);
             setHistoryCheckpointIsOpen(true);
             setOpenQuestion(0);
         }
     }
 
+    
     
 
     
@@ -202,12 +349,34 @@ const questionsArray = [
             <ExitButton onClick={exitMenuHandler}>
               <ExitIcon opacity='0.5' width="36px" height="36px"></ExitIcon>
             </ExitButton>
-            <PointCounterBar points={score} open={pointBarIsOpen}/>
+            <PointCounterBar points={totalScore} open={pointBarIsOpen}/>
           </ExitBar>
-          <div>
+          <div style={{display: story1}}>
             <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
-            <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler}/>
-            <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsArray} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
+            <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler} title="Teststed1" body="Lorum ipsum tester tester tester tester tester tester ij sefijd efijowefo wo fwioehf gww roifjweiog wg orug wo fwie ofjiowe fwieof weoigh weigw. oqwpdq qopwdw dqwo dqw owefkowfj fewo few e, feowkfowe fowe. ewokfowekf." 
+              fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${waterMill}`} avatarTtile="Dette er Ostevågen!" avatarBody="Dette er mitt hjem! Er du klar til å hjelpe meg med noen spørsmål?" avatarIllustration={`${Viking}`}/>
+            <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsStory1} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
+            <HistoryCheckpoint open={historyCheckpointIsOpen} star1={showGoldenStar1} star2={showGoldenStar2} star3={showGoldenStar3} star4={showGoldenStar4} points={score} onClose={checkpointHandler}/>
+          </div>
+          <div style={{display: story2}}>
+            <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
+            <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler} title="Teststed2" body="Lorum ipsum tester tester tester tester tester tester ij sefijd efijowefo wo fwioehf gww roifjweiog wg orug wo fwie ofjiowe fwieof weoigh weigw" 
+              fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${backgroundPattern}`} avatarTtile="Dette er Jergården!" avatarBody="Her bodde det mange innen skogsvirksomhet." avatarIllustration={`${Viking}`}/>
+            <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsStory2} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
+            <HistoryCheckpoint open={historyCheckpointIsOpen} star1={showGoldenStar1} star2={showGoldenStar2} star3={showGoldenStar3} star4={showGoldenStar4} points={score} onClose={checkpointHandler}/>
+          </div>
+          <div style={{display: story3}}>
+            <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
+            <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler} title="Teststed3" body="Lorum ipsum tester tester tester tester tester tester ij sefijd efijowefo wo fwioehf gww roifjweiog wg orug wo fwie ofjiowe fwieof weoigh weigw" 
+              fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${backgroundPattern}`} avatarTtile="Test3" avatarBody="Her bodde det mange innen skogsvirksomhet." avatarIllustration={`${Viking}`}/>
+            <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsStory3} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
+            <HistoryCheckpoint open={historyCheckpointIsOpen} star1={showGoldenStar1} star2={showGoldenStar2} star3={showGoldenStar3} star4={showGoldenStar4} points={score} onClose={checkpointHandler}/>
+          </div>
+          <div style={{display: story4}}>
+            <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
+            <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler} title="Teststed4" body="Lorum ipsum tester tester tester tester tester tester ij sefijd efijowefo wo fwioehf gww roifjweiog wg orug wo fwie ofjiowe fwieof weoigh weigw" 
+              fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${backgroundPattern}`} avatarTtile="Test4" avatarBody="Her bodde det mange innen skogsvirksomhet." avatarIllustration={`${Viking}`}/>
+            <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsStory4} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
             <HistoryCheckpoint open={historyCheckpointIsOpen} star1={showGoldenStar1} star2={showGoldenStar2} star3={showGoldenStar3} star4={showGoldenStar4} points={score} onClose={checkpointHandler}/>
           </div>
           <ExitMenu open={isOpen} onClose={() => setIsOpen(false)}/>

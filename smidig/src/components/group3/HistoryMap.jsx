@@ -10,7 +10,7 @@ import historyLocations from '../../data/historyLocations.json';
 
 
 
-const HistoryMap = ({open, onClose}) => {
+const HistoryMap = ({open, onClose, story}) => {
 
     const [viewState, setViewState] = React.useState({
         latitude: 59.932484,

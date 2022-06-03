@@ -10,8 +10,9 @@ import CheckmarkContainer from './CheckmarkContainer'
 import ProgressDiv from '../group3/ProgressDiv'
 import dashedLine from '../../images/dashedLine.svg'
 import { AvatarBox } from './AvatarBox'
+import backgroundPattern from '../../images/backgroundPattern2.svg'
 
-const HistoryInfoContainer = ({open, onClose}) => {
+const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, illustration, avatarTtile, avatarBody, avatarIllustration}) => {
     if (!open) return null
 
     const ScrollView = styled.div`
@@ -97,30 +98,24 @@ const HistoryInfoContainer = ({open, onClose}) => {
     <div>
         <ScrollView>
 
-            <AvatarBox title="Her er Ostavågen!" body="Dette er mitt hjem. Hva synest du? Er du klar for å
-                        hjelpe meg med tresaging?" illustration={Viking} color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)"/>
+            <AvatarBox title={avatarTtile} body={avatarBody} illustration={avatarIllustration} color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)"/>
 
             <Title>
-                Ostavågen
+                {title}
             </Title>
             
             <ContainerBackground>
                 <Picture style={{
-                    backgroundImage: `url(${testPicture})`}}/>
+                    backgroundImage: `url(${illustration})`}}/>
                 <TextContainer>
-                Lorem Ipsum is simply dummy text of the printing and 
-                type been the industry's standard dummy text ever since the 1500s.<br/><br/>
-
-                Lorem Ipsum is simply dummy text of the printing and 
-                typeszetting industry. Lorem Ipsum has been the industry's 
-                standard dummy text ever since the 1500s.
+                {body}
                 </TextContainer>
 
                 <Oppsumert>Oppsumert</Oppsumert>
                 
-                <CheckmarkContainer text="Stor plankeproduksjon fra 1832."/>
-                <CheckmarkContainer text="En av Norges største plankeprodesenter."/>
-                <CheckmarkContainer text="Første vindmøllen ble bygget i 1871."/>
+                <CheckmarkContainer text={fact1}/>
+                <CheckmarkContainer text={fact2}/>
+                <CheckmarkContainer text={fact3}/>
             </ContainerBackground>
             
             <ReadyButton onClick={onClose}>
