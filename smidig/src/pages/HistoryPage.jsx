@@ -6,7 +6,6 @@ import HistoryInfoContainer from '../components/group3/HistoryInfoContainer';
 import HistoryMap from '../components/group3/HistoryMap';
 import PointCounterBar from '../components/group3/PointCounterBar';
 import menuAudio from '../audio/menuClick.wav'
-import backgroundPattern from '../images/backgroundPattern2.svg'
 import QuizComponent from '../components/group3/QuizComponent'
 import { HistoryCheckpoint } from '../components/group3/HistoryCheckpoint';
 import HistoryIntroduction from '../audio/historyIntroduction.mp3'
@@ -35,8 +34,6 @@ const HistoryPage = () => {
 
     const Background = styled.div`
         position: absolute;
-        
-        
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -239,7 +236,7 @@ const questionsStory1 = [
 
     const [historyInfoIsOpen, setHistoryInfoOpen] = useState(false);
     function historyInfoHandler() {
-        if (historyInfoIsOpen == false) {
+        if (historyInfoIsOpen === false) {
             setHistoryInfoOpen(true);
         } else {
             setHistoryInfoOpen(false);
@@ -250,7 +247,7 @@ const questionsStory1 = [
 
     const [quizPageIsOpen, setQuizPageIsOpen] = useState(false);
     function quizPageHandler() {
-        if(quizPageIsOpen == false) {
+        if(quizPageIsOpen === false) {
             setHistoryInfoOpen(false)
             setQuizPageIsOpen(true)
         } else {
@@ -261,7 +258,7 @@ const questionsStory1 = [
     const [pointBarIsOpen, setPointBarIsOpen] = useState(true);
     const [historyCheckpointIsOpen, setHistoryCheckpointIsOpen] = useState(false);
     const checkpointHandler = () => {
-      if(historyCheckpointIsOpen == true) {
+      if(historyCheckpointIsOpen === true) {
         setHistoryCheckpointIsOpen(false)
         if(story1 == "true"){
           setStory1("none");
@@ -294,8 +291,6 @@ const questionsStory1 = [
     const [showGoldenStar4, setShowGoldenStar4] = useState("100%");
     
 
-    
-
     const quizHandler = (isCorrect) => {
         
         if(isCorrect === true) {
@@ -310,10 +305,10 @@ const questionsStory1 = [
         if (nextQuestion < 4){
             setOpenQuestion(nextQuestion);
         } else {
-            
-            if (score == 1) {
+          
+            if (score === 1) {
               setShowGoldenStar1("0%")
-            } else if (score == 2) {
+            } else if (score === 2) {
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
             } else if (score == 3) {
@@ -382,7 +377,7 @@ const questionsStory1 = [
           <ExitMenu open={isOpen} onClose={() => setIsOpen(false)}/>
       </HistoryPageContainer>
       </HistoryPage>
-  )
+  );
 }
 
-export default HistoryPage
+export default HistoryPage;

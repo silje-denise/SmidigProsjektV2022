@@ -42,7 +42,6 @@ const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, 
         margin-bottom: 16px;
     `;
 
-
     const ContainerBackground = styled.div`
         padding: 16px;
         background-color: rgba(255,255,255,0.7);
@@ -89,10 +88,6 @@ const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, 
         background-position: center;
     `;
 
-    
-    
-
-
 
   return (
     <div>
@@ -103,35 +98,30 @@ const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, 
             <Title>
                 {title}
             </Title>
-            
             <ContainerBackground>
                 <Picture style={{
                     backgroundImage: `url(${illustration})`}}/>
                 <TextContainer>
                 {body}
                 </TextContainer>
-
                 <Oppsumert>Oppsumert</Oppsumert>
                 
                 <CheckmarkContainer text={fact1}/>
                 <CheckmarkContainer text={fact2}/>
                 <CheckmarkContainer text={fact3}/>
             </ContainerBackground>
-            
             <ReadyButton onClick={onClose}>
                 <ReadyText>Jeg er klar!</ReadyText>
             </ReadyButton>
         </ScrollView>
-
         <ProgressBar style={{
                     backgroundImage: `url(${dashedLine})`}}>
                 <ProgressDiv number="1" color1="rgba(73, 163, 58,1)" color2="rgba(52, 109, 117, 1)" active="0px 0px 0px 6px rgba(0,0,0,0.2)"/>
                 <ProgressDiv number="2" color1="rgba(254, 209, 86,1)" color2="rgba(246, 163, 88, 1)"/>
                 <ProgressDiv number="3"color1="rgba(244, 150, 142,1)" color2="rgba(245, 138, 91, 1)"/>
         </ProgressBar>
-
     </div>
-  )
+  );
 }
 
-export default HistoryInfoContainer
+export default HistoryInfoContainer;

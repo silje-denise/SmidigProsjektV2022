@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import GoldenStar from '../../images/goldStar.svg';
-import Avatar from '../../images/Viking.png'
-import PointCounter from './PointCounter';
-import testMap from '../../images/testMap.png';
+import Avatar from '../../images/Viking.png';
 import GLMap, { Marker, Popup }from 'react-map-gl';
 import mapLocationIcon from '../../images/mapLocationIcon.svg';
 import historyLocations from '../../data/historyLocations.json';
 
 
+<<<<<<< HEAD
 
 const HistoryMap = ({open, onClose, story}) => {
 
+=======
+const HistoryMap = ({open, onClose}) => {
+>>>>>>> 3ae84927a50a5b3457156d72c826fadfa17b4391
     const [viewState, setViewState] = React.useState({
         latitude: 59.932484,
         longitude: -348.931581,
@@ -37,12 +38,7 @@ const HistoryMap = ({open, onClose, story}) => {
         font-weight: 700;
         float: left;
         bottom: 0;
-    
     `;
-
-    
-
-    
 
     const MapContainer = styled.div`
         position: relative;
@@ -64,18 +60,12 @@ const HistoryMap = ({open, onClose, story}) => {
 
     const Dialogue = styled.div`
         margin: 16px;
-
     `;
 
     const DialogueTitle = styled.p`
         font-size: 22px;
         font-weight: 700;
         margin-bottom: 8px;
-
-    `;
-    
-    const DialoguePhrase = styled.p`
-    
     `;
 
     const DialogueAvatar = styled.div`
@@ -87,9 +77,6 @@ const HistoryMap = ({open, onClose, story}) => {
         right: 8px;
         top: 8px;
         bottom: 8px;
-        
-
-
     `;
 
     const NextButton = styled.div`
@@ -129,63 +116,52 @@ const HistoryMap = ({open, onClose, story}) => {
 
     `;
 
-   
-    
-    
-
   return (
       <>
-            <TitleBar>
-                <PageTitle>Historien</PageTitle>
-            </TitleBar>
-        
-            <MapContainer>
-                <MapDiv>
-                    
-                    <GLMap {...viewState} 
+        <TitleBar>
+            <PageTitle>Historien</PageTitle>
+        </TitleBar>
+        <MapContainer>
+            <MapDiv>
+                <GLMap {...viewState} 
                         mapStyle="mapbox://styles/mapbox/outdoors-v10?optimize=true"
                         mapboxAccessToken="pk.eyJ1IjoiYWRkaW1hbm5pIiwiYSI6ImNsM3drdjZicjBhbm8zY21tbmc0cDM0M2MifQ.3DIlK5bhql2VKREmCXBgMQ"
                         style={{borderRadius: "16px"}}
-                        onMove={evt => {setViewState(evt.viewState)}}
-                        >
+                        onMove={evt => {setViewState(evt.viewState)}}>
+                        {historyLocations.historyLocations.map(point => (
+                        <Marker
+                            key={point.id}
+                            latitude={point.coordinates[0]}
+                            longitude={point.coordinates[1]}>
+                                <MarkerIcon onClick={(e) => {
+                                    e.preventDefault();
+                                    setPointActive(point);
 
-                            {historyLocations.historyLocations.map(point => (
-                                <Marker
-                                key={point.id}
-                                latitude={point.coordinates[0]}
-                                longitude={point.coordinates[1]}>
-                                    <MarkerIcon onClick={(e) => {
-                                        e.preventDefault();
-                                        setPointActive(point);
-
-                                    }} 
-                                     style={{backgroundImage: `url(${mapLocationIcon})`}}/>
-                            </Marker>
-                            ))}
-
-                            {pointActive ? (
-                                <Popup latitude={pointActive.coordinates[0]} longitude={pointActive.coordinates[1]} anchor="bottom">
-                                    <PointPopUp>
-                                        test
-                                    </PointPopUp>
-                                </Popup>
-                            ) : null}
-                            
-                        </GLMap>
-                </MapDiv>
-
+                                }} 
+                            style={{backgroundImage: `url(${mapLocationIcon})`}}/>
+                        </Marker>
+                        ))}
+                        {pointActive ? (
+                            <Popup latitude={pointActive.coordinates[0]} longitude={pointActive.coordinates[1]} anchor="bottom">
+                                <PointPopUp>
+                                    test
+                                </PointPopUp>
+                            </Popup>
+                        ) : null}
+                </GLMap>
+            </MapDiv>
                 <DialogueBox>
                     <Dialogue>
                         <DialogueTitle>Hei og velkommen!</DialogueTitle>
-                        <DialoguePhrase>Endelig er du her! Nå skal vi <br/>endelig gjennom kulturstien.</DialoguePhrase>
+                        <p>Endelig er du her! Nå skal vi <br/>endelig gjennom kulturstien.</p>
                     </Dialogue>
                     <DialogueAvatar style={{
-                backgroundImage: `url(${Avatar})`}}></DialogueAvatar>
+                        backgroundImage: `url(${Avatar})`}}></DialogueAvatar>
                 </DialogueBox>
-            </MapContainer>
-            <NextButton onClick={onClose}>La oss begynne!</NextButton>
-            </>
-  )
+        </MapContainer>
+        <NextButton onClick={onClose}>La oss begynne!</NextButton>
+    </>
+  );
 }
 
-export default HistoryMap
+export default HistoryMap;

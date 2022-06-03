@@ -3,7 +3,7 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import {React, useState} from "react";
 import styled from "styled-components";
 import map from "../images/Map.png";
-import Navigation from "../components/group3/Navigation";
+import Navigation from "../components/common/Navigation";
 import AudioFile from "../audio/pannekaka.mp3";
 
 
@@ -160,15 +160,15 @@ const MapPage = () => {
               setInfoText("Her finner du info om Byåa: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
               
            }else if(id === 1){
-            setInfoHeader("Område 1");
-            setInfoText(`Her finner du info om Område 1:  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.`);
+            setInfoHeader("Vannmølla");
+            setInfoText(`Her finner du info om Vannmølla:  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.`);
            }else if(id === 2){
-            setInfoHeader("Område 2");
-            setInfoText("Her finner du info om Område 2: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
+            setInfoHeader("Sagen");
+            setInfoText("Her finner du info om Sagen: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
            }
            else if(id === 3){
-            setInfoHeader("Område 3");
-            setInfoText("Her finner du info om Område 3: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
+            setInfoHeader("Låven");
+            setInfoText("Her finner du info om Låven: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
            }
        }else{
            setIsOpen(false);
@@ -188,14 +188,14 @@ const MapPage = () => {
             </ButtonWrapper>
             <AreaWrapper>
                 <Area1 onClick={() => handleOnclick(1)}>
-                    <p>Område 1</p>
+                    <p>Vannmølla</p>
                     <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'rgb(103,179,70)'}/>
                 </Area1>
                 <Area2 onClick={() => handleOnclick(2)}>
-                    <p>Område 2</p>
+                    <p>Sagen</p>
                 <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'rgb(103,179,70)'}/></Area2>
                 <Area3 onClick={() => handleOnclick(3)}>
-                    <p>Område 3</p>
+                    <p>Låven</p>
                 <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'rgb(103,179,70)'}/></Area3>
             </AreaWrapper>
             <OverlayWrapper>
