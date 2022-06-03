@@ -6,6 +6,7 @@ import AvatarIllu from '../../images/Viking.png';
 import QuestionAlternative from './QuestionAlternative';
 import checkmarkCircle from '../../images/checkmarkCircle.svg';
 import xCircle from '../../images/xCircle.svg';
+import waterMill from '../../images/waterMill.jpg';
 
 const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAnswer, wrongAnswer}) => {
   if (!open) return null;
