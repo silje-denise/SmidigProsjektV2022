@@ -13,7 +13,7 @@ const quizQuestions = [{
     ]
 },
 {
-    questionText: 'Hvilket insekt bygger store tuer i skoen, ofte inntil en trestamme?',
+    questionText: 'Hvilket insekt bygger store tuer i skoen, ofte inntil trestammer?',
     answerOptions:
     // Q2
         [

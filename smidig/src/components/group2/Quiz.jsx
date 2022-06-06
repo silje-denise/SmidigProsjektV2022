@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import quizQuestions from "../Quiz/quizArray";
 import NextButton from "../common/NextButton";
+import QuizComplete from "./QuizComplete";
+
 //import PointsComponent from '../common/PointsComponent'
 
 const StyledQuizWrapper = styled.div`
@@ -49,6 +51,22 @@ const StyledQuizElement = styled.button`
     align-items: center;
 `;
 
+const DivQuizPage = styled.div`
+    display: none;
+`;
+
+function showQuiz() {
+    var hiddenDiv = document.getElementById("CompleteQuizOverlay");
+
+    if (hiddenDiv.style.display === "none") {
+        hiddenDiv.style.display = "block";
+    }
+
+    else {
+        hiddenDiv.style.display = "none";
+    }
+  }
+
 const Quiz = () => {
     const [answerClicked, setAnswerClicked] = useState(-1);
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -77,7 +95,7 @@ const Quiz = () => {
             setCurrentQuestion(nextQuestion);
             setAnswerClicked(-1)
         }else {
-                alert("quizen er ferdig")
+                showQuiz()
             }
     }
 
@@ -94,6 +112,10 @@ const Quiz = () => {
                 <StyledQuizElement  onClick={() => handleAnswerButtonClick(answerOption.correct, index)} className={getClassNameForOption(index)}> {answerOption.answerText} </StyledQuizElement>))}
             </StyledQuizDiv>
             <NextButton onClick={nextQuestion}></NextButton>
+
+            <DivQuizPage id='CompleteQuizOverlay'>
+                <QuizComplete />
+            </DivQuizPage>
         </>
     );
 }
