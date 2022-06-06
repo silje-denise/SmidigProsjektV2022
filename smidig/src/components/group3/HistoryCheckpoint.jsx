@@ -7,7 +7,7 @@ import ProgressDiv from '../group3/ProgressDiv'
 import dashedLine from '../../images/dashedLine.svg'
 import { getAvatarSource } from '../../getAvatarSource';
 
-export const HistoryCheckpoint = ({open, points, star1, star2, star3, star4, onClose}) => {
+export const HistoryCheckpoint = ({open, points, star1, star2, star3, star4, total, finnish, hideStars, onClose}) => {
     if (!open) return null;
 
     const HistoryCheckpointContainer = styled.div`
@@ -21,7 +21,7 @@ export const HistoryCheckpoint = ({open, points, star1, star2, star3, star4, onC
 
     const Container = styled.div`
         position: relative;
-        background-image: linear-gradient(120deg, rgba(85, 85, 85, 1), rgba(38, 38, 38, 1));
+        background-image: linear-gradient(120deg, ${hideStars ? "rgba(209, 220, 147, 1), rgba(115, 198, 76, 1)" : "rgba(85, 85, 85, 1), rgba(38, 38, 38, 1)"});
         border-radius: 24px;
         margin: 10px 12px;
         padding: 16px;
@@ -30,7 +30,8 @@ export const HistoryCheckpoint = ({open, points, star1, star2, star3, star4, onC
     const StarsContainer = styled.div`
         margin: auto;
         width: max-content;
-        padding: 64px 0px 32px 0px;
+        padding-top: 64px;
+        display: ${hideStars ? hideStars : "true"};
         
     `;
 
@@ -80,19 +81,19 @@ export const HistoryCheckpoint = ({open, points, star1, star2, star3, star4, onC
     `;
 
     const TextContainer = styled.div`
-        color: #FED156;
+        color: ${hideStars ? "#000000" : "#FED156"};
         font-weight: 700;
         font-size: 28px;
         width: 100%auto;
         text-align: center;
         opacity: 0.9;
         text-shadow: 0px 0px 12px #FED15650;
-        margin-bottom: 64px;
+        margin: 32px 0px 64px 0px;
     `;
 
     const NextButton = styled.div`
         position: relative;
-        background-image: linear-gradient(120deg, rgba(209, 220, 147, 1), rgba(115, 198, 76, 1));
+        background-image: linear-gradient(120deg, ${hideStars ? "rgba(85, 85, 85, 1), rgba(38, 38, 38, 1)" : "rgba(209, 220, 147, 1), rgba(115, 198, 76, 1)"});
         height: 64px;
         border-radius: 6px;
         margin-top: -16px;
@@ -103,7 +104,7 @@ export const HistoryCheckpoint = ({open, points, star1, star2, star3, star4, onC
         text-align: center;
         font-weight: 600;
         font-size: 26px;
-        color: black;
+        color: ${hideStars ? "#ffffff" : "#000000"};
         opacity: 0.8;
         line-height: 2.4;
     `;
@@ -116,6 +117,7 @@ export const HistoryCheckpoint = ({open, points, star1, star2, star3, star4, onC
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: ${hideStars ? hideStars : "true"};
 `;
 
   return (
@@ -128,11 +130,11 @@ export const HistoryCheckpoint = ({open, points, star1, star2, star3, star4, onC
                 <SmallStar2 style={{backgroundImage: `url(${star})`}} />
                 <SmallStar3 style={{backgroundImage: `url(${star})`}} />
             </StarsContainer>
-            <TextContainer>{points}/4 Stjerner!</TextContainer>
+            <TextContainer>{points}/{total ? total : "4 Stjerner!"}</TextContainer>
             
-            <AvatarBox title="Så flink du er!" body="Er du klar for neste eventyr?" illustration={getAvatarSource()} color1="rgba(243, 211, 96, 1)" color2="rgba(215, 173, 40, 1)"/>
+            <AvatarBox title="Så flink du er!" body={finnish ? finnish : "Er du klar for neste eventyr?"} illustration={getAvatarSource()} color1="rgba(243, 211, 96, 1)" color2="rgba(215, 173, 40, 1)"/>
             <NextButton onClick={onClose}>
-                <NextText>Jeg er klar!</NextText>
+                <NextText>{hideStars ? "Ferdig" : "Jeg er klar!"}</NextText>
             </NextButton>
         </Container>
     </HistoryCheckpointContainer>

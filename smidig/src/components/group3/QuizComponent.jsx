@@ -151,7 +151,7 @@ const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAn
   const StyledImg = styled.img`
   height: auto;
   width: auto;
-  `;
+  `
   
   return (
     <div>
