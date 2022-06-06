@@ -3,7 +3,7 @@
     {
         "id": 1,
         "name": "Osteåsen",
-        "coordinates": [59.932484, -348.931581],
+        "coordinates": [59.934484, -348.931581],
         "description": "Her var det stor sagproduksjon tildig i 1920-tallet.",
         "points": 0
     },
@@ -17,7 +17,7 @@
     {
         "id": 3,
         "name": "test3",
-        "coordinates": [59.9384, -348.981],
+        "coordinates": [59.9404, -348.961],
         "description": "Her var det stor sagproduksjon tildig i 1920-tallet.",
         "points": 0
     },
