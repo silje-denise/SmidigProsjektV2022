@@ -148,13 +148,10 @@ const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAn
     
   `;
 
-<<<<<<< HEAD
-=======
   const StyledImg = styled.img`
   height: auto;
   width: auto;
-  `;
->>>>>>> 6befd937a4d78a2e4524dc2caaf590748f449d9a
+  `
   
   return (
     <div>

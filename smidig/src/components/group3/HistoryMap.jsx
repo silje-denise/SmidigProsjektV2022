@@ -5,9 +5,13 @@ import GLMap, { Marker, Popup }from 'react-map-gl';
 import mapLocationIcon from '../../images/mapLocationIcon.svg';
 import historyLocations from '../../data/historyLocations.json';
 import { getAvatarSource } from '../../getAvatarSource';
+import mapIconNorum from '../../images/mapIconNorum.svg';
+import mapIconBorgen from '../../images/mapIconBorgen.svg';
+import mapIconRud from '../../images/mapIconRud.svg';
+import mapIconTorva from '../../images/mapIconTorva.svg';
 
 
-const HistoryMap = ({open, onClose}) => {
+const HistoryMap = ({open, onClose, rud, borgen, norum, torva, avatarTitle, avatarBody}) => {
     const [viewState, setViewState] = React.useState({
         latitude: 59.932484,
         longitude: -348.931581,
@@ -17,7 +21,6 @@ const HistoryMap = ({open, onClose}) => {
     });
 
     const [pointActive, setPointActive] = useState(null);
-
     if (!open) return null
 
     const TitleBar = styled.div`
@@ -99,8 +102,8 @@ const HistoryMap = ({open, onClose}) => {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        height: 64px;
-        width: 64px;
+        height: 48px;
+        width: 200px;
     `;
 
     const PointPopUp = styled.div`
@@ -126,6 +129,11 @@ const HistoryMap = ({open, onClose}) => {
       width: 5rem;
     `;
 
+    const DialogBody = styled.p`
+        width: 80%;
+        margin-bottom: 42px;
+    `;
+
   return (
       <>
         <TitleBar>
@@ -138,19 +146,43 @@ const HistoryMap = ({open, onClose}) => {
                         mapboxAccessToken="pk.eyJ1IjoiYWRkaW1hbm5pIiwiYSI6ImNsM3drdjZicjBhbm8zY21tbmc0cDM0M2MifQ.3DIlK5bhql2VKREmCXBgMQ"
                         style={{borderRadius: "16px"}}
                         onMove={evt => {setViewState(evt.viewState)}}>
-                        {historyLocations.historyLocations.map(point => (
+                        
                         <Marker
-                            key={point.id}
-                            latitude={point.coordinates[0]}
-                            longitude={point.coordinates[1]}>
+                            latitude={historyLocations.historyLocations[0].coordinates[0]}
+                            longitude={historyLocations.historyLocations[0].coordinates[1]}>
                                 <MarkerIcon onClick={(e) => {
                                     e.preventDefault();
-                                    setPointActive(point);
-
-                                }} 
-                            style={{backgroundImage: `url(${mapLocationIcon})`}}/>
+                                    setPointActive(historyLocations.historyLocations[0])
+                                }}
+                                style={{backgroundImage: `url(${mapIconBorgen})`, opacity: `${borgen ? borgen : 0.5}`}}/>
                         </Marker>
-                        ))}
+                        <Marker
+                            latitude={historyLocations.historyLocations[1].coordinates[0]}
+                            longitude={historyLocations.historyLocations[1].coordinates[1]}>
+                                <MarkerIcon onClick={(e) => {
+                                    e.preventDefault();
+                                    setPointActive(historyLocations.historyLocations[0])
+                                }}
+                                style={{backgroundImage: `url(${mapIconNorum})`, opacity: `${norum ? norum : 0.5}`}}/>
+                        </Marker>
+                        <Marker
+                            latitude={historyLocations.historyLocations[2].coordinates[0]}
+                            longitude={historyLocations.historyLocations[2].coordinates[1]}>
+                                <MarkerIcon onClick={(e) => {
+                                    e.preventDefault();
+                                    setPointActive(historyLocations.historyLocations[0])
+                                }}
+                                style={{backgroundImage: `url(${mapIconRud})`, opacity: `${rud ? rud : 0.5}`}}/>
+                        </Marker>
+                        <Marker
+                            latitude={historyLocations.historyLocations[3].coordinates[0]}
+                            longitude={historyLocations.historyLocations[3].coordinates[1]}>
+                                <MarkerIcon onClick={(e) => {
+                                    e.preventDefault();
+                                    setPointActive(historyLocations.historyLocations[0])
+                                }}
+                                style={{backgroundImage: `url(${mapIconTorva})`, opacity: `${torva ? torva : 0.5}`}}/>
+                        </Marker>
                         {pointActive ? (
                             <Popup latitude={pointActive.coordinates[0]} longitude={pointActive.coordinates[1]} anchor="bottom">
                                 <PointPopUp>
@@ -162,8 +194,8 @@ const HistoryMap = ({open, onClose}) => {
             </MapDiv>
                 <DialogueBox>
                     <Dialogue>
-                        <DialogueTitle>Hei og velkommen!</DialogueTitle>
-                        <p>Endelig er du her! Nå kan vi <br/> gå gjennom kulturstien sammen.</p>
+                        <DialogueTitle>{avatarTitle}</DialogueTitle>
+                        <DialogBody>{avatarBody}</DialogBody>
                     </Dialogue>
                     <DialogueAvatar>
                         <ProfileIcon> 

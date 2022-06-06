@@ -209,6 +209,7 @@ const questionsStory1 = [
   const [story2, setStory2] = useState("none");
   const [story3, setStory3] = useState("none");
   const [story4, setStory4] = useState("none");
+  const [storyCheckpoint, setStoryCheckpoint] = useState(false)
     const [isOpen, setIsOpen] = useState(false);
     function exitMenuHandler() {
         
@@ -271,7 +272,7 @@ const questionsStory1 = [
           setStory4("true");
         } else if(story4 == "true") {
           setStory4("none");
-          setStory1("true");
+          setStoryCheckpoint(true);
           {/*Her må du legge til total score checkpoint for alle sstoriene!*/}
         }
         setMapIsOpen(true)
@@ -330,6 +331,11 @@ const questionsStory1 = [
         }
     }
 
+    const storyCheckpointHandler = () => {
+      setHistoryCheckpointIsOpen(false)
+      setIsOpen(true);
+    }
+
     
     
 
@@ -347,33 +353,34 @@ const questionsStory1 = [
             <PointCounterBar points={totalScore} open={pointBarIsOpen}/>
           </ExitBar>
           <div style={{display: story1}}>
-            <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
+            <HistoryMap open={mapIsOpen} onClose={mapPageHandler} rud="1" avatarTitle="Hei og velkommen!" avatarBody="Endelig er du her! Nå kan vi gå gjennom kulturstien sammen."/>
             <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler} title="Teststed1" body="Lorum ipsum tester tester tester tester tester tester ij sefijd efijowefo wo fwioehf gww roifjweiog wg orug wo fwie ofjiowe fwieof weoigh weigw. oqwpdq qopwdw dqwo dqw owefkowfj fewo few e, feowkfowe fowe. ewokfowekf." 
               fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${waterMill}`} avatarTtile="Dette er Ostevågen!" avatarBody="Dette er mitt hjem! Er du klar til å hjelpe meg med noen spørsmål?" avatarIllustration={`${Viking}`}/>
             <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsStory1} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
             <HistoryCheckpoint open={historyCheckpointIsOpen} star1={showGoldenStar1} star2={showGoldenStar2} star3={showGoldenStar3} star4={showGoldenStar4} points={score} onClose={checkpointHandler}/>
           </div>
           <div style={{display: story2}}>
-            <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
+            <HistoryMap open={mapIsOpen} onClose={mapPageHandler} borgen="1" avatarTitle="Borgen" avatarBody="Nå skal vi videre til Borgen! Et vikitg samlepunkt."/>
             <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler} title="Teststed2" body="Lorum ipsum tester tester tester tester tester tester ij sefijd efijowefo wo fwioehf gww roifjweiog wg orug wo fwie ofjiowe fwieof weoigh weigw" 
               fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${waterMill}`} avatarTtile="Dette er Jergården!" avatarBody="Her bodde det mange innen skogsvirksomhet." avatarIllustration={`${Viking}`}/>
             <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsStory2} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
             <HistoryCheckpoint open={historyCheckpointIsOpen} star1={showGoldenStar1} star2={showGoldenStar2} star3={showGoldenStar3} star4={showGoldenStar4} points={score} onClose={checkpointHandler}/>
           </div>
           <div style={{display: story3}}>
-            <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
+            <HistoryMap open={mapIsOpen} onClose={mapPageHandler} norum="1" avatarTitle="Norum" avatarBody="Nå skal vi til Norum!"/>
             <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler} title="Teststed3" body="Lorum ipsum tester tester tester tester tester tester ij sefijd efijowefo wo fwioehf gww roifjweiog wg orug wo fwie ofjiowe fwieof weoigh weigw" 
               fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${waterMill}`} avatarTtile="Test3" avatarBody="Her bodde det mange innen skogsvirksomhet." avatarIllustration={`${Viking}`}/>
             <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsStory3} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
             <HistoryCheckpoint open={historyCheckpointIsOpen} star1={showGoldenStar1} star2={showGoldenStar2} star3={showGoldenStar3} star4={showGoldenStar4} points={score} onClose={checkpointHandler}/>
           </div>
           <div style={{display: story4}}>
-            <HistoryMap open={mapIsOpen} onClose={mapPageHandler}/>
+            <HistoryMap open={mapIsOpen} onClose={mapPageHandler} torva="1" avatarTitle="Torva" avatarBody="Her er Torva!"/>
             <HistoryInfoContainer open={historyInfoIsOpen} onClose={historyInfoHandler} title="Teststed4" body="Lorum ipsum tester tester tester tester tester tester ij sefijd efijowefo wo fwioehf gww roifjweiog wg orug wo fwie ofjiowe fwieof weoigh weigw" 
               fact1="oijef iejfois fesf sfef sadaefae adaw daw." fact2="noe opwqdq feu f ue." fact3="iojaeoja dwa da." illustration={`${waterMill}`} avatarTtile="Test4" avatarBody="Her bodde det mange innen skogsvirksomhet." avatarIllustration={`${Viking}`}/>
             <QuizComponent open={quizPageIsOpen} openQuestion={openQuestion} quizHandler={quizHandler} questionsArray={questionsStory4} rightAnswer={showAnswerStatusCorrect} wrongAnswer={showAnswerStatusWrong}/>
             <HistoryCheckpoint open={historyCheckpointIsOpen} star1={showGoldenStar1} star2={showGoldenStar2} star3={showGoldenStar3} star4={showGoldenStar4} points={score} onClose={checkpointHandler}/>
           </div>
+          <HistoryCheckpoint open={storyCheckpoint} points={totalScore} total="16" finnish="Da var vi ferdige for denne gang!" hideStars={"none"} onClose={storyCheckpointHandler}></HistoryCheckpoint>
           <ExitMenu open={isOpen} onClose={() => setIsOpen(false)}/>
       </HistoryPageContainer>
       </HistoryPage>

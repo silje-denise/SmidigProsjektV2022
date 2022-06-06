@@ -6,6 +6,7 @@ import Navigation from "../components/common/Navigation";
 import HeaderText from "../components/group1/HeaderText";
 import Background from "../images/background.png";
 import { Link } from "react-router-dom";
+import PointCounterBar from '../components/group3/PointCounterBar';
 
 
 const GameLanding = styled.div`
@@ -17,11 +18,7 @@ const NavWrapper = styled.div`
     position: absolute;
     width: 100vw;
 `;
-const Pointwrapper = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px ;
-`;
+
 const StyledBackground = styled.div`
     background-image: url(${Background});
     width: 100%;
@@ -37,10 +34,9 @@ const StyledLink = styled(Link)`
 const GamesLandingPage = () => {
     return(
         <StyledBackground>
+            
             <GameLanding>
-                <Pointwrapper>
-                    <Points />
-                </Pointwrapper>
+            <PointCounterBar points="3" open="true" />
                 <StyledLink to="/history">
                     <HistoryDiv/>
                 </StyledLink>
