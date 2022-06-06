@@ -6,13 +6,7 @@ import mapLocationIcon from '../../images/mapLocationIcon.svg';
 import historyLocations from '../../data/historyLocations.json';
 
 
-<<<<<<< HEAD
-
-const HistoryMap = ({open, onClose, story}) => {
-
-=======
 const HistoryMap = ({open, onClose}) => {
->>>>>>> 3ae84927a50a5b3457156d72c826fadfa17b4391
     const [viewState, setViewState] = React.useState({
         latitude: 59.932484,
         longitude: -348.931581,

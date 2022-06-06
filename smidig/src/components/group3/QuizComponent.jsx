@@ -144,6 +144,7 @@ const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAn
     margin-left: 8px;
     
   `;
+
   
   return (
     <div>
