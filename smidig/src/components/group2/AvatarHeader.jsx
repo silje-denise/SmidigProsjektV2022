@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { getAvatarSource } from "../../getAvatarSource";
 
 
 const StyledAvatarHeader = styled("div")`
@@ -24,12 +25,12 @@ const StyledHeaderText = styled("h2")`
     margin-top: 1.25rem;
 `;
 
-const AvatarHeader = ({source}) => {
+const AvatarHeader = () => {
     return(
         <>
             <StyledAvatarHeader>
                <StyledAvatarImageWrapper>
-                   <StyledAvatarImage src={source} alt="The chosen avatar (interchangable)"/>
+                   <StyledAvatarImage src={getAvatarSource()} alt="The chosen avatar (interchangable)"/>
                </StyledAvatarImageWrapper>
                 <StyledHeaderText>Velg din avatar</StyledHeaderText>
             </StyledAvatarHeader>

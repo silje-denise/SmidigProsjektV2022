@@ -10,7 +10,7 @@ import CheckmarkContainer from './CheckmarkContainer'
 import ProgressDiv from '../group3/ProgressDiv'
 import dashedLine from '../../images/dashedLine.svg'
 import { AvatarBox } from './AvatarBox'
-import backgroundPattern from '../../images/backgroundPattern2.svg'
+import { getAvatarSource } from '../../getAvatarSource';
 
 const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, illustration, avatarTtile, avatarBody, avatarIllustration}) => {
     if (!open) return null
@@ -88,12 +88,28 @@ const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, 
         background-position: center;
     `;
 
+    const ProfileIcon = styled.div`
+    border-radius: 50px;
+    width: 5rem;
+    height: 5rem;
+    display:flex;
+    justify-content: center;
+    position: fixed;
+    right: 2.5rem;
+    z-index: 100;
+  `;
+
+    const StyledImg = styled.img`
+      height: 5rem;
+      width: 5rem;
+      z-index: 200;
+    `;
+
 
   return (
     <div>
         <ScrollView>
-
-            <AvatarBox title={avatarTtile} body={avatarBody} illustration={avatarIllustration} color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)"/>
+            <AvatarBox title={avatarTtile} illustration={getAvatarSource()} body={avatarBody} color1="rgba(255,255,255,1)" color2="rgba(255, 255, 255, 1)" />
 
             <Title>
                 {title}

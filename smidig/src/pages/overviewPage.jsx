@@ -10,7 +10,6 @@ import SettingsPage from './SettingsPage';
 import Logo from '../images/RaelingenLogo.png';
 import { getAvatarSource } from '../getAvatarSource';
 import {Link} from 'react-router-dom';
-import Dog from '../images/Dog.png';
 
 const OverviewPage = () => {
 
@@ -50,8 +49,8 @@ const OverviewPage = () => {
 
     const LogoContainer = styled.div`
       background-color: white;
-      width: 188px;
-      padding: 10px;
+      width: 8rem;
+      padding: 1rem;
       display:flex;
       flex-direction: column;
     `;
@@ -61,7 +60,7 @@ const OverviewPage = () => {
       flex-direction: row;
 
       h1:first-child{
-        color:rgb(121,176,85);
+        color:rgb(32,152,3);
       }
     `;
 
@@ -71,18 +70,39 @@ const OverviewPage = () => {
     `;
 
     const ProfileIcon = styled.div`
-      background-color: lightgrey;
+      background-color: white;
       border-radius: 50px;
-      width: 60px;
-      height:60px;
+      width: 5rem;
+      height: 5rem;
       display:flex;
-      justify-content:center;
-      margin-top:20px;
+      justify-content: center;
+      margin-top: 2.5rem;
+      margin-right: -0.25rem;
     `;
 
     const Header = styled.div`
       display:flex;
       justify-content: space-between;
+    `;
+
+    const StyledWhiteBox = styled.div`
+    height: 15rem;
+    width: 5rem;
+    background-color: white;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    z-index: -1;
+    `;
+
+    const StyledWhiteBox2 = styled.div`
+    height: 1rem;
+    width: 5rem;
+    background-color: white;
+    position: absolute;
+    top: 0rem;
+    left: 2rem;
+    z-index: -1;
     `;
 
     function showOverlay() {
@@ -103,13 +123,15 @@ const OverviewPage = () => {
         <div className='background'/>
         <div className='overviewPage'>
           <Header>
+            <StyledWhiteBox />
+            <StyledWhiteBox2 />
             <SettingsBar>
               <SettingsIcon onClick={showOverlay} style={{
                 backgroundImage: `url(${settingsIconSvg})`}}></SettingsIcon>
             </SettingsBar>
             <Link to={"/profile"}>
               <ProfileIcon> 
-                <StyledImg src={Dog}/>   
+                <StyledImg src={getAvatarSource()}/>   
               </ProfileIcon>
             </Link>
         </Header>

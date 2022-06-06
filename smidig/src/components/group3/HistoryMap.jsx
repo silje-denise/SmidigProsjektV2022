@@ -4,6 +4,7 @@ import Avatar from '../../images/Viking.png';
 import GLMap, { Marker, Popup }from 'react-map-gl';
 import mapLocationIcon from '../../images/mapLocationIcon.svg';
 import historyLocations from '../../data/historyLocations.json';
+import { getAvatarSource } from '../../getAvatarSource';
 
 
 const HistoryMap = ({open, onClose}) => {
@@ -110,6 +111,21 @@ const HistoryMap = ({open, onClose}) => {
 
     `;
 
+    const ProfileIcon = styled.div`
+    border-radius: 50px;
+    width: 5rem;
+    height: 5rem;
+    display:flex;
+    justify-content: center;
+    position: fixed;
+    right: 2.5rem;
+  `;
+
+    const StyledImg = styled.img`
+      height: 5rem;
+      width: 5rem;
+    `;
+
   return (
       <>
         <TitleBar>
@@ -147,10 +163,13 @@ const HistoryMap = ({open, onClose}) => {
                 <DialogueBox>
                     <Dialogue>
                         <DialogueTitle>Hei og velkommen!</DialogueTitle>
-                        <p>Endelig er du her! Nå skal vi <br/>endelig gjennom kulturstien.</p>
+                        <p>Endelig er du her! Nå kan vi <br/> gå gjennom kulturstien sammen.</p>
                     </Dialogue>
-                    <DialogueAvatar style={{
-                        backgroundImage: `url(${Avatar})`}}></DialogueAvatar>
+                    <DialogueAvatar>
+                        <ProfileIcon> 
+                            <StyledImg src={getAvatarSource()}/>   
+                        </ProfileIcon>
+                    </DialogueAvatar>
                 </DialogueBox>
         </MapContainer>
         <NextButton onClick={onClose}>La oss begynne!</NextButton>

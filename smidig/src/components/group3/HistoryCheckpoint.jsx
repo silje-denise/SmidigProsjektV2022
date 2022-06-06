@@ -5,6 +5,7 @@ import { AvatarBox } from './AvatarBox';
 import Viking from '../../images/Viking.png'
 import ProgressDiv from '../group3/ProgressDiv'
 import dashedLine from '../../images/dashedLine.svg'
+import { getAvatarSource } from '../../getAvatarSource';
 
 export const HistoryCheckpoint = ({open, points, star1, star2, star3, star4, onClose}) => {
     if (!open) return null;
@@ -129,7 +130,7 @@ export const HistoryCheckpoint = ({open, points, star1, star2, star3, star4, onC
             </StarsContainer>
             <TextContainer>{points}/4 Stjerner!</TextContainer>
             
-            <AvatarBox title="Så flink du er!" body="Er du klar for neste eventyr?" illustration={Viking} color1="rgba(243, 211, 96, 1)" color2="rgba(215, 173, 40, 1)"/>
+            <AvatarBox title="Så flink du er!" body="Er du klar for neste eventyr?" illustration={getAvatarSource()} color1="rgba(243, 211, 96, 1)" color2="rgba(215, 173, 40, 1)"/>
             <NextButton onClick={onClose}>
                 <NextText>Jeg er klar!</NextText>
             </NextButton>
