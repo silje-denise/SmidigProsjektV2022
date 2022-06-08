@@ -11,19 +11,8 @@ import mapIconRud from '../../images/mapIconRud.svg';
 import mapIconTorva from '../../images/mapIconTorva.svg';
 
 
-const HistoryMap = ({open, onClose, rud, borgen, norum, torva, avatarTitle, avatarBody}) => {
-    const [viewState, setViewState] = React.useState({
-        latitude: 59.932484,
-        longitude: -348.931581,
-        width: "100vh",
-        height: "100vh",
-        zoom: 11,
-    });
 
-    const [pointActive, setPointActive] = useState(null);
-    if (!open) return null
-
-    const TitleBar = styled.div`
+const TitleBar = styled.div`
         position: relative;
         width: 100%;
         height: 42px;
@@ -133,6 +122,21 @@ const HistoryMap = ({open, onClose, rud, borgen, norum, torva, avatarTitle, avat
         width: 80%;
         margin-bottom: 42px;
     `;
+
+
+const HistoryMap = ({open, onClose, rud, borgen, norum, torva, avatarTitle, avatarBody}) => {
+    const [viewState, setViewState] = React.useState({
+        latitude: 59.932484,
+        longitude: -348.931581,
+        width: "100vh",
+        height: "100vh",
+        zoom: 11,
+    });
+
+    const [pointActive, setPointActive] = useState(null);
+    if (!open) return null
+
+    
 
   return (
       <>

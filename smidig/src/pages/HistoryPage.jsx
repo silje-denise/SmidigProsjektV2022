@@ -313,12 +313,12 @@ const questionsStory1 = [
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
             } else if (score == 3) {
-              alert("denne testkjører 3" + score)
+              
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
               setShowGoldenStar3("0%")
             } else if (score == 4) {
-              alert("denne testkjører 4" + score)
+              
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
               setShowGoldenStar3("0%")
