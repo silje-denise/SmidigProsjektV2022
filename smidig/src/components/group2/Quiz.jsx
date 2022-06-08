@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import quizQuestions from "../Quiz/quizArray";
+import quizQuestions from "../../data/quizArray";
 import NextButton from "../common/NextButton";
 import QuizComplete from "./QuizComplete";
 import { keyframes } from "styled-components";
