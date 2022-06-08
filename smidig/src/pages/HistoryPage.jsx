@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import ExitIcon from '../components/group3/ExitIcon';
 import ExitMenu from '../components/group3/ExitMenu.jsx';
 import HistoryInfoContainer from '../components/group3/HistoryInfoContainer';
 import HistoryMap from '../components/group3/HistoryMap';
@@ -13,7 +12,9 @@ import Ostavagen from '../audio/Ostavagen.mp3';
 import sporsmalIntro from '../audio/sporsmalIntro.mp3';
 import Viking from '../images/Viking.png'
 import waterMill from '../images/waterMill.jpg';
-import globalScore from '../data/score'
+import globalScore from '../data/score';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const HistoryPage = () => {
 
@@ -225,7 +226,7 @@ const questionsStory1 = [
         setShowGoldenStar2("100%")
         setShowGoldenStar3("100%")
         setShowGoldenStar4("100%")
-        if (mapIsOpen == false) {
+        if (mapIsOpen ===false) {
             setMapIsOpen(true);
             
         } else {
@@ -238,7 +239,7 @@ const questionsStory1 = [
 
     const [historyInfoIsOpen, setHistoryInfoOpen] = useState(false);
     function historyInfoHandler() {
-        if (historyInfoIsOpen === false) {
+        if (historyInfoIsOpen ===false) {
             setHistoryInfoOpen(true);
         } else {
             setHistoryInfoOpen(false);
@@ -262,19 +263,19 @@ const questionsStory1 = [
     const checkpointHandler = () => {
       if(historyCheckpointIsOpen === true) {
         setHistoryCheckpointIsOpen(false)
-        if(story1 == "true"){
+        if(story1==="true"){
           setStory1("none");
           setStory2("true");
           setScore(0);
-        } else if(story2 == "true"){
+        } else if(story2==="true"){
           setStory2("none");
           setStory3("true");
           setScore(0);
-        } else if(story3 == "true"){
+        } else if(story3==="true"){
           setStory3("none");
           setStory4("true");
           setScore(0);
-        } else if(story4 == "true") {
+        } else if(story4==="true") {
           setStory4("none");
           setStoryCheckpoint(true);
           setScore(0);
@@ -365,7 +366,7 @@ const questionsStory1 = [
         <HistoryPageContainer>
           <ExitBar>
             <ExitButton onClick={exitMenuHandler}>
-              <ExitIcon opacity='0.5' width="36px" height="36px"></ExitIcon>
+              <FontAwesomeIcon icon={faXmark} size="3x"/>
             </ExitButton>
             <PointCounterBar open={pointBarIsOpen}/>
           </ExitBar>
