@@ -12,10 +12,8 @@ import dashedLine from '../../images/dashedLine.svg'
 import { AvatarBox } from './AvatarBox'
 import { getAvatarSource } from '../../getAvatarSource';
 
-const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, illustration, avatarTtile, avatarBody, avatarIllustration}) => {
-    if (!open) return null
 
-    const ScrollView = styled.div`
+const ScrollView = styled.div`
         height: 600px;
         width: 100%auto;
         background-image: linear-gradient(120deg, rgba(209, 220, 147, 1), rgba(115, 200, 45, 1));
@@ -104,6 +102,12 @@ const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, 
       width: 5rem;
       z-index: 200;
     `;
+
+
+const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, illustration, avatarTtile, avatarBody, avatarIllustration}) => {
+    if (!open) return null
+
+    
 
 
   return (

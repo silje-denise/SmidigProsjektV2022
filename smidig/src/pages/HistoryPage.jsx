@@ -4,7 +4,7 @@ import ExitIcon from '../components/group3/ExitIcon';
 import ExitMenu from '../components/group3/ExitMenu.jsx';
 import HistoryInfoContainer from '../components/group3/HistoryInfoContainer';
 import HistoryMap from '../components/group3/HistoryMap';
-import PointCounterBar from '../components/group3/PointCounterBar';
+import PointCounterBar from '../components/group3/PointCounter';
 import menuAudio from '../audio/menuClick.wav'
 import QuizComponent from '../components/group3/QuizComponent'
 import { HistoryCheckpoint } from '../components/group3/HistoryCheckpoint';
@@ -13,6 +13,7 @@ import Ostavagen from '../audio/Ostavagen.mp3';
 import sporsmalIntro from '../audio/sporsmalIntro.mp3';
 import Viking from '../images/Viking.png'
 import waterMill from '../images/waterMill.jpg';
+import globalScore from '../data/score'
 
 const HistoryPage = () => {
 
@@ -296,6 +297,7 @@ const questionsStory1 = [
         
         if(isCorrect === true) {
             setScore(score+1)
+            globalScore.addScore(1);
             setShowAnswerStatusCorrect("true")
             setShowAnswerStatusWrong("none")
         }else {
@@ -313,12 +315,12 @@ const questionsStory1 = [
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
             } else if (score == 3) {
-              alert("denne testkjører 3" + score)
+              
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
               setShowGoldenStar3("0%")
             } else if (score == 4) {
-              alert("denne testkjører 4" + score)
+              
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
               setShowGoldenStar3("0%")

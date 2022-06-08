@@ -18,8 +18,15 @@ code {
   background-color: gray;
 }
 .correct{
-  background-color: rgb(103,179,70) !important; 
+  background-color: rgb(103,179,70) !important;
+  animation: scaler 1s forwards;
 }
 .false{
   background-color: red !important;
+}
+
+@keyframes scaler {
+  0% {transform: scale(1);}
+  100% {transform: scale(1.01);}
+  
 }

@@ -9,10 +9,8 @@ import xCircle from '../../images/xCircle.svg';
 import waterMill from '../../images/waterMill.jpg';
 import { getAvatarSource } from '../../getAvatarSource';
 
-const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAnswer, wrongAnswer}) => {
-  if (!open) return null;
 
-  const fader = keyframes`
+const fader = keyframes`
     from {opacity:0}
     to {opacity:1}
   `;
@@ -152,6 +150,12 @@ const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAn
   height: auto;
   width: auto;
   `
+
+
+const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAnswer, wrongAnswer}) => {
+  if (!open) return null;
+
+  
   
   return (
     <div>

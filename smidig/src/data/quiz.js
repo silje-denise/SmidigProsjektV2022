@@ -1,6 +1,6 @@
 import quizQuestions from "./quizArray";
-import quizElement from "../group2/Quiz"
-import QuizPage from "../../pages/QuizPage";
+import quizElement from "../components/group2/Quiz"
+import QuizPage from "../pages/QuizPage";
 
 const highScoreOutput = document.querySelector('#highScore')
 const highScoreBoard = document.querySelector('#highScoreBoard')

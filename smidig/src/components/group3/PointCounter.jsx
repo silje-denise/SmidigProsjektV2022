@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import GoldenStar from '../../images/goldStar.svg';
+import score from "../../data/score"
 
 const PointCounter = ({points}) => {
 
@@ -35,9 +36,15 @@ const PointCounter = ({points}) => {
     background-color: #222222;
 `;
 
+const getPoints = () => {
+  return score.userScore[0].score;
+}
+
+
+
   return (
     <PointContainer>
-        <PointNumber>{points}</PointNumber>
+        <PointNumber>{ points ? points : getPoints()}</PointNumber>
         <StarIllustration style={{backgroundImage: `url(${GoldenStar})`}}></StarIllustration>
     </PointContainer>
   )

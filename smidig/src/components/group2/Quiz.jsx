@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import quizQuestions from "../Quiz/quizArray";
+import quizQuestions from "../../data/quizArray";
 import NextButton from "../common/NextButton";
 import QuizComplete from "./QuizComplete";
+import { keyframes } from "styled-components";
+import globalScore from "../../data/score.js";
 
 //import PointsComponent from '../common/PointsComponent'
 
@@ -60,9 +62,7 @@ function showQuiz() {
 
     if (hiddenDiv.style.display === "none") {
         hiddenDiv.style.display = "block";
-    }
-
-    else {
+    } else {
         hiddenDiv.style.display = "none";
     }
   }
@@ -73,14 +73,18 @@ const Quiz = () => {
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
     const handleAnswerButtonClick = (correct,index)  => {  
-       setAnswerClicked(index); 
+       setAnswerClicked(index);
+       
+       setTimeout(nextQuestion, 500)
+       
     };
 
     const getClassNameForOption = (index) => {
         if (index === answerClicked) {
             const isCorrect = quizQuestions[currentQuestion].answerOptions[index].correct
             if(isCorrect===true){
-                return "correct"
+                globalScore.addScore(0.5);
+                return "correct";
             }
             else if(isCorrect===false){
                 return "false"
@@ -94,10 +98,14 @@ const Quiz = () => {
         if (nextQuestion < quizQuestions.length){
             setCurrentQuestion(nextQuestion);
             setAnswerClicked(-1)
+            
         }else {
+            
                 showQuiz()
+                setTimeout(showQuiz, 100)
             }
     }
+
 
     return(
         <>
@@ -109,7 +117,7 @@ const Quiz = () => {
             </StyledQuizWrapper>
             <StyledQuizDiv>
                 {quizQuestions[currentQuestion].answerOptions.map((answerOption, index)=>( 
-                <StyledQuizElement  onClick={() => handleAnswerButtonClick(answerOption.correct, index)} className={getClassNameForOption(index)}> {answerOption.answerText} </StyledQuizElement>))}
+                <StyledQuizElement  onClick={() => {handleAnswerButtonClick(answerOption.correct, index)}} className={getClassNameForOption(index)}> {answerOption.answerText} </StyledQuizElement>))}
             </StyledQuizDiv>
             <NextButton onClick={nextQuestion}></NextButton>
 
