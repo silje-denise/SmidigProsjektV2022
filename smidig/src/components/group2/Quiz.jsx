@@ -62,9 +62,7 @@ function showQuiz() {
 
     if (hiddenDiv.style.display === "none") {
         hiddenDiv.style.display = "block";
-    }
-
-    else {
+    } else {
         hiddenDiv.style.display = "none";
     }
   }
@@ -85,8 +83,7 @@ const Quiz = () => {
         if (index === answerClicked) {
             const isCorrect = quizQuestions[currentQuestion].answerOptions[index].correct
             if(isCorrect===true){
-                globalScore.addScore(1);
-                alert(globalScore.userScore[0].score)
+                globalScore.addScore(0.5);
                 return "correct";
             }
             else if(isCorrect===false){
@@ -101,8 +98,11 @@ const Quiz = () => {
         if (nextQuestion < quizQuestions.length){
             setCurrentQuestion(nextQuestion);
             setAnswerClicked(-1)
+            
         }else {
+            
                 showQuiz()
+                setTimeout(showQuiz, 100)
             }
     }
 

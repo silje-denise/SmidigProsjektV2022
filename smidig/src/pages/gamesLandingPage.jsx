@@ -36,7 +36,7 @@ const GamesLandingPage = () => {
         <StyledBackground>
             
             <GameLanding>
-            <PointCounterBar points="3" open="true" />
+            <PointCounterBar/>
                 <StyledLink to="/history">
                     <HistoryDiv/>
                 </StyledLink>

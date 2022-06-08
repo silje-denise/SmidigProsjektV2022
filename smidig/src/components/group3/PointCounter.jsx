@@ -40,9 +40,11 @@ const getPoints = () => {
   return score.userScore[0].score;
 }
 
+
+
   return (
     <PointContainer>
-        <PointNumber>{getPoints()}</PointNumber>
+        <PointNumber>{ points ? points : getPoints()}</PointNumber>
         <StarIllustration style={{backgroundImage: `url(${GoldenStar})`}}></StarIllustration>
     </PointContainer>
   )

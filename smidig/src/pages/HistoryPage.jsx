@@ -13,6 +13,7 @@ import Ostavagen from '../audio/Ostavagen.mp3';
 import sporsmalIntro from '../audio/sporsmalIntro.mp3';
 import Viking from '../images/Viking.png'
 import waterMill from '../images/waterMill.jpg';
+import globalScore from '../data/score'
 
 const HistoryPage = () => {
 
@@ -296,6 +297,7 @@ const questionsStory1 = [
         
         if(isCorrect === true) {
             setScore(score+1)
+            globalScore.addScore(1);
             setShowAnswerStatusCorrect("true")
             setShowAnswerStatusWrong("none")
         }else {
