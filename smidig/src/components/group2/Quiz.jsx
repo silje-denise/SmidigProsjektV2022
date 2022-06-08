@@ -84,8 +84,6 @@ const Quiz = () => {
             const isCorrect = quizQuestions[currentQuestion].answerOptions[index].correct
             if(isCorrect===true){
                 globalScore.addScoreQuiz(0.5);
-                alert(globalScore.userScore[1].quizScore + " " + globalScore.userScore[0].score )
-                
                 returnValue = "correct";
             }
             else if(isCorrect===false){

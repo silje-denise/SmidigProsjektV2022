@@ -8,6 +8,7 @@ import LandingPage from './pages/LandingPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
 import SettingsPage from './pages/SettingsPage.jsx'
 import MapPage from './pages/MapPage';
+import MapPageAlt from './pages/MapPageAlt';
 import QuizPage from './pages/QuizPage';
 import OverviewPage from './pages/OverviewPage';
 import GamesLandingPage from './pages/GamesLandingPage.jsx';

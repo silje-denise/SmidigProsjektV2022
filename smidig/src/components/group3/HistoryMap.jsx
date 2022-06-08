@@ -147,7 +147,7 @@ const HistoryMap = ({open, onClose, rud, borgen, norum, torva, avatarTitle, avat
             <MapDiv>
                 <GLMap {...viewState} 
                         mapStyle="mapbox://styles/mapbox/outdoors-v10?optimize=true"
-                        mapboxAccessToken={"pk.eyJ1IjoiYWRkaW1hbm5pIiwiYSI6ImNsM3drdjZicjBhbm8zY21tbmc0cDM0M2MifQ.3DIlK5bhql2VKREmCXBgMQ"}
+                        mapboxAccessToken="pk.eyJ1IjoiYWRkaW1hbm5pIiwiYSI6ImNsM3drdjZicjBhbm8zY21tbmc0cDM0M2MifQ.3DIlK5bhql2VKREmCXBgMQ"
                         style={{borderRadius: "16px"}}
                         onMove={evt => {setViewState(evt.viewState)}}>
                         
