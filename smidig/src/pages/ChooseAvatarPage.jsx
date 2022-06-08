@@ -58,7 +58,7 @@ const ChooseAvatarPage = () => {
 
     return(
         <> 
-        <StyledImage src={monster}/>
+        <StyledImage src={monster} alt="Bakgrunnsmønster"/>
         <PageWrapper>
             <AvatarHeader source={getAvatarSource(selectedAvatar)}/>
             <CharacterSelectionWrapper>

@@ -83,7 +83,7 @@ const SettingsPage = () => {
                     <FontAwesomeIcon icon={faXmark} size="3x"/>
                 </StyledXButton>
                 <StyledBackground>
-                    <StyledBackgroundImage src={monster} />
+                    <StyledBackgroundImage src={monster} alt="Bakgrunnsmønster"/>
                 </StyledBackground>
                 <StyledSecondWhiteBox />
                 <StyledPageWrapper>

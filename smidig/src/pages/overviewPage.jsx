@@ -131,7 +131,7 @@ const OverviewPage = () => {
             </SettingsBar>
             <Link to={"/profile"}>
               <ProfileIcon> 
-                <StyledImg src={getAvatarSource()}/>   
+                <StyledImg src={getAvatarSource()} alt="Profilbilde"/>   
               </ProfileIcon>
             </Link>
         </Header>
@@ -140,7 +140,7 @@ const OverviewPage = () => {
             <h1>UT</h1>
             <h1>FORSK</h1>
           </StyledLogo>
-          <StyledImg src={Logo}/>
+          <StyledImg src={Logo} alt="Logoen til Rælingen kommune"/>
           </LogoContainer>
           <motion.div ref={carusel} className='scrollView' >
             <motion.div drag="x" dragConstraints={{ right: 0, left: -width}}>

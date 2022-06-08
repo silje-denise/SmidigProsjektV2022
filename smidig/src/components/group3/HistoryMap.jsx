@@ -203,7 +203,7 @@ const HistoryMap = ({open, onClose, rud, borgen, norum, torva, avatarTitle, avat
                     </Dialogue>
                     <DialogueAvatar>
                         <ProfileIcon> 
-                            <StyledImg src={getAvatarSource()}/>   
+                            <StyledImg src={getAvatarSource()} alt="Profilbilde"/>   
                         </ProfileIcon>
                     </DialogueAvatar>
                 </DialogueBox>

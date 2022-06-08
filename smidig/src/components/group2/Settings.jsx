@@ -122,7 +122,7 @@ const Settings = () => {
                 </StyledShareApp>
             </StyledSettingsDiv>
             <StyledLogo>
-                <StyledLogoImage src={RaelingenLogo}/>
+                <StyledLogoImage src={RaelingenLogo} alt="Logoen til Rælingen kommune"/>
             </StyledLogo>
         </>
     );

@@ -80,11 +80,11 @@ const ProfileHeader = () => {
             </UserInfo>
             <ProfileInfoWrapper>
                 <Link to={"/chooseavatar"}>
-                     <ProfilePicture src={getAvatarSource()}/>
+                     <ProfilePicture src={getAvatarSource()} alt="Profilbilde"/>
                 </Link>
             </ProfileInfoWrapper>
             </HeaderGrid>
-            <img src={profilLinje}/>
+            <img src={profilLinje} alt="Linje"/>
         </HeaderWrapper>
         </ProfilePage>
     );

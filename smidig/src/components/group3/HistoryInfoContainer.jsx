@@ -1,15 +1,10 @@
-import { motion } from 'framer-motion'
-import '../../App.css'
-import React, { useEffect, useState, useRef } from 'react'
-import styled from 'styled-components'
-import PointCounter from './PointCounter'
-import Viking from '../../images/Viking.png'
-import testPicture from '../../images/testPicture.jpg'
-import CheckmarkIcon from '../../images/checkmark.svg'
-import CheckmarkContainer from './CheckmarkContainer'
-import ProgressDiv from '../group3/ProgressDiv'
-import dashedLine from '../../images/dashedLine.svg'
-import { AvatarBox } from './AvatarBox'
+import '../../App.css';
+import React from 'react';
+import styled from 'styled-components';
+import CheckmarkContainer from './CheckmarkContainer';
+import ProgressDiv from '../group3/ProgressDiv';
+import dashedLine from '../../images/dashedLine.svg';
+import { AvatarBox } from './AvatarBox';
 import { getAvatarSource } from '../../getAvatarSource';
 
 
@@ -86,29 +81,9 @@ const ScrollView = styled.div`
         background-position: center;
     `;
 
-    const ProfileIcon = styled.div`
-    border-radius: 50px;
-    width: 5rem;
-    height: 5rem;
-    display:flex;
-    justify-content: center;
-    position: fixed;
-    right: 2.5rem;
-    z-index: 100;
-  `;
-
-    const StyledImg = styled.img`
-      height: 5rem;
-      width: 5rem;
-      z-index: 200;
-    `;
-
 
 const HistoryInfoContainer = ({open, onClose, title, body, fact1, fact2, fact3, illustration, avatarTtile, avatarBody, avatarIllustration}) => {
     if (!open) return null
-
-    
-
 
   return (
     <div>

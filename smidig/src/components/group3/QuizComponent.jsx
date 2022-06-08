@@ -167,7 +167,7 @@ const QuizComponent = ({open, openQuestion, quizHandler, questionsArray, rightAn
           <AvatarSatus>
             <AvatarText>Kan du hjelpe meg å svare?</AvatarText>
             <Avatar>
-              <StyledImg src={getAvatarSource()}/>   
+              <StyledImg src={getAvatarSource()} alt="Profilbilde"/>   
             </Avatar>
           </AvatarSatus>
         </div>
