@@ -68,7 +68,7 @@ const fader = keyframes`
     const Avatar = styled.div`
       width: 32px;
       height: 32px;
-      margin: 2px;
+      margin: 0px;
       border-radius: 16px;
       background-size: cover;
       background-repeat: no-repeat;

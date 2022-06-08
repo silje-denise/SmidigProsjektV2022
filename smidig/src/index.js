@@ -14,6 +14,7 @@ import GamesLandingPage from './pages/GamesLandingPage.jsx';
 import HistoryPage from './pages/HistoryPage';
 import HistoryInfoContainer from './components/group3/HistoryInfoContainer.jsx';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <React.StrictMode>

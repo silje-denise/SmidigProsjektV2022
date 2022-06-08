@@ -6,6 +6,7 @@ import Viking from '../../images/Viking.png'
 import ProgressDiv from '../group3/ProgressDiv'
 import dashedLine from '../../images/dashedLine.svg'
 import { getAvatarSource } from '../../getAvatarSource';
+import globalScore from '../../data/score';
 
 export const HistoryCheckpoint = ({open, points, star1, star2, star3, star4, total, finnish, hideStars, onClose}) => {
     if (!open) return null;

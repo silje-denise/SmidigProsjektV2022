@@ -32,7 +32,7 @@ export const AvatarBox = ({title, body, illustration, color1, color2}) => {
 
     const AvatarIllustration = styled.div`
         position: absolute;
-        width: 30%;
+        width: 100px;
         right: 8px;
         top: 8px;
         bottom: 8px;
