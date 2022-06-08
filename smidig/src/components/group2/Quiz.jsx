@@ -3,6 +3,7 @@ import styled from "styled-components";
 import quizQuestions from "../Quiz/quizArray";
 import NextButton from "../common/NextButton";
 import QuizComplete from "./QuizComplete";
+import { keyframes } from "styled-components";
 
 //import PointsComponent from '../common/PointsComponent'
 
@@ -73,7 +74,10 @@ const Quiz = () => {
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
     const handleAnswerButtonClick = (correct,index)  => {  
-       setAnswerClicked(index); 
+       setAnswerClicked(index);
+       
+       setTimeout(nextQuestion, 1000)
+       
     };
 
     const getClassNameForOption = (index) => {
@@ -99,6 +103,7 @@ const Quiz = () => {
             }
     }
 
+
     return(
         <>
             <StyledQuizWrapper>
@@ -109,7 +114,7 @@ const Quiz = () => {
             </StyledQuizWrapper>
             <StyledQuizDiv>
                 {quizQuestions[currentQuestion].answerOptions.map((answerOption, index)=>( 
-                <StyledQuizElement  onClick={() => handleAnswerButtonClick(answerOption.correct, index)} className={getClassNameForOption(index)}> {answerOption.answerText} </StyledQuizElement>))}
+                <StyledQuizElement  onClick={() => {handleAnswerButtonClick(answerOption.correct, index)}} className={getClassNameForOption(index)}> {answerOption.answerText} </StyledQuizElement>))}
             </StyledQuizDiv>
             <NextButton onClick={nextQuestion}></NextButton>
 
