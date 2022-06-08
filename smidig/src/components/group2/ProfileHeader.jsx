@@ -52,7 +52,7 @@ const PointView = styled.div`
     position: absolute;
     right: 0;
     top: 0;
-    margin: -64px 32px 0px 32px;
+    margin: -78px 32px 0px 32px;
 `;
 
 const ProfilePage = styled.div`
