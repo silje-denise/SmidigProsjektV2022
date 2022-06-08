@@ -60,16 +60,23 @@ const DivQuizPage = styled.div`
 
 
 const Quiz = () => {
+    
     const [answerClicked, setAnswerClicked] = useState(-1);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
-    const handleAnswerButtonClick = (correct,index)  => {  
+    
+    const handleAnswerButtonClick = (correct,index)  => { 
+        if((currentQuestion) === 0){
+            globalScore.resetQuizScore();
+        } 
        setAnswerClicked(index);
        
        setTimeout(nextQuestion, 500)
        
     };
+
+    
 
     const getClassNameForOption = (index) => {
         let returnValue = "";
@@ -90,7 +97,9 @@ const Quiz = () => {
     }
 
     const nextQuestion = () => {
+        
         let nextQuestion = currentQuestion + 1;
+        
 
         if (nextQuestion < 4){
             setCurrentQuestion(nextQuestion);
@@ -118,7 +127,7 @@ const Quiz = () => {
 
     return(
         <>
-            <StyledQuizWrapper>
+            <StyledQuizWrapper >
                 {showScore}  
                 <StyledQuizQuestion>
                     {quizQuestions[currentQuestion].questionText}
