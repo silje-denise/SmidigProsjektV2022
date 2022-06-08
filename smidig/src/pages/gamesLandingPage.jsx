@@ -6,7 +6,7 @@ import Navigation from "../components/common/Navigation";
 import HeaderText from "../components/group1/HeaderText";
 import Background from "../images/background.png";
 import { Link } from "react-router-dom";
-import PointCounterBar from '../components/group3/PointCounterBar';
+import PointCounterBar from '../components/group3/PointCounter';
 
 
 const GameLanding = styled.div`

@@ -4,6 +4,7 @@ import quizQuestions from "../../data/quizArray";
 import NextButton from "../common/NextButton";
 import QuizComplete from "./QuizComplete";
 import { keyframes } from "styled-components";
+import globalScore from "../../data/score.js";
 
 //import PointsComponent from '../common/PointsComponent'
 
@@ -76,7 +77,7 @@ const Quiz = () => {
     const handleAnswerButtonClick = (correct,index)  => {  
        setAnswerClicked(index);
        
-       setTimeout(nextQuestion, 1000)
+       setTimeout(nextQuestion, 500)
        
     };
 
@@ -84,7 +85,9 @@ const Quiz = () => {
         if (index === answerClicked) {
             const isCorrect = quizQuestions[currentQuestion].answerOptions[index].correct
             if(isCorrect===true){
-                return "correct"
+                globalScore.addScore(1);
+                alert(globalScore.userScore[0].score)
+                return "correct";
             }
             else if(isCorrect===false){
                 return "false"

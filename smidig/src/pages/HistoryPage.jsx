@@ -4,7 +4,7 @@ import ExitIcon from '../components/group3/ExitIcon';
 import ExitMenu from '../components/group3/ExitMenu.jsx';
 import HistoryInfoContainer from '../components/group3/HistoryInfoContainer';
 import HistoryMap from '../components/group3/HistoryMap';
-import PointCounterBar from '../components/group3/PointCounterBar';
+import PointCounterBar from '../components/group3/PointCounter';
 import menuAudio from '../audio/menuClick.wav'
 import QuizComponent from '../components/group3/QuizComponent'
 import { HistoryCheckpoint } from '../components/group3/HistoryCheckpoint';
