@@ -64,7 +64,7 @@ import {Link} from 'react-router-dom';
         text-align: center;
     `;
 
-    const QuizComplete = () => {
+    const QuizComplete = ({points}) => {
 
     return(
         <>
@@ -84,7 +84,7 @@ import {Link} from 'react-router-dom';
                     </StyledHeaderDiv>
                     <StyledTextDiv>
                         <h3>
-                            Du fikk <b>3/4</b> stjerner
+                            Du fikk <b>{points}/4</b> stjerner
                         </h3>
                     </StyledTextDiv>
                 </StyledPageWrapper>

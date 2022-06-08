@@ -11,7 +11,7 @@ const ArrowWrapper = styled("div")`
     display:flex;
     align-items:center;
     padding: 40px 0px 0px 40px;
-    background-image: url(${monster});
+    /*background-image: url(${monster});*/
 `;
 
 const StyledImage = styled("img")`

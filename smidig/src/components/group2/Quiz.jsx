@@ -57,15 +57,7 @@ const DivQuizPage = styled.div`
     display: none;
 `;
 
-function showQuiz() {
-    var hiddenDiv = document.getElementById("CompleteQuizOverlay");
 
-    if (hiddenDiv.style.display === "none") {
-        hiddenDiv.style.display = "block";
-    } else {
-        hiddenDiv.style.display = "none";
-    }
-  }
 
 const Quiz = () => {
     const [answerClicked, setAnswerClicked] = useState(-1);
@@ -80,31 +72,48 @@ const Quiz = () => {
     };
 
     const getClassNameForOption = (index) => {
+        let returnValue = "";
         if (index === answerClicked) {
             const isCorrect = quizQuestions[currentQuestion].answerOptions[index].correct
             if(isCorrect===true){
-                globalScore.addScore(0.5);
-                return "correct";
+                globalScore.addScoreQuiz(0.5);
+                alert(globalScore.userScore[1].quizScore + " " + globalScore.userScore[0].score )
+                
+                returnValue = "correct";
             }
             else if(isCorrect===false){
-                return "false"
+                returnValue = "false"
             }
-        }   
+            
+        }
+        return returnValue;
     }
 
     const nextQuestion = () => {
-        const nextQuestion = currentQuestion + 1;
+        let nextQuestion = currentQuestion + 1;
 
-        if (nextQuestion < quizQuestions.length){
+        if (nextQuestion < 4){
             setCurrentQuestion(nextQuestion);
             setAnswerClicked(-1)
             
         }else {
+            setAnswerClicked(-1)
             
                 showQuiz()
                 setTimeout(showQuiz, 100)
             }
     }
+
+    function showQuiz() {
+        setScore(globalScore.userScore[1].quizScore)
+        var hiddenDiv = document.getElementById("CompleteQuizOverlay");
+    
+        if (hiddenDiv.style.display === "none") {
+            hiddenDiv.style.display = "block";
+        } else {
+            hiddenDiv.style.display = "none";
+        }
+      }
 
 
     return(
@@ -122,7 +131,7 @@ const Quiz = () => {
             <NextButton onClick={nextQuestion}></NextButton>
 
             <DivQuizPage id='CompleteQuizOverlay'>
-                <QuizComplete />
+                <QuizComplete points={score}/>
             </DivQuizPage>
         </>
     );

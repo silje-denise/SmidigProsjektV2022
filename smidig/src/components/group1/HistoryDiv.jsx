@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { getAvatarSource } from "../../getAvatarSource";
 
 const StyledContainerWrappper = styled.div`
+        position: relative;
         padding-top: 80px;
 `
 
@@ -24,10 +25,13 @@ const StyledContainer = styled.div `
 
 const StyledHistoryImage = styled.div `
         grid-area: sidebar;
+        position: absolute;
+        right: 0;
 `;
 
 const StyledImage = styled.img`
    height : 90px ;
+
 `;
 
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
 import ExitIcon from '../components/group3/ExitIcon';
 import ExitMenu from '../components/group3/ExitMenu.jsx';
@@ -265,22 +265,26 @@ const questionsStory1 = [
         if(story1 == "true"){
           setStory1("none");
           setStory2("true");
+          setScore(0);
         } else if(story2 == "true"){
           setStory2("none");
           setStory3("true");
+          setScore(0);
         } else if(story3 == "true"){
           setStory3("none");
           setStory4("true");
+          setScore(0);
         } else if(story4 == "true") {
           setStory4("none");
           setStoryCheckpoint(true);
+          setScore(0);
           {/*Her må du legge til total score checkpoint for alle sstoriene!*/}
         }
         setMapIsOpen(true)
       }
     }
 
-    const [score, setScore] = useState(0);
+    
     const [totalScore, setTotalScore] = useState(0);
 
     const [openQuestion, setOpenQuestion] = useState(0);
@@ -291,45 +295,56 @@ const questionsStory1 = [
     const [showGoldenStar2, setShowGoldenStar2] = useState("100%");
     const [showGoldenStar3, setShowGoldenStar3] = useState("100%");
     const [showGoldenStar4, setShowGoldenStar4] = useState("100%");
-    
 
+    function addLocalScore(input) {
+      setScore(score + input);
+    }
+    
+    const [score, setScore] = useState(0);
+
+    
     const quizHandler = (isCorrect) => {
         
         if(isCorrect === true) {
-            setScore(score+1)
+          
+            
             globalScore.addScore(1);
+            addLocalScore(1);
+            
             setShowAnswerStatusCorrect("true")
             setShowAnswerStatusWrong("none")
         }else {
             setShowAnswerStatusCorrect("none")
             setShowAnswerStatusWrong("true")
         }
+
         const nextQuestion = openQuestion + 1;
         if (nextQuestion < 4){
             setOpenQuestion(nextQuestion);
         } else {
-          
+            setTotalScore(totalScore + score);
             if (score === 1) {
               setShowGoldenStar1("0%")
             } else if (score === 2) {
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
-            } else if (score == 3) {
-              
+            } else if (score === 3) {
+              alert(score)
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
               setShowGoldenStar3("0%")
-            } else if (score == 4) {
+            } else if (score === 4) {
               
               setShowGoldenStar1("0%")
               setShowGoldenStar2("0%")
               setShowGoldenStar3("0%")
               setShowGoldenStar4("0%")
             }
-            setTotalScore(totalScore + score);
+            
             setQuizPageIsOpen(false);
             setHistoryCheckpointIsOpen(true);
             setOpenQuestion(0);
+            
         }
     }
 
@@ -352,7 +367,7 @@ const questionsStory1 = [
             <ExitButton onClick={exitMenuHandler}>
               <ExitIcon opacity='0.5' width="36px" height="36px"></ExitIcon>
             </ExitButton>
-            <PointCounterBar points={totalScore} open={pointBarIsOpen}/>
+            <PointCounterBar open={pointBarIsOpen}/>
           </ExitBar>
           <div style={{display: story1}}>
             <HistoryMap open={mapIsOpen} onClose={mapPageHandler} rud="1" avatarTitle="Hei og velkommen!" avatarBody="Endelig er du her! Nå kan vi gå gjennom kulturstien sammen."/>
