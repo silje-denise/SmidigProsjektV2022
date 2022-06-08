@@ -7,22 +7,17 @@ import Navigation from "../components/common/Navigation";
 import AudioFile from "../audio/pannekaka.mp3";
 import { keyframes } from "styled-components";
 import GLMap, { Marker, Popup }from 'react-map-gl';
-import mapIconBorgen from '../images/mapIconBorgen.svg';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import historyLocations from '../data/historyLocations.json';
-import mapIconNorum from '../images/mapIconNorum.svg';
-import mapIconRud from '../images/mapIconRud.svg';
-import mapIconTorva from '../images/mapIconTorva.svg';
 
 
 const PageWrapper = styled("div")`
-    position: relative;
+    background-color: lightblue;
     height: 100vh;
     width: 100vw;
+    background-image: url(${map});
 `;
 
 const OverlayWrapper = styled("div")`
-    
+    height: 90vh;
     width: 100vw;
     display:flex;
     justify-content: flex-end;
@@ -73,7 +68,6 @@ const ButtonWrapper = styled("div")`
     padding: 20px;
     display:flex;
     backdrop-filter: blur(2px);
-    z-index: 100;
 `;
 
 const ContentWrapper = styled("div")`
@@ -83,6 +77,7 @@ const ContentWrapper = styled("div")`
 
 const NavWrapper = styled.div`
     position:absolute;
+    bottom: 0px;
     z-index:100;
     background-color:rgba(255,255,255,1);
     display:flex;
@@ -102,6 +97,7 @@ const AreaWrapper = styled("div")`
 const Area1 = styled("button")`
     background-color: white;
     border-radius:30px;
+    border: 2px solid rgb(103,179,70);
     width:130px;
     display:flex;
     align-items:center;
@@ -150,43 +146,19 @@ const HeaderButtonWrapper = styled("div")`
 const StyledHeaderButton = styled("button")`
     width: 160px;
     height: 50px;
+    border: 2px solid rgb(103,179,70);
     border-radius: 10px;
-    font-size: 24px;
-    background-color: #ededed; 
-`;
-
-const MapDiv = styled.div`
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-        width: 100%;
-        top: 80px;
-    `;
-
-const MarkerIcon = styled.div`
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 48px;
-    width: 200px;
+    font-size: 23px;
+    background-color:white; 
 `;
 
 
 
 
 const MapPage = () => {
-    const [viewState, setViewState] = useState({
-        latitude: 59.912484,
-        longitude: -348.931581,
-        width: "100vh",
-        height: "100vh",
-        zoom: 11,
-    });
     const [isOpen, setIsOpen] = useState(false);
     const [infoText, setInfoText] = useState("Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
     const [infoHeader, setInfoHeader] = useState("Byåa");
-    
 
     const handleOnclick = (id)=>{
    
@@ -198,14 +170,14 @@ const MapPage = () => {
               setInfoText("Her finner du info om Byåa: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
               
            }else if(id === 1){
-            setInfoHeader("Borgen");
+            setInfoHeader("Vannmølla");
             setInfoText(`Her finner du info om Vannmølla:  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.`);
            }else if(id === 2){
-            setInfoHeader("Norum");
+            setInfoHeader("Sagen");
             setInfoText("Her finner du info om Sagen: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
            }
            else if(id === 3){
-            setInfoHeader("Torva");
+            setInfoHeader("Låven");
             setInfoText("Her finner du info om Låven: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita repudiandae doloribus quam eos cum dignissimos ut, pariatur corporis facilis cumque cupiditate vitae, soluta asperiores enim quae officia eligendi, repellat et.");
            }
        }else{
@@ -213,14 +185,9 @@ const MapPage = () => {
        }
     }
 
-    
-
-  
-    const [pointActive, setPointActive] = useState(null);
-
 
     return(
-            
+            <>
             <PageWrapper>
             <ButtonWrapper>
                 <HeaderButtonWrapper>
@@ -229,57 +196,18 @@ const MapPage = () => {
                     </StyledHeaderButton>
                 </HeaderButtonWrapper>
             </ButtonWrapper>
-            
-            <MapDiv>
-                <GLMap {...viewState} 
-                        mapboxAccessToken={"pk.eyJ1IjoiYWRkaW1hbm5pIiwiYSI6ImNsM3drdjZicjBhbm8zY21tbmc0cDM0M2MifQ.3DIlK5bhql2VKREmCXBgMQ"}
-                        onMove={evt => {setViewState(evt.viewState)}}
-                        mapStyle="mapbox://styles/mapbox/streets-v9">
-                        <Marker
-                            latitude={historyLocations.historyLocations[0].coordinates[0]}
-                            longitude={historyLocations.historyLocations[0].coordinates[1]}>
-                                <MarkerIcon onClick={(e) => {
-                                    e.preventDefault();
-                                    handleOnclick(1)
-                                    setPointActive(historyLocations.historyLocations[0])
-                                    
-                                }}
-                                style={{backgroundImage: `url(${mapIconBorgen})`}}/>
-                        </Marker>
-                        <Marker
-                            latitude={historyLocations.historyLocations[1].coordinates[0]}
-                            longitude={historyLocations.historyLocations[1].coordinates[1]}>
-                                <MarkerIcon onClick={(e) => {
-                                    e.preventDefault();
-                                    handleOnclick(2)
-                                    setPointActive(historyLocations.historyLocations[0])
-                                }}
-                                style={{backgroundImage: `url(${mapIconNorum})`}}/>
-                        </Marker>
-                        <Marker
-                            latitude={historyLocations.historyLocations[2].coordinates[0]}
-                            longitude={historyLocations.historyLocations[2].coordinates[1]}>
-                                <MarkerIcon onClick={(e) => {
-                                    e.preventDefault();
-                                    handleOnclick(3)
-                                    setPointActive(historyLocations.historyLocations[0])
-                                }}
-                                style={{backgroundImage: `url(${mapIconRud})`}}/>
-                        </Marker>
-                        <Marker
-                            latitude={historyLocations.historyLocations[3].coordinates[0]}
-                            longitude={historyLocations.historyLocations[3].coordinates[1]}>
-                                <MarkerIcon onClick={(e) => {
-                                    e.preventDefault();
-                                    handleOnclick(4)
-                                    setPointActive(historyLocations.historyLocations[0])
-                                }}
-                                style={{backgroundImage: `url(${mapIconTorva})`}}/>
-                        </Marker>
-                        
-                </GLMap>
-            </MapDiv>
-            
+            <AreaWrapper>
+                <Area1 onClick={() => handleOnclick(1)}>
+                    <p>Vannmølla</p>
+                    <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'rgb(103,179,70)'}/>
+                </Area1>
+                <Area2 onClick={() => handleOnclick(2)}>
+                    <p>Sagen</p>
+                <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'rgb(103,179,70)'}/></Area2>
+                <Area3 onClick={() => handleOnclick(3)}>
+                    <p>Låven</p>
+                <FontAwesomeIcon icon={faLocationDot} size={'2x'} color={'rgb(103,179,70)'}/></Area3>
+            </AreaWrapper>
             <OverlayWrapper>
                 <Overlay visible={isOpen} onClick={handleOnclick}>
                     <StyledHeaderText>
@@ -297,7 +225,7 @@ const MapPage = () => {
                 </NavWrapper>
             </OverlayWrapper>   
         </PageWrapper>
-          
+        </>   
     );
 }
 
